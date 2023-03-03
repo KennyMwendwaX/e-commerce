@@ -1,0 +1,85 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "Air Jordan 1 retro blue",
+      "brand": "Jordan",
+      "category": "Shoes",
+      "description": "",
+      "price": 25000,
+      "imgUrl": "/air-jordan-1-retro-blue-400x400.jpg"
+    },
+    {
+      "id": "2",
+      "name": "iPhone 14 Pro Max",
+      "brand": "Apple",
+      "category": "Phones",
+      "description": "",
+      "price": 150000,
+      "imgUrl": "/iPhone-14-Pro-Max.jpg"
+    },
+    {
+      "id": "3",
+      "name": "RayBan Sunglasses",
+      "brand": "RayBan",
+      "category": "Accessories",
+      "description": "",
+      "price": 9000,
+      "imgUrl": "/rayban.jpg"
+    },
+    {
+      "id": "4",
+      "name": "MacBook Pro",
+      "brand": "Apple",
+      "category": "Laptops",
+      "description": "",
+      "price": 160000,
+      "imgUrl": "/macbook.jpg"
+    },
+    {
+      "id": "5",
+      "name": "good kid, m.A.A.d city Vinyl Album",
+      "brand": "Kendrick Lamar",
+      "category": "Album",
+      "description": "",
+      "price": 14000,
+      "imgUrl": "/gkmc.webp"
+    },
+    {
+      "id": "6",
+      "name": "Madvillainy",
+      "brand": "Madvillain",
+      "category": "Album",
+      "description": "",
+      "price": 9500,
+      "imgUrl": "/madvillainy.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Atomic Habits",
+      "brand": "James Clear",
+      "category": "Book",
+      "description": "",
+      "price": 4500,
+      "imgUrl": "/atomic-habits-book.webp"
+    },
+    {
+      "id": "8",
+      "name": "HP All-in-One 24-df1027nh Bundle PC",
+      "brand": "Hewlett Packard",
+      "category": "Computers",
+      "description": "",
+      "price": 110000,
+      "imgUrl": "/hp-all-in-one.png"
+    },
+    {
+      "id": "9",
+      "name": "Samsung Android TV",
+      "brand": "Samsung",
+      "category": "TV",
+      "description": "",
+      "price": 70000,
+      "imgUrl": "/samsung-tv.jpeg"
+    }
+  ]
+}
