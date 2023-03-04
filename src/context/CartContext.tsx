@@ -5,15 +5,16 @@ type CartProviderProps = {
 }
 
 type CartItem = {
-  id: number
+  id: string
   quantity: number
 }
 
 type CartContextTypes = {
-  getItemQuantity: (id: number) => number
-  increaseCartQuantity: (id: number) => void
-  decreaseCartQuantity: (id: number) => void
-  removeFromCart: (id: number) => void
+  addToCart: (id: string) => void
+  getItemQuantity: (id: string) => number
+  increaseCartQuantity: (id: string) => void
+  decreaseCartQuantity: (id: string) => void
+  removeFromCart: (id: string) => void
   cartQuantity: number
   cartItems: CartItem[]
 }
@@ -31,11 +32,7 @@ export function CartProvider({ children }: CartProviderProps) {
     0
   )
 
-  function getItemQuantity(id: number) {
-    return cartItems.find((item) => item.id === id)?.quantity || 1
-  }
-
-  function increaseCartQuantity(id: number) {
+  function addToCart(id: string) {
     setCartItems((currentItems) => {
       if (currentItems.find((item) => item.id === id) == null) {
         return [...currentItems, { id, quantity: 1 }]
@@ -51,7 +48,27 @@ export function CartProvider({ children }: CartProviderProps) {
     })
   }
 
-  function decreaseCartQuantity(id: number) {
+  function getItemQuantity(id: string) {
+    return cartItems.find((item) => item.id === id)?.quantity || 0
+  }
+
+  function increaseCartQuantity(id: string) {
+    setCartItems((currentItems) => {
+      if (currentItems.find((item) => item.id === id) == null) {
+        return [...currentItems, { id, quantity: 1 }]
+      } else {
+        return currentItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + 1 }
+          } else {
+            return item
+          }
+        })
+      }
+    })
+  }
+
+  function decreaseCartQuantity(id: string) {
     setCartItems((currentItems) => {
       if (currentItems.find((item) => item.id === id)?.quantity === 1) {
         return currentItems.filter((item) => item.id !== id)
@@ -67,7 +84,7 @@ export function CartProvider({ children }: CartProviderProps) {
     })
   }
 
-  function removeFromCart(id: number) {
+  function removeFromCart(id: string) {
     setCartItems((currentItems) => {
       return currentItems.filter((item) => item.id !== id)
     })
@@ -76,6 +93,7 @@ export function CartProvider({ children }: CartProviderProps) {
   return (
     <CartContext.Provider
       value={{
+        addToCart,
         getItemQuantity,
         increaseCartQuantity,
         decreaseCartQuantity,

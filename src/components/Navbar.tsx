@@ -22,9 +22,11 @@ export default function Navbar() {
             <div className="relative hidden md:block">
               <a href="/cart" className="text-gray-700 text-3xl cursor-pointer">
                 <HiOutlineShoppingCart />
-                <span className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-blue-600 rounded-full -top-2 -right-2">
-                  {cartQuantity}
-                </span>
+                {cartQuantity > 0 && (
+                  <span className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-blue-600 rounded-full -top-2 -right-2">
+                    {cartQuantity}
+                  </span>
+                )}
               </a>
             </div>
             {/* Mobile view Icons */}

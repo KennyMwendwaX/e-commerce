@@ -30,12 +30,12 @@ export default function Item() {
   if (item === null) return <div>Loading...</div>
 
   const {
+    addToCart,
     getItemQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,
-    removeFromCart,
   } = useCart()
-  const quantity = getItemQuantity(parseInt(item.id))
+  const quantity = getItemQuantity(item.id)
 
   return (
     <>
@@ -76,7 +76,7 @@ export default function Item() {
                   <span className="text-gray-600 ml-3 text-sm">4 Reviews</span>
                 </span>
               </div>
-              <p className="leading-relaxed font-light">
+              <p className="leading-relaxed font-light border-b border-gray-400 mb-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
                 est voluptatum sit culpa itaque, libero, ducimus doloribus
                 aliquid beatae perferendis velit commodi mollitia quis odit
@@ -85,38 +85,23 @@ export default function Item() {
                 rerum mollitia a assumenda commodi natus laboriosam obcaecati,
                 iste accusamus!
               </p>
-
-              <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-                <div className="flex items-center">
-                  <span className="mr-3 font-light">Quantity</span>
-                  <div className="bg-transparent border border-gray-600 items-center font-light">
-                    <span className="sr-only">Quantity button</span>
-                    <button
-                      onClick={() => decreaseCartQuantity(parseInt(item.id))}
-                      className="text-gray-900 bg-transparent focus:outline-none font-medium text-sm px-5 py-2.5">
-                      <HiOutlineMinus />
-                    </button>
-                    <button className="text-gray-700 bg-transparent focus:outline-none font-medium text-sm px-5 py-2.5">
-                      {quantity}
-                    </button>
-                    <button
-                      onClick={() => increaseCartQuantity(parseInt(item.id))}
-                      className="text-gray-900 bg-transparent  focus:outline-none font-medium text-sm px-5 py-2.5">
-                      <HiOutlinePlus />
-                    </button>
-                  </div>
-                </div>
-              </div>
               <div className="flex">
                 <span className="title-font font-medium text-2xl text-gray-900">
                   {formatCurrency(item.price)}
                 </span>
-                <button
-                  type="button"
-                  className="flex ml-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                  <FaShoppingCart />
-                  &nbsp;Add to Cart
-                </button>
+                {quantity > 0 ? (
+                  <button className="flex ml-auto text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-2">
+                    Added to cart
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => addToCart(item.id)}
+                    className="flex ml-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-2">
+                    <FaShoppingCart />
+                    &nbsp;Add to Cart
+                  </button>
+                )}
                 <button
                   data-tooltip-target="tooltip-right"
                   data-tooltip-placement="right"
