@@ -25,8 +25,8 @@ export default function CartComponent() {
   }
   return (
     <div className="relative overflow-x-auto rounded-lg">
-      <table className="w-full text-sm text-left text-gray-500 ">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-100 border-b border-gray-400">
+      <table className="w-2/3 text-sm text-left text-gray-500 ">
+        <thead className="text-sm text-gray-900 uppercase border-b border-gray-400">
           <tr>
             <th scope="col" className="px-6 py-3">
               <span className="sr-only">Image</span>
@@ -50,7 +50,7 @@ export default function CartComponent() {
             <td className="w-32 p-4">
               <img src="/gkmc.webp" alt="Apple Watch" />
             </td>
-            <td className="px-6 py-4 font-semibold text-gray-900">
+            <td className="px-6 py-4 font-semibold text-gray-700">
               Apple Watch
             </td>
             <td className="px-6 py-4">
@@ -61,7 +61,7 @@ export default function CartComponent() {
                   className="text-gray-900 bg-transparent focus:outline-none font-medium text-sm px-5 py-2.5">
                   <HiOutlineMinus />
                 </button>
-                <button className="text-gray-700 bg-transparent focus:outline-none font-medium text-sm px-5 py-2.5">
+                <button className="text-gray-900 bg-transparent focus:outline-none font-medium text-sm px-5 py-2.5">
                   {cartCount}
                 </button>
                 <button

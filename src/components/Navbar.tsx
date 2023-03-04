@@ -1,7 +1,9 @@
 import { FaSearch, FaBars } from "react-icons/fa"
 import { HiOutlineShoppingCart } from "react-icons/hi"
+import { useCart } from "../context/CartContext"
 
 export default function Navbar() {
+  const { cartQuantity } = useCart()
   return (
     <>
       <nav className="bg-gray-200 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-gray-200">
@@ -21,7 +23,7 @@ export default function Navbar() {
               <a href="/cart" className="text-gray-700 text-3xl cursor-pointer">
                 <HiOutlineShoppingCart />
                 <span className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-blue-600 rounded-full -top-2 -right-2">
-                  5
+                  {cartQuantity}
                 </span>
               </a>
             </div>
