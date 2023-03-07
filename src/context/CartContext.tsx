@@ -27,10 +27,11 @@ export function useCart() {
 
 export function CartProvider({ children }: CartProviderProps) {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
-  const cartQuantity = cartItems.reduce(
-    (quantity, item) => item.quantity + quantity,
-    0
-  )
+  // const cartQuantity = cartItems.reduce(
+  //   (quantity, item) => item.quantity + quantity,
+  //   0
+  // )
+  const cartQuantity = cartItems.reduce((item) => item + 1, 0)
 
   function addToCart(id: string) {
     setCartItems((currentItems) => {
@@ -53,34 +54,62 @@ export function CartProvider({ children }: CartProviderProps) {
   }
 
   function increaseCartQuantity(id: string) {
+    // setCartItems((currentItems) => {
+    //   if (currentItems.find((item) => item.id === id) == null) {
+    //     return [...currentItems, { id, quantity: 1 }]
+    //   } else {
+    //     return currentItems.map((item) => {
+    //       if (item.id === id) {
+    //         return { ...item, quantity: item.quantity + 1 }
+    //       } else {
+    //         return item
+    //       }
+    //     })
+    //   }
+    // })
     setCartItems((currentItems) => {
-      if (currentItems.find((item) => item.id === id) == null) {
-        return [...currentItems, { id, quantity: 1 }]
-      } else {
-        return currentItems.map((item) => {
-          if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1 }
-          } else {
-            return item
+      return currentItems.map((item) => {
+        if (item.id === id) {
+          // Check to make sure the new quantity does not exceed 10
+          const newQuantity = item.quantity + 1
+          return {
+            ...item,
+            quantity: newQuantity <= 10 ? newQuantity : item.quantity,
           }
-        })
-      }
+        } else {
+          return item
+        }
+      })
     })
   }
 
   function decreaseCartQuantity(id: string) {
+    // setCartItems((currentItems) => {
+    //   if (currentItems.find((item) => item.id === id)?.quantity === 1) {
+    //     return currentItems.filter((item) => item.id !== id)
+    //   } else {
+    //     return currentItems.map((item) => {
+    //       if (item.id === id) {
+    //         return { ...item, quantity: item.quantity - 1 }
+    //       } else {
+    //         return item
+    //       }
+    //     })
+    //   }
+    // })
     setCartItems((currentItems) => {
-      if (currentItems.find((item) => item.id === id)?.quantity === 1) {
-        return currentItems.filter((item) => item.id !== id)
-      } else {
-        return currentItems.map((item) => {
-          if (item.id === id) {
-            return { ...item, quantity: item.quantity - 1 }
-          } else {
-            return item
+      return currentItems.map((item) => {
+        if (item.id === id) {
+          // Check to make sure the new quantity does not go below 1
+          const newQuantity = item.quantity - 1
+          return {
+            ...item,
+            quantity: newQuantity >= 1 ? newQuantity : item.quantity,
           }
-        })
-      }
+        } else {
+          return item
+        }
+      })
     })
   }
 
