@@ -143,7 +143,7 @@ export default function CartComponent() {
               type="text"
               id="promo"
               placeholder="Enter your code"
-              className="block w-full p-2 pl-10 text-sm text-gray-800 border border-gray-400 focus:outline-none focus:border-blue-600 bg-transparent"
+              className="block w-full p-2 text-sm text-gray-800 border border-gray-400 focus:outline-none focus:border-blue-600 bg-transparent"
             />
           </div>
           <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">
