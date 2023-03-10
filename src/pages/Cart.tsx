@@ -1,4 +1,5 @@
 import CartComponent from "../components/CartComponent"
+import CartSummary from "../components/CartSummary"
 import { useCart } from "../context/CartContext"
 
 export default function Cart() {
@@ -7,7 +8,12 @@ export default function Cart() {
   return (
     <div className="container px-5 py-20 pb-5 mx-auto">
       <h1 className="font-light">Cart {cartQuantity}</h1>
-      <CartComponent />
+      <div className="overflow-x-auto rounded-lg">
+        <div className="flex">
+          <CartComponent />
+          <CartSummary />
+        </div>
+      </div>
     </div>
   )
 }
