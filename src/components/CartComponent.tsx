@@ -9,22 +9,6 @@ import CartItem from "./CartItem"
 
 export default function CartComponent() {
   const { cartItems } = useCart()
-  const [cartCount, setCartCount] = useState(1)
-  const increment = () => {
-    if (cartCount >= 10) {
-      setCartCount(10)
-    } else {
-      setCartCount(cartCount + 1)
-    }
-  }
-
-  const decrement = () => {
-    if (cartCount <= 1) {
-      setCartCount(1)
-    } else {
-      setCartCount(cartCount - 1)
-    }
-  }
   return (
     <table className="w-2/3 text-sm text-left text-gray-500">
       <thead className="text-sm text-gray-900 uppercase border-b border-gray-400">

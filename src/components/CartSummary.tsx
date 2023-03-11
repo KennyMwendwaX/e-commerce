@@ -1,4 +1,7 @@
+import { useCart } from "../context/CartContext"
+
 export default function CartSummary() {
+  const { cartQuantity } = useCart()
   return (
     <>
       <div id="summary" className="w-1/3 px-8">
@@ -7,7 +10,9 @@ export default function CartSummary() {
         </h1>
         <div className="flex justify-between mt-10 mb-5">
           <span className="font-semibold text-sm uppercase">Items</span>
-          <span className="font-semibold text-sm">3</span>
+          <button className="text-white bg-blue-700 hover:bg-blue-800 font-sm rounded-full text-sm px-2.5 py-1 text-center">
+            {cartQuantity}
+          </button>
         </div>
         <div>
           <label className="font-medium inline-block mb-3 text-sm uppercase">
