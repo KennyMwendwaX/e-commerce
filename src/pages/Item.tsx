@@ -29,12 +29,7 @@ export default function Item() {
 
   if (item === null) return <div>Loading...</div>
 
-  const {
-    addToCart,
-    getItemQuantity,
-    increaseCartQuantity,
-    decreaseCartQuantity,
-  } = useCart()
+  const { addToCart, getItemQuantity } = useCart()
   const quantity = getItemQuantity(item.id)
 
   return (
@@ -90,7 +85,7 @@ export default function Item() {
                   {formatCurrency(item.price)}
                 </span>
                 {quantity > 0 ? (
-                  <button className="flex ml-auto text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-2">
+                  <button className="flex ml-auto text-white bg-indigo-600 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-2">
                     Added to cart
                   </button>
                 ) : (

@@ -5,8 +5,10 @@ import {
 } from "react-icons/hi"
 import { useState } from "react"
 import { useCart } from "../context/CartContext"
+import CartItem from "./CartItem"
 
 export default function CartComponent() {
+  const { cartItems } = useCart()
   const [cartCount, setCartCount] = useState(1)
   const increment = () => {
     if (cartCount >= 10) {
@@ -45,66 +47,9 @@ export default function CartComponent() {
         </tr>
       </thead>
       <tbody className="bg-transparent">
-        <tr className="border-b border-gray-400">
-          <td className="w-32 p-4">
-            <img src="/gkmc.webp" alt="Apple Watch" />
-          </td>
-          <td className="px-6 py-4 font-semibold text-gray-700">Apple Watch</td>
-          <td className="px-6 py-4">
-            <div className="inline-flex bg-transparent border border-gray-600 items-center font-light">
-              <span className="sr-only">Quantity button</span>
-              <button
-                onClick={decrement}
-                className="text-gray-900 bg-transparent focus:outline-none font-medium text-sm px-5 py-2.5">
-                <HiOutlineMinus />
-              </button>
-              <button className="text-gray-900 bg-transparent focus:outline-none font-medium text-sm px-5 py-2.5">
-                {cartCount}
-              </button>
-              <button
-                onClick={increment}
-                className="text-gray-900 bg-transparent focus:outline-none font-medium text-sm px-5 py-2.5">
-                <HiOutlinePlus />
-              </button>
-            </div>
-          </td>
-          <td className="px-6 py-4 font-semibold text-gray-900">$599</td>
-          <td className="px-6 py-4">
-            <a href="#" className="font-medium text-red-600 hover:underline">
-              Remove
-            </a>
-          </td>
-        </tr>
-        <tr className="border-b border-gray-400">
-          <td className="w-32 p-4">
-            <img src="/gkmc.webp" alt="Apple Watch" />
-          </td>
-          <td className="px-6 py-4 font-semibold text-gray-900">Apple Watch</td>
-          <td className="px-6 py-4">
-            <div className="inline-flex bg-transparent border border-gray-600 items-center font-light">
-              <span className="sr-only">Quantity button</span>
-              <button
-                onClick={decrement}
-                className="text-gray-900 bg-transparent focus:outline-none font-medium text-sm px-5 py-2.5">
-                <HiOutlineMinus />
-              </button>
-              <button className="text-gray-700 bg-transparent focus:outline-none font-medium text-sm px-5 py-2.5">
-                {cartCount}
-              </button>
-              <button
-                onClick={increment}
-                className="text-gray-900 bg-transparent focus:outline-none font-medium text-sm px-5 py-2.5">
-                <HiOutlinePlus />
-              </button>
-            </div>
-          </td>
-          <td className="px-6 py-4 font-semibold text-gray-900 ">$599</td>
-          <td className="px-6 py-4">
-            <a href="#" className="font-medium text-red-600 hover:underline">
-              Remove
-            </a>
-          </td>
-        </tr>
+        {cartItems.map((item) => (
+          <CartItem key={item.id} {...item} />
+        ))}
       </tbody>
     </table>
   )
