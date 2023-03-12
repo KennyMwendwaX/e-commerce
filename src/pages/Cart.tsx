@@ -19,7 +19,7 @@ export default function Cart() {
         </>
       ) : (
         <div className="items-center">
-          Cart is empty
+          No items in the cart
           <Link
             to="/"
             className="bg-blue-50 text-blue-600 inline-flex items-center ml-1">
