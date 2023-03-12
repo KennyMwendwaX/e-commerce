@@ -51,7 +51,7 @@ export default function CartItem({ id, quantity }: CartItemProps) {
           </div>
         </td>
         <td className="px-6 py-4 font-semibold text-gray-900">
-          {formatCurrency(item.price)}
+          {formatCurrency(item.price * quantity)}
         </td>
         <td className="px-6 py-4">
           <button
