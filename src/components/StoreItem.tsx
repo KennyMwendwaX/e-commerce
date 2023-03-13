@@ -13,7 +13,7 @@ export default function StoreItem({
     <>
       <Link
         className="block relative h-48 rounded overflow-hidden cursor-pointer"
-        to={`/${id}`}>
+        to={`/products/${id}`}>
         <img
           alt="ecommerce"
           className="object-cover object-center w-full h-full block"

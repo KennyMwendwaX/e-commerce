@@ -7,7 +7,6 @@ import {
   FaStar,
   FaRegStar,
 } from "react-icons/fa"
-import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { ItemTypes } from "../types/StoreTypes"

@@ -2,11 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { CartProvider } from "./context/CartContext"
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
-import ProductPage from "./pages/ProductPage"
+import Products from "./pages/Products"
 import Cart from "./pages/Cart"
 import Offcanvas from "./components/Offcanvas"
 import Item from "./pages/Item"
-import ProductList from "./components/ProductList"
 import NotFound from "./pages/NotFound"
 
 function App() {
@@ -16,12 +15,11 @@ function App() {
         <div className="bg-gray-50">
           <Navbar />
           <Routes>
-            <Route path="/">
-              <Route index element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/products">
+              <Route index element={<Products />} />
               <Route path=":id" element={<Item />} />
             </Route>
-            <Route path="products" element={<ProductList />} />
-            <Route path="product" element={<ProductPage />} />
             <Route path="cart" element={<Cart />} />
             <Route path="canvas" element={<Offcanvas />} />
             <Route path="*" element={<NotFound />} />
