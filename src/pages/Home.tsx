@@ -48,7 +48,11 @@ export default function Home() {
       </Swiper>
       <p>Categories</p>
       <div className="mb-10">
-        <div className="flex flex-wrap"></div>
+        <div className="flex flex-wrap">
+          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
+            <img src="/gkmc.webp" />
+          </div>
+        </div>
       </div>
       <div>Top Seller Books</div>
     </div>
