@@ -48,7 +48,35 @@ export default function Home() {
       </Swiper>
       <p>Categories</p>
       <div className="mb-10">
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap space-x-4">
+          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
+            <img src="/gkmc.webp" />
+            <div>Computers</div>
+          </div>
+          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
+            <img src="/gkmc.webp" />
+            <div>Laptops</div>
+          </div>
+          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
+            <img src="/gkmc.webp" />
+            <div>Phones</div>
+          </div>
+          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
+            <img src="/gkmc.webp" />
+            <div>Books</div>
+          </div>
+          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
+            <img src="/gkmc.webp" />
+            <div>TVs</div>
+          </div>
+          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
+            <img src="/gkmc.webp" />
+            <div>Shoes</div>
+          </div>
+          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
+            <img src="/gkmc.webp" />
+            <div>Graphic Cards</div>
+          </div>
           <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
             <img src="/gkmc.webp" />
           </div>
