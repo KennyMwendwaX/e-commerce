@@ -75,10 +75,11 @@ export default function Home() {
           </div>
           <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
             <img src="/gkmc.webp" />
-            <div>Graphic Cards</div>
+            <div>Graphic Accessories</div>
           </div>
           <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
             <img src="/gkmc.webp" />
+            <div></div>
           </div>
         </div>
       </div>
