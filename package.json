@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "buildcss": "tailwindcss -i ./styles/input.css -o ./styles/global.css",
+    "buildcss": "tailwindcss -i ./styles/input.css -o ./styles/global.css --minify",
     "watchcss": "tailwindcss -i ./styles/input.css -o ./styles/global.css --watch",
     "json": "npx json-server ./src/asset/data.json --port 8000",
     "watchjson": "npx json-server ./src/asset/data.json --port 8000 --watch"
