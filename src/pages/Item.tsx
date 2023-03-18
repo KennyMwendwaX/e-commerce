@@ -42,7 +42,7 @@ export default function Item() {
               src={item.imgUrl}
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-              <h2 className="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">
+              <h2 className="inline-block py-1 px-2 rounded bg-indigo-100 text-indigo-600 text-xs font-medium tracking-widest">
                 {item.brand}
               </h2>
               <h1 className="flex text-gray-900 text-3xl title-font font-medium mb-1">

@@ -12,7 +12,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper"
 export default function Home() {
   return (
     <div className="container px-5 py-20 pb-5 mx-auto">
-      <p>Popular Brands</p>
+      <p>Top Deals</p>
       <Swiper
         navigation={true}
         pagination={{ clickable: true }}
@@ -59,7 +59,7 @@ export default function Home() {
           </div>
           <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
             <img src="/gkmc.webp" />
-            <div>Phones</div>
+            <div>Smartphones</div>
           </div>
           <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
             <img src="/gkmc.webp" />
@@ -75,14 +75,23 @@ export default function Home() {
           </div>
           <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
             <img src="/gkmc.webp" />
+            <div>Wrist Watches</div>
+          </div>
+          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
+            <img src="/gkmc.webp" />
+            <div>Albums</div>
+          </div>
+          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
+            <img src="/gkmc.webp" />
             <div>Graphic Accessories</div>
           </div>
           <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
             <img src="/gkmc.webp" />
-            <div></div>
+            <div>Electronics</div>
           </div>
         </div>
       </div>
+      <div>Explore Popular Categories</div>
       <div>Top Seller Books</div>
     </div>
   )
