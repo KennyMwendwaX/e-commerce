@@ -81,5 +81,52 @@
       "price": 70000,
       "imgUrl": "/item-img/samsung-tv.jpeg"
     }
+  ],
+  "popular-categories": [
+    {
+      "id": "1",
+      "name": "Desktops",
+      "imgUrl": "/item-img/samsung-tv.jpeg"
+    },
+    {
+      "id": "2",
+      "name": "Laptops",
+      "imgUrl": "/item-img/samsung-tv.jpeg"
+    },
+    {
+      "id": "3",
+      "name": "Smartphones",
+      "imgUrl": "/item-img/samsung-tv.jpeg"
+    },
+    {
+      "id": "4",
+      "name": "TVs",
+      "imgUrl": "/item-img/samsung-tv.jpeg"
+    },
+    {
+      "id": "5",
+      "name": "Gaming",
+      "imgUrl": "/item-img/samsung-tv.jpeg"
+    },
+    {
+      "id": "6",
+      "name": "Albums",
+      "imgUrl": "/item-img/samsung-tv.jpeg"
+    },
+    {
+      "id": "7",
+      "name": "Fashion",
+      "imgUrl": "/item-img/samsung-tv.jpeg"
+    },
+    {
+      "id": "8",
+      "name": "Footwear",
+      "imgUrl": "/item-img/samsung-tv.jpeg"
+    },
+    {
+      "id": "9",
+      "name": "Watches",
+      "imgUrl": "/item-img/samsung-tv.jpeg"
+    }
   ]
 }

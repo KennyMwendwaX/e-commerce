@@ -61,49 +61,63 @@ export default function Home() {
               className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
               src="/item-img/gkmc.webp"
             />
-            <div>Albums</div>
+            <div className="text-center">Computers</div>
           </div>
           <div className="block relative">
             <img
               className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
               src="/item-img/gkmc.webp"
             />
-            <div>Albums</div>
+            <div className="text-center">Computers</div>
           </div>
           <div className="block relative">
             <img
               className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
               src="/item-img/gkmc.webp"
             />
-            <div>Albums</div>
+            <div className="text-center">Computers</div>
           </div>
           <div className="block relative">
             <img
               className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
               src="/item-img/gkmc.webp"
             />
-            <div>Albums</div>
+            <div className="text-center">Computers</div>
           </div>
           <div className="block relative">
             <img
               className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
               src="/item-img/gkmc.webp"
             />
-            <div>Albums</div>
+            <div className="text-center">Computers</div>
           </div>
           <div className="block relative">
             <img
               className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
               src="/item-img/gkmc.webp"
             />
-            <div>Albums</div>
+            <div className="text-center">Computers</div>
           </div>
           <div className="block relative">
             <img
               className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
               src="/item-img/gkmc.webp"
             />
-            <div>Albums</div>
+            <div className="text-center">Computers</div>
+          </div>
+          <div className="block relative">
+            <img
+              className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
+              src="/item-img/gkmc.webp"
+            />
+            <div className="text-center">Computers</div>
+          </div>
+          <div className="block relative">
+            <img
+              className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
+              src="/item-img/gkmc.webp"
+            />
+            <div className="text-center">Computers</div>
           </div>
         </div>
       </div>
