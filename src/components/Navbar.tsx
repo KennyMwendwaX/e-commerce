@@ -60,7 +60,7 @@ export default function Navbar() {
               <input
                 type="text"
                 id="search-navbar"
-                className="block w-full p-2 pl-10 text-sm text-gray-800 border border-gray-400 focus:outline-none focus:border-blue-600 rounded-lg bg-gray-50"
+                className="block w-full p-2 pl-10 text-sm text-gray-800 border border-gray-500 focus:outline-none focus:border-blue-600 rounded-lg bg-gray-50"
                 placeholder="Search..."
               />
             </div>

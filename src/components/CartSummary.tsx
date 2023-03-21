@@ -20,7 +20,7 @@ export default function CartSummary() {
   return (
     <>
       <div id="summary" className="w-1/3 px-8">
-        <h1 className="font-semibold text-xl border-b border-gray-400 pb-4">
+        <h1 className="font-semibold text-lg border-b border-gray-400 pb-2">
           Order Summary
         </h1>
         <div className="flex justify-between mt-5">

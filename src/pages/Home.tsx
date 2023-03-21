@@ -22,72 +22,88 @@ export default function Home() {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         className="mySwiper h-50">
         <SwiperSlide>
-          <img src="/madvillainy.jpg" />
+          <img src="/item-img/madvillainy.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/gkmc.webp" />
+          <img src="/item-img/gkmc.webp" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/samsung-tv.jpeg" />
+          <img src="/item-img/samsung-tv.jpeg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/macbook.jpg" />
+          <img src="/item-img/macbook.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/rayban.jpg" />
+          <img src="/item-img/rayban.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/madvillainy.jpg" />
+          <img src="/item-img/madvillainy.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/madvillainy.jpg" />
+          <img src="/item-img/madvillainy.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/madvillainy.jpg" />
+          <img src="/item-img/madvillainy.jpg" />
         </SwiperSlide>
       </Swiper>
-      <p>Categories</p>
+      <p>Explore Popular Categories</p>
       <div className="mb-10">
-        <div className="flex flex-wrap space-x-4">
-          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
-            <img src="/gkmc.webp" />
-            <div>Computers</div>
+        <div className="grid grid-cols-6 space-x-2">
+          <div className="block relative">
+            <img
+              className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
+              src="/item-img/gkmc.webp"
+            />
+            <div className="text-center">Computers</div>
           </div>
-          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
-            <img src="/gkmc.webp" />
-            <div>Laptops</div>
-          </div>
-          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
-            <img src="/gkmc.webp" />
-            <div>Smartphones</div>
-          </div>
-          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
-            <img src="/gkmc.webp" />
-            <div>Books</div>
-          </div>
-          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
-            <img src="/gkmc.webp" />
-            <div>TVs</div>
-          </div>
-          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
-            <img src="/gkmc.webp" />
-            <div>Shoes</div>
-          </div>
-          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
-            <img src="/gkmc.webp" />
-            <div>Wrist Watches</div>
-          </div>
-          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
-            <img src="/gkmc.webp" />
+          <div className="block relative">
+            <img
+              className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
+              src="/item-img/gkmc.webp"
+            />
             <div>Albums</div>
           </div>
-          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
-            <img src="/gkmc.webp" />
-            <div>Graphic Accessories</div>
+          <div className="block relative">
+            <img
+              className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
+              src="/item-img/gkmc.webp"
+            />
+            <div>Albums</div>
           </div>
-          <div className="block relative h-60 w-48 rounded overflow-hidden cursor-pointer">
-            <img src="/gkmc.webp" />
-            <div>Electronics</div>
+          <div className="block relative">
+            <img
+              className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
+              src="/item-img/gkmc.webp"
+            />
+            <div>Albums</div>
+          </div>
+          <div className="block relative">
+            <img
+              className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
+              src="/item-img/gkmc.webp"
+            />
+            <div>Albums</div>
+          </div>
+          <div className="block relative">
+            <img
+              className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
+              src="/item-img/gkmc.webp"
+            />
+            <div>Albums</div>
+          </div>
+          <div className="block relative">
+            <img
+              className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
+              src="/item-img/gkmc.webp"
+            />
+            <div>Albums</div>
+          </div>
+          <div className="block relative">
+            <img
+              className="h-48 w-48 rounded-full overflow-hidden cursor-pointer"
+              src="/item-img/gkmc.webp"
+            />
+            <div>Albums</div>
           </div>
         </div>
       </div>

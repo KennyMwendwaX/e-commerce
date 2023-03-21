@@ -7,7 +7,7 @@
       "category": "Shoes",
       "description": "",
       "price": 25000,
-      "imgUrl": "/air-jordan-1-retro-blue-400x400.jpg"
+      "imgUrl": "/item-img/air-jordan-1-retro-blue-400x400.jpg"
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "category": "Phones",
       "description": "",
       "price": 150000,
-      "imgUrl": "/iPhone-14-Pro-Max.jpg"
+      "imgUrl": "/item-img/iPhone-14-Pro-Max.jpg"
     },
     {
       "id": "3",
@@ -25,7 +25,7 @@
       "category": "Accessories",
       "description": "",
       "price": 9000,
-      "imgUrl": "/rayban.jpg"
+      "imgUrl": "/item-img/rayban.jpg"
     },
     {
       "id": "4",
@@ -34,7 +34,7 @@
       "category": "Laptops",
       "description": "",
       "price": 160000,
-      "imgUrl": "/macbook.jpg"
+      "imgUrl": "/item-img/macbook.jpg"
     },
     {
       "id": "5",
@@ -43,7 +43,7 @@
       "category": "Album",
       "description": "",
       "price": 14000,
-      "imgUrl": "/gkmc.webp"
+      "imgUrl": "/item-img/gkmc.webp"
     },
     {
       "id": "6",
@@ -52,7 +52,7 @@
       "category": "Album",
       "description": "",
       "price": 9500,
-      "imgUrl": "/madvillainy.jpg"
+      "imgUrl": "/item-img/madvillainy.jpg"
     },
     {
       "id": "7",
@@ -61,7 +61,7 @@
       "category": "Book",
       "description": "",
       "price": 4500,
-      "imgUrl": "/atomic-habits-book.webp"
+      "imgUrl": "/item-img/atomic-habits-book.webp"
     },
     {
       "id": "8",
@@ -70,7 +70,7 @@
       "category": "Computers",
       "description": "",
       "price": 110000,
-      "imgUrl": "/hp-all-in-one.png"
+      "imgUrl": "/item-img/hp-all-in-one.png"
     },
     {
       "id": "9",
@@ -79,7 +79,7 @@
       "category": "TV",
       "description": "",
       "price": 70000,
-      "imgUrl": "/samsung-tv.jpeg"
+      "imgUrl": "/item-img/samsung-tv.jpeg"
     }
   ]
 }
