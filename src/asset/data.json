@@ -91,12 +91,12 @@
     {
       "id": "2",
       "name": "Laptops",
-      "imgUrl": "/item-img/samsung-tv.jpeg"
+      "imgUrl": "/item-img/macbook.jpg"
     },
     {
       "id": "3",
       "name": "Smartphones",
-      "imgUrl": "/item-img/samsung-tv.jpeg"
+      "imgUrl": "/item-img/iPhone-14-Pro-Max.jpg"
     },
     {
       "id": "4",
@@ -111,20 +111,25 @@
     {
       "id": "6",
       "name": "Albums",
-      "imgUrl": "/item-img/samsung-tv.jpeg"
+      "imgUrl": "/item-img/gkmc.webp"
     },
     {
       "id": "7",
       "name": "Fashion",
-      "imgUrl": "/item-img/samsung-tv.jpeg"
+      "imgUrl": "/item-img/madvillainy.jpg"
     },
     {
       "id": "8",
+      "name": "Books",
+      "imgUrl": "/item-img/atomic-habits-book.webp"
+    },
+    {
+      "id": "9",
       "name": "Footwear",
       "imgUrl": "/item-img/samsung-tv.jpeg"
     },
     {
-      "id": "9",
+      "id": "10",
       "name": "Watches",
       "imgUrl": "/item-img/samsung-tv.jpeg"
     }
