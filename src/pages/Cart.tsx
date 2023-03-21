@@ -8,7 +8,7 @@ export default function Cart() {
   const { cartQuantity } = useCart()
 
   return (
-    <div className="container px-5 py-20 pb-5 mx-auto">
+    <div className="container px-5 py-20 mx-auto">
       {cartQuantity > 0 ? (
         <>
           <h1 className="font-medium">My Cart</h1>

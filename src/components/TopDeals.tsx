@@ -22,28 +22,28 @@ export default function TopDeals() {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         className="mySwiper h-50">
         <SwiperSlide>
-          <img src="/item-img/madvillainy.jpg" />
+          <img className="cursor-pointer" src="/item-img/madvillainy.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/item-img/gkmc.webp" />
+          <img className="cursor-pointer" src="/item-img/gkmc.webp" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/item-img/samsung-tv.jpeg" />
+          <img className="cursor-pointer" src="/item-img/samsung-tv.jpeg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/item-img/macbook.jpg" />
+          <img className="cursor-pointer" src="/item-img/macbook.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/item-img/rayban.jpg" />
+          <img className="cursor-pointer" src="/item-img/rayban.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/item-img/madvillainy.jpg" />
+          <img className="cursor-pointer" src="/item-img/madvillainy.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/item-img/madvillainy.jpg" />
+          <img className="cursor-pointer" src="/item-img/madvillainy.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/item-img/madvillainy.jpg" />
+          <img className="cursor-pointer" src="/item-img/madvillainy.jpg" />
         </SwiperSlide>
       </Swiper>
     </>

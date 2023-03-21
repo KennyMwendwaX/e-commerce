@@ -3,7 +3,7 @@ import PopularCategories from "../components/PopularCategories"
 
 export default function Home() {
   return (
-    <div className="container px-5 py-20 pb-5 mx-auto">
+    <div className="container px-5 pt-20 pb-5 mx-auto">
       <TopDeals />
       <div className="mb-8">
         <PopularCategories />
