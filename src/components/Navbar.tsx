@@ -14,7 +14,7 @@ export default function Navbar() {
               className="h-6 mr-3 sm:h-9"
               alt="eDexter Logo"
             />
-            <span className="self-center text-gray-800 text-xl font-semibold whitespace-nowrap">
+            <span className="self-center text-gray-800 text-xl tracking-tight font-mono font-semibold whitespace-nowrap">
               Iconic
             </span>
           </a>

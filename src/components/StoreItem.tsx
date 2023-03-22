@@ -24,8 +24,10 @@ export default function StoreItem({
         <h3 className="inline-block py-1 px-2 rounded bg-indigo-100 text-indigo-600 text-xs font-medium tracking-widest">
           {brand}
         </h3>
-        <h2 className="text-gray-900 title-font text-lg font-medium">{name}</h2>
-        <p className="mt-1">{formatCurrency(price)}</p>
+        <h2 className="text-gray-900 title-font text-lg tracking-tight font-mono font-medium">
+          {name}
+        </h2>
+        <p className="mt-1 font-normal">{formatCurrency(price)}</p>
       </div>
     </>
   )

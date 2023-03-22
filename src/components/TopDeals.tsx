@@ -12,7 +12,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper"
 export default function TopDeals() {
   return (
     <>
-      <div>Top Deals</div>
+      <div className="font-light text-xl">Top Deals</div>
       <Swiper
         navigation={true}
         pagination={{ clickable: true }}
@@ -22,16 +22,16 @@ export default function TopDeals() {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         className="mySwiper h-50">
         <SwiperSlide>
-          <img className="cursor-pointer" src="/item-img/madvillainy.jpg" />
+          <img className="cursor-pointer" src="/category-img/clothes.webp" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className="cursor-pointer" src="/item-img/macbook.jpg" />
         </SwiperSlide>
         <SwiperSlide>
           <img className="cursor-pointer" src="/item-img/gkmc.webp" />
         </SwiperSlide>
         <SwiperSlide>
           <img className="cursor-pointer" src="/item-img/samsung-tv.jpeg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className="cursor-pointer" src="/item-img/macbook.jpg" />
         </SwiperSlide>
         <SwiperSlide>
           <img className="cursor-pointer" src="/item-img/rayban.jpg" />

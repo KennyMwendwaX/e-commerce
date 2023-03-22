@@ -8,8 +8,7 @@ export default function Home() {
       <div className="mb-8">
         <PopularCategories />
       </div>
-      <div>Explore Popular Categories</div>
-      <div>Top Seller Books</div>
+      <div>Explore Popular Brands</div>
     </div>
   )
 }
