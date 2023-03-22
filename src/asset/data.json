@@ -86,17 +86,17 @@
     {
       "id": "1",
       "name": "Desktops",
-      "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ_AudpJwD1IgdCxAy7llhori1ba10Nt2ebilEKtNyIEk_S3iWVppA5pknAUOBmi8iuLQ&usqp=CAU"
+      "imgUrl": "/category-img/desktop.jpeg"
     },
     {
       "id": "2",
       "name": "Laptops",
-      "imgUrl": "https://static.frame.work/92cqdkoguwxj1a5w5ks5rnjs7nl8"
+      "imgUrl": "/category-img/laptop.webp"
     },
     {
       "id": "3",
       "name": "Smartphones",
-      "imgUrl": "https://media.wired.com/photos/63db2361b6ec2064d937cc48/master/pass/Have-We-Reached-Peak-Smartphone--Gadget-Lab-Gear-GettyImages-1246719267.jpg"
+      "imgUrl": "/item-img/iPhone-14-Pro-Max.jpg"
     },
     {
       "id": "4",
@@ -106,7 +106,7 @@
     {
       "id": "5",
       "name": "Gaming Consoles",
-      "imgUrl": "https://www.rollingstone.com/wp-content/uploads/2022/07/83C9DD01-4DE0-4774-8608-491024E285A1.webp"
+      "imgUrl": "/category-img/gaming-console.webp"
     },
     {
       "id": "6",
@@ -116,22 +116,22 @@
     {
       "id": "7",
       "name": "Fashion",
-      "imgUrl": "https://assets.hermes.com/is/image/hermesproduct/mega-chariot-t-shirt--267820HA01-worn-4-0-0-800-800_g.jpg"
+      "imgUrl": "/category-img/clothes.webp"
     },
     {
       "id": "8",
       "name": "Books",
-      "imgUrl": "https://legiit-service.s3.amazonaws.com/ff8455099791788cb767bcaa420e46c0/01985830cbaaa4e3b18c0f4074cfb23d.jpg"
+      "imgUrl": "/category-img/books.jpg"
     },
     {
       "id": "9",
       "name": "Footwear",
-      "imgUrl": "https://sneakernews.com/wp-content/uploads/2022/10/jordan-1-lost-and-found-5.jpg"
+      "imgUrl": "/category-img/footwear.jpg"
     },
     {
       "id": "10",
       "name": "Wrist Watches",
-      "imgUrl": "https://www.dalvey.com/media/catalog/product/t/o/torque_caelus_wrist_watch_white_04--03360_.jpg?auto=webp&format=pjpg&width=640&height=800&fit=cover"
+      "imgUrl": "/category-img/wrist-watch.jpg"
     }
   ]
 }
