@@ -23,9 +23,9 @@ export default function Cart() {
               <div className="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl">
                 No items in the cart
               </div>
-              <div className="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
-                Please add items to the cart. You'll find lots to explore on the
-                home page.
+              <div className="mb-4 text-lg font-light font-mono text-gray-500 dark:text-gray-400">
+                Please add items to the cart. You'll find lots of products to
+                explore on the home page.
               </div>
               <a
                 href="/"
