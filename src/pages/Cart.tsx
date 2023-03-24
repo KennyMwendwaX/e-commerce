@@ -7,17 +7,17 @@ export default function Cart() {
   const { cartQuantity } = useCart()
 
   return (
-    <div className="container px-5 py-20 mx-auto">
-      {cartQuantity > 0 ? (
-        <>
-          <h1 className="font-medium">My Cart</h1>
-          <div className="flex flex-basis">
-            <CartComponent />
-            <CartSummary />
-          </div>
-        </>
-      ) : (
-        <div className="bg-gray-50">
+    <div className="bg-gray-50">
+      <div className="container px-5 py-20 mx-auto">
+        {cartQuantity > 0 ? (
+          <>
+            <h1 className="font-medium">My Cart</h1>
+            <div className="flex flex-basis">
+              <CartComponent />
+              <CartSummary />
+            </div>
+          </>
+        ) : (
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
             <div className="mx-auto max-w-screen-sm text-center">
               <div className="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl">
@@ -34,8 +34,8 @@ export default function Cart() {
               </a>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }
