@@ -1,5 +1,6 @@
 import TopDeals from "../components/TopDeals"
 import PopularCategories from "../components/PopularCategories"
+import PopularBrands from "../components/PopularBrands"
 
 export default function Home() {
   return (
@@ -8,7 +9,9 @@ export default function Home() {
       <div className="mb-8">
         <PopularCategories />
       </div>
-      <div>Explore Popular Brands</div>
+      <div className="mb-8">
+        <PopularBrands />
+      </div>
     </div>
   )
 }
