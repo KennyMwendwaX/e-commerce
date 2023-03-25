@@ -133,5 +133,37 @@
       "name": "Wrist Watches",
       "imgUrl": "/category-img/wrist-watch.jpg"
     }
+  ],
+  "popular-brands": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "imgUrl": "/category-img/desktop.jpeg"
+    },
+    {
+      "id": "2",
+      "name": "Apple",
+      "imgUrl": "/category-img/desktop.jpeg"
+    },
+    {
+      "id": "3",
+      "name": "Apple",
+      "imgUrl": "/category-img/desktop.jpeg"
+    },
+    {
+      "id": "4",
+      "name": "Apple",
+      "imgUrl": "/category-img/desktop.jpeg"
+    },
+    {
+      "id": "5",
+      "name": "Apple",
+      "imgUrl": "/category-img/desktop.jpeg"
+    },
+    {
+      "id": "6",
+      "name": "Apple",
+      "imgUrl": "/category-img/desktop.jpeg"
+    }
   ]
 }

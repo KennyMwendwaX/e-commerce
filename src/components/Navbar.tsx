@@ -1,5 +1,6 @@
 import { FaSearch, FaBars } from "react-icons/fa"
-import { HiOutlineShoppingCart } from "react-icons/hi"
+import { HiOutlineShoppingCart, HiMoon } from "react-icons/hi"
+import { BsMoonStars } from "react-icons/bs"
 import { useCart } from "../context/CartContext"
 
 export default function Navbar() {
@@ -19,6 +20,9 @@ export default function Navbar() {
             </span>
           </a>
           <div className="flex md:order-2">
+            <button className="text-gray-700 text-2xl cursor-pointer mr-8">
+              <BsMoonStars />
+            </button>
             <div className="relative hidden md:block">
               <a href="/cart" className="text-gray-700 text-3xl cursor-pointer">
                 <HiOutlineShoppingCart />

@@ -23,6 +23,9 @@ export default function TopDeals() {
         className="mySwiper h-50">
         <SwiperSlide>
           <img className="cursor-pointer" src="/category-img/clothes.webp" />
+          <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
+            -10%
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <img className="cursor-pointer" src="/item-img/macbook.jpg" />
