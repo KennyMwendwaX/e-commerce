@@ -1,3 +1,4 @@
+import { FaGooglePlay, FaApple } from "react-icons/fa"
 import { HiOutlineMail } from "react-icons/hi"
 
 export default function Footer() {
@@ -45,6 +46,11 @@ export default function Footer() {
                 </li>
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
+                    Returns and Refunds Policy
+                  </a>
+                </li>
+                <li className="mb-4">
+                  <a href="#" className="hover:underline">
                     Licensing
                   </a>
                 </li>
@@ -61,24 +67,28 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    iOS
-                  </a>
+                  <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                    <FaApple className="w-7 h-7" />
+                    <span className="ml-4 flex items-start flex-col leading-none">
+                      <span className="text-xs text-gray-600 mb-1">
+                        Download on the
+                      </span>
+                      <span className="title-font font-medium">App Store</span>
+                    </span>
+                  </button>
                 </li>
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    Android
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    Windows
-                  </a>
-                </li>
-                <li className="mb-4">
-                  <a href="#" className="hover:underline">
-                    MacOS
-                  </a>
+                  <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                    <FaGooglePlay className="w-6 h-6" />
+                    <span className="ml-4 flex items-start flex-col leading-none">
+                      <span className="text-xs text-gray-600 mb-1">
+                        GET IT ON
+                      </span>
+                      <span className="title-font font-medium">
+                        Google Play
+                      </span>
+                    </span>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -86,34 +96,36 @@ export default function Footer() {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                 SUBSCRIBE TO OUR MAILING LIST
               </h2>
-              <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
-                <div className="relative w-full mr-3">
+
+              <div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-center md:justify-start">
+                <div className="relative block w-full mr-3">
                   <label
                     htmlFor="member_email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                     Email address
                   </label>
-                  <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                    <HiOutlineMail className="w-4 h-4 text-gray-500" />
+                  <div className="inline-flex items-center">
+                    <div className="absolute top-10 left-0 flex items-center pl-3 pointer-events-none">
+                      <HiOutlineMail className="w-5 h-5 text-gray-500" />
+                    </div>
+                    <input
+                      id="member_email"
+                      className="bg-gray-50 border-2 border-gray-400 text-gray-900 text-sm rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+                      name="email_address"
+                      aria-label="Email Address"
+                      placeholder="Your email address..."
+                      required
+                      type="email"
+                    />
+                    <button className="text-white bg-blue-800 border-0 py-2 px-6 ml-4 focus:outline-none hover:bg-blue-600 rounded">
+                      Subscribe
+                    </button>
                   </div>
-                  <input
-                    id="member_email"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
-                    name="email_address"
-                    aria-label="Email Address"
-                    placeholder="Your email address..."
-                    required
-                    type="email"
-                  />
                 </div>
               </div>
-              <button className="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                SUBSCRIBE
-              </button>
             </div>
           </div>
         </div>
-
         <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
           <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
             © 2023 <a href="/">Iconic™</a>. All Rights Reserved.
