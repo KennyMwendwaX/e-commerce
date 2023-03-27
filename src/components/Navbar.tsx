@@ -1,10 +1,18 @@
 import { FaSearch, FaBars } from "react-icons/fa"
-import { HiOutlineShoppingCart, HiMoon } from "react-icons/hi"
+import { HiOutlineShoppingCart } from "react-icons/hi"
 import { BsMoonStars } from "react-icons/bs"
 import { useCart } from "../context/CartContext"
+import { useState } from "react"
 
 export default function Navbar() {
   const { cartQuantity } = useCart()
+  const [query, setQuery] = useState<string>("")
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value)
+    console.log(query)
+  }
+
   return (
     <>
       <nav className="bg-gray-200 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-gray-200">
@@ -13,7 +21,7 @@ export default function Navbar() {
             <img
               src="/logo.png"
               className="h-6 mr-3 sm:h-9"
-              alt="eDexter Logo"
+              alt="Iconic Logo"
             />
             <span className="self-center text-gray-800 text-xl tracking-tight font-mono font-semibold whitespace-nowrap">
               Iconic
@@ -53,6 +61,7 @@ export default function Navbar() {
               <FaBars />
             </button>
           </div>
+          {/* Search bar */}
           <div
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-search">
@@ -64,6 +73,7 @@ export default function Navbar() {
               <input
                 type="text"
                 id="search-navbar"
+                onChange={handleChange}
                 className="block w-full p-2 pl-10 text-sm text-gray-800 border border-gray-500 focus:outline-none focus:border-blue-600 rounded-lg bg-gray-50"
                 placeholder="Search..."
               />
