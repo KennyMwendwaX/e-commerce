@@ -6,11 +6,11 @@ import { useState } from "react"
 
 export default function Navbar() {
   const { cartQuantity } = useCart()
-  const [query, setQuery] = useState<string>("")
+  const [searchValue, setSearchValue] = useState<string>("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value)
-    console.log(query)
+    setSearchValue(e.target.value)
+    console.log(searchValue)
   }
 
   return (
