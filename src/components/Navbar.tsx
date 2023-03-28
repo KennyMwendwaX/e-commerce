@@ -1,8 +1,10 @@
 import { FaSearch, FaBars } from "react-icons/fa"
 import { HiOutlineShoppingCart } from "react-icons/hi"
-import { BsMoonStars } from "react-icons/bs"
+import { BsToggleOn } from "react-icons/bs"
 import { useCart } from "../context/CartContext"
 import { useState } from "react"
+import { useEffect } from "react"
+import { ItemTypes } from "../types/StoreTypes"
 
 export default function Navbar() {
   const { cartQuantity } = useCart()
@@ -10,8 +12,37 @@ export default function Navbar() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value)
-    console.log(searchValue)
   }
+
+  function fetchItems() {
+    fetch("http://localhost:8000/items")
+      .then((res) => res.json())
+      .then((data) => {
+        const results = data
+          .filter((item: ItemTypes) => {
+            return (
+              item &&
+              item.name.toLowerCase().includes(searchValue.toLowerCase())
+            )
+          })
+          .sort((a: ItemTypes, b: ItemTypes) => {
+            if (a.name.toLowerCase().indexOf(searchValue.toLowerCase()) === 0) {
+              return -1 // a comes first if it starts with the search value
+            } else if (
+              b.name.toLowerCase().indexOf(searchValue.toLowerCase()) === 0
+            ) {
+              return 1 // b comes first if it starts with the search value
+            } else {
+              return 0 // keep the original order
+            }
+          })
+        console.log(results)
+      })
+  }
+
+  useEffect(() => {
+    fetchItems()
+  }, [searchValue])
 
   return (
     <>
@@ -28,8 +59,8 @@ export default function Navbar() {
             </span>
           </a>
           <div className="flex md:order-2">
-            <button className="text-gray-700 text-2xl cursor-pointer mr-8">
-              <BsMoonStars />
+            <button className="text-gray-700 cursor-pointer mr-8">
+              <BsToggleOn className="w-12 h-8" />
             </button>
             <div className="relative hidden md:block">
               <a href="/cart" className="text-gray-700 text-3xl cursor-pointer">
