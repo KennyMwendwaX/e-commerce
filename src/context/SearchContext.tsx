@@ -1,12 +1,13 @@
 import { createContext, useContext, ReactNode, useState } from "react"
+import { ItemTypes } from "../types/StoreTypes"
 
 type SearchProviderProps = {
   children: ReactNode
 }
 
 type SearchContextTypes = {
-  searchQuery: string | null
-  setSearchQuery: (query: string | null) => void
+  filteredItems: ItemTypes[] | null
+  setFilteredItems: React.Dispatch<React.SetStateAction<ItemTypes[] | null>>
 }
 
 const SearchContext = createContext({} as SearchContextTypes)
@@ -16,13 +17,12 @@ export function useSearchContext() {
 }
 
 export function SearchProvider({ children }: SearchProviderProps) {
-  const [searchQuery, setSearchQuery] = useState<string | null>(null)
-
+  const [filteredItems, setFilteredItems] = useState<ItemTypes[] | null>(null)
   return (
     <SearchContext.Provider
       value={{
-        searchQuery,
-        setSearchQuery,
+        filteredItems,
+        setFilteredItems,
       }}>
       {children}
     </SearchContext.Provider>

@@ -14,6 +14,7 @@ import formatCurrency from "../utils/formatCurrency"
 import { useCart } from "../context/CartContext"
 
 export default function Item() {
+  const { addToCart, getItemQuantity } = useCart()
   const { id } = useParams<{ id: string }>()
   const [item, setItem] = useState<ItemTypes | null>(null)
 
@@ -28,7 +29,6 @@ export default function Item() {
 
   if (item === null) return <div>Loading...</div>
 
-  const { addToCart, getItemQuantity } = useCart()
   const quantity = getItemQuantity(item.id)
 
   return (

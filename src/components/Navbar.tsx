@@ -5,10 +5,12 @@ import { useCart } from "../context/CartContext"
 import { useState } from "react"
 import { useEffect } from "react"
 import { ItemTypes } from "../types/StoreTypes"
+import { useSearchContext } from "../context/SearchContext"
 
 export default function Navbar() {
   const { cartQuantity } = useCart()
-  const [searchValue, setSearchValue] = useState<string>("")
+  const { filteredItems, setFilteredItems } = useSearchContext()
+  const [searchValue, setSearchValue] = useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value)
@@ -18,17 +20,22 @@ export default function Navbar() {
     fetch("http://localhost:8000/items")
       .then((res) => res.json())
       .then((data) => {
-        const results = data
+        const searchResults = data
           .filter((item: ItemTypes) => {
             return (
+              searchValue && // prevent rendering when there is no input
               item &&
               item.name.toLowerCase().includes(searchValue.toLowerCase())
             )
           })
           .sort((a: ItemTypes, b: ItemTypes) => {
-            if (a.name.toLowerCase().indexOf(searchValue.toLowerCase()) === 0) {
+            if (
+              searchValue && // check that the value is not null
+              a.name.toLowerCase().indexOf(searchValue.toLowerCase()) === 0
+            ) {
               return -1 // a comes first if it starts with the search value
             } else if (
+              searchValue && // check that the value is not null
               b.name.toLowerCase().indexOf(searchValue.toLowerCase()) === 0
             ) {
               return 1 // b comes first if it starts with the search value
@@ -36,13 +43,20 @@ export default function Navbar() {
               return 0 // keep the original order
             }
           })
-        console.log(results)
+
+        setFilteredItems(searchResults)
       })
   }
 
   useEffect(() => {
     fetchItems()
   }, [searchValue])
+
+  useEffect(() => {
+    if (filteredItems != null && filteredItems.length > 0) {
+      console.log(filteredItems)
+    }
+  }, [filteredItems])
 
   return (
     <>
