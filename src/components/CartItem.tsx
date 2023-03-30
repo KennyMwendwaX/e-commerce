@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi"
+import { Link } from "react-router-dom"
 import { useCart } from "../context/CartContext"
 import { ItemTypes } from "../types/StoreTypes"
 import formatCurrency from "../utils/formatCurrency"
@@ -29,7 +30,9 @@ export default function CartItem({ id, quantity }: CartItemProps) {
     <>
       <tr className="border-b border-gray-400">
         <td className="w-32 p-4">
-          <img src={item.imgUrl} alt="Apple Watch" />
+          <Link to={`/products/${id}`}>
+            <img src={item.imgUrl} alt="Apple Watch" />
+          </Link>
         </td>
         <td className="px-6 py-4 font-semibold text-gray-700">{item.name}</td>
         <td className="px-6 py-4">

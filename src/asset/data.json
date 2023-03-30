@@ -80,6 +80,24 @@
       "description": "",
       "price": 70000,
       "imgUrl": "/item-img/samsung-tv.jpeg"
+    },
+    {
+      "id": "10",
+      "name": "Dalvey Wrist Watch Leather",
+      "brand": "Dalvey",
+      "category": "Wrist Watch",
+      "description": "",
+      "price": 55000,
+      "imgUrl": "/category-img/wrist-watch.jpg"
+    },
+    {
+      "id": "11",
+      "name": "Dell Desktop",
+      "brand": "Dell",
+      "category": "Desktop",
+      "description": "",
+      "price": 30000,
+      "imgUrl": "/category-img/desktop.jpeg"
     }
   ],
   "popular-categories": [

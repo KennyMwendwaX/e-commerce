@@ -15,7 +15,7 @@ export default function Products() {
     fetchItems()
   }, [])
 
-  const [searchResults, setSearchResults] = useState<ItemTypes[]>([])
+  const [searchResults, setSearchResults] = useState<ItemTypes[] | null>(null)
   const { filteredItems } = useSearchContext()
 
   useEffect(() => {

@@ -1,9 +1,9 @@
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import { FaSearch, FaBars } from "react-icons/fa"
 import { HiOutlineShoppingCart } from "react-icons/hi"
 import { BsToggleOn } from "react-icons/bs"
 import { useCart } from "../context/CartContext"
-import { useState } from "react"
-import { useEffect } from "react"
 import { ItemTypes } from "../types/StoreTypes"
 import { useSearchContext } from "../context/SearchContext"
 
@@ -11,6 +11,7 @@ export default function Navbar() {
   const { cartQuantity } = useCart()
   const { filteredItems, setFilteredItems } = useSearchContext()
   const [searchValue, setSearchValue] = useState<string | null>(null)
+  const navigate = useNavigate()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value)
@@ -54,7 +55,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (filteredItems != null && filteredItems.length > 0) {
-      console.log(filteredItems)
+      navigate("/products")
     }
   }, [filteredItems])
 

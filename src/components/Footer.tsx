@@ -120,8 +120,8 @@ export default function Footer() {
                       name="email_address"
                       aria-label="Email Address"
                       placeholder="Your email address..."
-                      required
                       type="email"
+                      required
                     />
                     <button className="text-white bg-blue-800 border-0 py-2 px-6 ml-4 focus:outline-none hover:bg-blue-600 rounded">
                       Subscribe
