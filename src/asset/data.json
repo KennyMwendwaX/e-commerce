@@ -83,12 +83,12 @@
     },
     {
       "id": "10",
-      "name": "Dalvey Wrist Watch Leather",
-      "brand": "Dalvey",
+      "name": "Rolex",
+      "brand": "Rolex",
       "category": "Wrist Watch",
       "description": "",
       "price": 55000,
-      "imgUrl": "/category-img/wrist-watch.jpg"
+      "imgUrl": "https://content.rolex.com/dam/2022-11/upright-bba-with-shadow/m226659-0004.png?impolicy=v6-upright&imwidth=270"
     },
     {
       "id": "11",

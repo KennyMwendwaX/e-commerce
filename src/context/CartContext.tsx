@@ -1,5 +1,5 @@
 import { createContext, useContext, ReactNode } from "react"
-import { useLocalStorage } from "../hooks/useLocalStorage"
+import useLocalStorage from "../hooks/useLocalStorage"
 
 type CartProviderProps = {
   children: ReactNode

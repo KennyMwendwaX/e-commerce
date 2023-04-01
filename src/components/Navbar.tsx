@@ -2,10 +2,11 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { FaSearch, FaBars } from "react-icons/fa"
 import { HiOutlineShoppingCart } from "react-icons/hi"
-import { BsToggleOn } from "react-icons/bs"
+import { BsToggleOff, BsToggleOn } from "react-icons/bs"
 import { useCart } from "../context/CartContext"
 import { ItemTypes } from "../types/StoreTypes"
 import { useSearchContext } from "../context/SearchContext"
+import useColorMode from "../hooks/useColorMode"
 
 export default function Navbar() {
   const { cartQuantity } = useCart()
@@ -59,6 +60,8 @@ export default function Navbar() {
     }
   }, [filteredItems])
 
+  const [colorMode, setColorMode] = useColorMode()
+
   return (
     <>
       <nav className="bg-gray-200 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-gray-200">
@@ -74,8 +77,16 @@ export default function Navbar() {
             </span>
           </a>
           <div className="flex md:order-2">
-            <button className="text-gray-700 cursor-pointer mr-8">
-              <BsToggleOn className="w-12 h-8" />
+            <button
+              onClick={() =>
+                setColorMode(colorMode === "light" ? "dark" : "light")
+              }
+              className="text-gray-700 cursor-pointer mr-8">
+              {colorMode === "light" ? (
+                <BsToggleOff className="w-12 h-8" />
+              ) : (
+                <BsToggleOn className="w-12 h-8" />
+              )}
             </button>
             <div className="relative hidden md:block">
               <a href="/cart" className="text-gray-700 text-3xl cursor-pointer">
