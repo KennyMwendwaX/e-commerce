@@ -60,7 +60,7 @@ export default function Navbar() {
     }
   }, [filteredItems])
 
-  const [colorMode, setColorMode] = useColorMode()
+  const [theme, setTheme] = useColorMode()
 
   return (
     <>
@@ -78,11 +78,9 @@ export default function Navbar() {
           </a>
           <div className="flex md:order-2">
             <button
-              onClick={() =>
-                setColorMode(colorMode === "light" ? "dark" : "light")
-              }
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
               className="text-gray-700 cursor-pointer mr-8">
-              {colorMode === "light" ? (
+              {theme === "light" ? (
                 <BsToggleOff className="w-12 h-8" />
               ) : (
                 <BsToggleOn className="w-12 h-8" />
