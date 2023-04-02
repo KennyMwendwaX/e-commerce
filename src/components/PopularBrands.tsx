@@ -20,7 +20,9 @@ export default function PopularBrands() {
   }, [])
   return (
     <>
-      <div className="font-light text-xl mt-8">Explore Popular Brands</div>
+      <div className="font-light text-xl mt-8 mb-2 dark:text-gray-300">
+        Explore Popular Brands
+      </div>
       <div className="grid grid-cols-6 space-x-2">
         {brands.map((brand) => (
           <div className="block relative mb-5" key={brand.id}>
@@ -28,7 +30,9 @@ export default function PopularBrands() {
               className="h-48 w-48 rounded-full overflow-hidden cursor-pointer mb-2"
               src={brand.imgUrl}
             />
-            <div className="text-center font-mono">{brand.name}</div>
+            <div className="text-center font-mono dark:text-gray-300">
+              {brand.name}
+            </div>
           </div>
         ))}
       </div>

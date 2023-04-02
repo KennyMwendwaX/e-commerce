@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { FaSearch, FaBars } from "react-icons/fa"
 import { HiOutlineShoppingCart } from "react-icons/hi"
-import { BsToggleOff, BsToggleOn } from "react-icons/bs"
+import { BsMoonStarsFill, BsSunFill } from "react-icons/bs"
 import { useCart } from "../context/CartContext"
 import { ItemTypes } from "../types/StoreTypes"
 import { useSearchContext } from "../context/SearchContext"
@@ -64,7 +64,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-gray-200 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-gray-200">
+      <nav className="bg-gray-200 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 dark:bg-gray-800">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <a href="/" className="flex items-center">
             <img
@@ -72,22 +72,26 @@ export default function Navbar() {
               className="h-6 mr-3 sm:h-9"
               alt="Iconic Logo"
             />
-            <span className="self-center text-gray-800 text-xl tracking-tight font-mono font-semibold whitespace-nowrap">
+            <span className="self-center text-gray-800 text-xl tracking-tight font-mono font-semibold whitespace-nowrap dark:text-gray-100">
               Iconic
             </span>
           </a>
-          <div className="flex md:order-2">
+          <div className="flex items-center md:order-2">
             <button
+              type="button"
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              className="text-gray-700 cursor-pointer mr-8">
+              className="text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-4">
               {theme === "light" ? (
-                <BsToggleOff className="w-12 h-8" />
+                <BsMoonStarsFill className="w-6 h-6" />
               ) : (
-                <BsToggleOn className="w-12 h-8" />
+                <BsSunFill className="w-6 h-6" />
               )}
+              <span className="sr-only">Toggle dark mode</span>
             </button>
             <div className="relative hidden md:block">
-              <a href="/cart" className="text-gray-700 text-3xl cursor-pointer">
+              <a
+                href="/cart"
+                className="text-gray-700 text-3xl cursor-pointer dark:text-gray-300">
                 <HiOutlineShoppingCart />
                 {cartQuantity > 0 && (
                   <span className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-blue-600 rounded-full -top-2 -right-2">
@@ -121,7 +125,7 @@ export default function Navbar() {
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-search">
             <div className="relative hidden md:block">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 pointer-events-none">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 pointer-events-none dark:text-gray-300">
                 <FaSearch />
                 <span className="sr-only">Search icon</span>
               </div>
@@ -129,7 +133,7 @@ export default function Navbar() {
                 type="text"
                 id="search-navbar"
                 onChange={handleChange}
-                className="block w-full p-2 pl-10 text-sm text-gray-800 border border-gray-500 focus:outline-none focus:border-blue-600 rounded-lg bg-gray-50"
+                className="block w-full p-2 pl-10 text-sm text-gray-800 border border-gray-500 focus:outline-none focus:border-blue-600 rounded-lg bg-gray-50 dark:bg-gray-600 dark:text-gray-200 dark:focus:border-indigo-600"
                 placeholder="Search..."
               />
             </div>

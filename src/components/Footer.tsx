@@ -10,7 +10,7 @@ import { HiOutlineMail } from "react-icons/hi"
 export default function Footer() {
   return (
     <>
-      <footer className="bg-white dark:bg-gray-900">
+      <footer className="bg-gray-50 dark:bg-gray-800 rounded-lg">
         <div className="mx-auto w-full container">
           <div className="flex flex-wrap px-6 py-8">
             <div>
@@ -73,23 +73,19 @@ export default function Footer() {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                  <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none dark:bg-gray-700 hover:dark:bg-gray-600">
                     <FaApple className="w-7 h-7" />
                     <span className="ml-4 flex items-start flex-col leading-none">
-                      <span className="text-xs text-gray-600 mb-1">
-                        Download on the
-                      </span>
+                      <span className="text-xs mb-1">Download on the</span>
                       <span className="title-font font-medium">App Store</span>
                     </span>
                   </button>
                 </li>
                 <li className="mb-4">
-                  <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                  <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none dark:bg-gray-700 hover:dark:bg-gray-600">
                     <FaGooglePlay className="w-6 h-6" />
                     <span className="ml-4 flex items-start flex-col leading-none">
-                      <span className="text-xs text-gray-600 mb-1">
-                        GET IT ON
-                      </span>
+                      <span className="text-xs mb-1">GET IT ON</span>
                       <span className="title-font font-medium">
                         Google Play
                       </span>
@@ -116,14 +112,14 @@ export default function Footer() {
                     </div>
                     <input
                       id="member_email"
-                      className="bg-gray-50 border-2 border-gray-400 text-gray-900 text-sm rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
+                      className="bg-gray-50 border-2 border-gray-400 text-gray-900 text-sm rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:text-gray-200 dark:focus:bg-gray-800 dark:border-gray-600 dark:focus:border-indigo-500"
                       name="email_address"
                       aria-label="Email Address"
                       placeholder="Your email address..."
                       type="email"
                       required
                     />
-                    <button className="text-white bg-blue-800 border-0 py-2 px-6 ml-4 focus:outline-none hover:bg-blue-600 rounded">
+                    <button className="text-white bg-blue-800 border-0 py-2.5 px-6 ml-4 focus:outline-none focus:ring-4 focus:ring-blue-400 hover:bg-blue-600 rounded-lg">
                       Subscribe
                     </button>
                   </div>
@@ -132,7 +128,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+        <div className="px-4 py-6 bg-gray-200 dark:bg-gray-700 md:flex md:items-center md:justify-between rounded-b-lg">
           <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
             © 2023 <a href="/">Iconic™</a>. All Rights Reserved.
           </span>

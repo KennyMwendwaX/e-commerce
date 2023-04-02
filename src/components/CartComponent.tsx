@@ -6,7 +6,7 @@ export default function CartComponent() {
   return (
     <div className="w-2/3">
       <table className="text-sm text-left text-gray-500">
-        <thead className="text-sm text-gray-900 uppercase border-b border-gray-400">
+        <thead className="text-sm text-gray-900 border-b border-gray-400 dark:text-gray-300">
           <tr>
             <th scope="col" className="px-6 py-3">
               <span className="sr-only">Image</span>
@@ -15,7 +15,7 @@ export default function CartComponent() {
               Product
             </th>
             <th scope="col" className="px-6 py-3">
-              Qty
+              Quantity
             </th>
             <th scope="col" className="px-6 py-3">
               Price

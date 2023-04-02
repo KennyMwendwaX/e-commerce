@@ -12,7 +12,9 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper"
 export default function TopDeals() {
   return (
     <>
-      <div className="font-light text-xl">Top Deals</div>
+      <div className="font-light text-xl mb-2 dark:text-gray-300">
+        Top Deals
+      </div>
       <Swiper
         navigation={true}
         pagination={{ clickable: true }}

@@ -42,10 +42,10 @@ export default function Item() {
               src={item.imgUrl}
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-              <h2 className="inline-block py-1 px-2 rounded bg-indigo-100 text-indigo-600 text-xs font-medium tracking-widest">
+              <h2 className="inline-block py-1 px-2 rounded bg-indigo-100 text-indigo-600 text-xs font-medium tracking-widest dark:bg-gray-700 dark:text-indigo-500">
                 {item.brand}
               </h2>
-              <h1 className="flex text-gray-900 text-3xl title-font font-medium mb-1">
+              <h1 className="flex text-gray-900 text-3xl title-font font-medium mb-1 dark:text-gray-200">
                 {item.name}
                 <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-400 space-x-3 text-xl">
                   <a className="text-gray-500 cursor-pointer">
@@ -70,7 +70,7 @@ export default function Item() {
                   <span className="text-gray-600 ml-3 text-sm">4 Reviews</span>
                 </span>
               </div>
-              <p className="leading-relaxed font-light border-b border-gray-400 mb-5">
+              <p className="leading-relaxed font-light mb-5 dark:text-gray-300">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
                 est voluptatum sit culpa itaque, libero, ducimus doloribus
                 aliquid beatae perferendis velit commodi mollitia quis odit
@@ -79,8 +79,14 @@ export default function Item() {
                 rerum mollitia a assumenda commodi natus laboriosam obcaecati,
                 iste accusamus!
               </p>
+              <div className="flex mb-5 dark:text-gray-300">
+                <span className="mr-3">Color</span>
+                <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
+                <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
+                <button className="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
+              </div>
               <div className="flex">
-                <span className="title-font font-medium text-2xl text-gray-900">
+                <span className="title-font font-medium text-2xl text-gray-900 dark:text-gray-400">
                   {formatCurrency(item.price)}
                 </span>
                 {quantity > 0 ? (
