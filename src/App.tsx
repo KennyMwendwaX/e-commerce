@@ -11,25 +11,25 @@ import NotFound from "./pages/NotFound"
 
 function App() {
   return (
-    // <div className="bg-gray-100 dark:bg-gray-900">
-    <Router>
-      <SearchProvider>
-        <CartProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products">
-              <Route index element={<Products />} />
-              <Route path=":id" element={<Item />} />
-            </Route>
-            <Route path="cart" element={<Cart />} />
-            <Route path="canvas" element={<Offcanvas />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </CartProvider>
-      </SearchProvider>
-    </Router>
-    // </div>
+    <div className="bg-gray-100 min-h-screen dark:bg-gray-900">
+      <Router>
+        <SearchProvider>
+          <CartProvider>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products">
+                <Route index element={<Products />} />
+                <Route path=":id" element={<Item />} />
+              </Route>
+              <Route path="cart" element={<Cart />} />
+              <Route path="canvas" element={<Offcanvas />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </CartProvider>
+        </SearchProvider>
+      </Router>
+    </div>
   )
 }
 
