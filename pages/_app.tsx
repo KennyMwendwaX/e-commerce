@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Roboto } from "next/font/google";
@@ -12,7 +13,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <main className={roboto.className}>
         <div className="min-h-screen bg-gray-100">
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </div>
       </main>
     </>

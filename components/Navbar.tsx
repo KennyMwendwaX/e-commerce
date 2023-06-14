@@ -1,22 +1,25 @@
-import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
-import { FaSearch, FaBars } from "react-icons/fa"
-import { HiOutlineShoppingCart } from "react-icons/hi"
-import { BsMoonStarsFill, BsSunFill } from "react-icons/bs"
-import { useCart } from "../context/CartContext"
-import { ItemTypes } from "../types/StoreTypes"
-import { useSearchContext } from "../context/SearchContext"
-import useColorMode from "../hooks/useColorMode"
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
+import { FaSearch, FaBars } from "react-icons/fa";
+import { HiOutlineShoppingCart } from "react-icons/hi";
+import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
+import { useCart } from "../context/CartContext";
+import { ItemTypes } from "../types/StoreTypes";
+import { useSearchContext } from "../context/SearchContext";
+import useColorMode from "../hooks/useColorMode";
+import Link from "next/link";
+import Image from "next/image";
+import "@/public/logo.png";
 
 export default function Navbar() {
-  const { cartQuantity } = useCart()
-  const { filteredItems, setFilteredItems } = useSearchContext()
-  const [searchValue, setSearchValue] = useState<string | null>(null)
-  const navigate = useNavigate()
+  const { cartQuantity } = useCart();
+  const { filteredItems, setFilteredItems } = useSearchContext();
+  const [searchValue, setSearchValue] = useState<string | null>(null);
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value)
-  }
+    setSearchValue(e.target.value);
+  };
 
   function fetchItems() {
     fetch("http://localhost:8000/items")
@@ -28,46 +31,46 @@ export default function Navbar() {
               searchValue && // prevent rendering when there is no input
               item &&
               item.name.toLowerCase().includes(searchValue.toLowerCase())
-            )
+            );
           })
           .sort((a: ItemTypes, b: ItemTypes) => {
             if (
               searchValue && // check that the value is not null
               a.name.toLowerCase().indexOf(searchValue.toLowerCase()) === 0
             ) {
-              return -1 // a comes first if it starts with the search value
+              return -1; // a comes first if it starts with the search value
             } else if (
               searchValue && // check that the value is not null
               b.name.toLowerCase().indexOf(searchValue.toLowerCase()) === 0
             ) {
-              return 1 // b comes first if it starts with the search value
+              return 1; // b comes first if it starts with the search value
             } else {
-              return 0 // keep the original order
+              return 0; // keep the original order
             }
-          })
+          });
 
-        setFilteredItems(searchResults)
-      })
+        setFilteredItems(searchResults);
+      });
   }
 
   useEffect(() => {
-    fetchItems()
-  }, [searchValue])
+    fetchItems();
+  }, [searchValue]);
 
   useEffect(() => {
     if (filteredItems != null && filteredItems.length > 0) {
-      navigate("/products")
+      router.push("/products");
     }
-  }, [filteredItems])
+  }, [filteredItems]);
 
-  const [theme, setTheme] = useColorMode()
+  const [theme, setTheme] = useColorMode();
 
   return (
     <>
       <nav className="bg-gray-200 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 dark:bg-gray-800">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <a href="/" className="flex items-center">
-            <img
+          <Link href="/" className="flex items-center">
+            <Image
               src="/logo.png"
               className="h-6 mr-3 sm:h-9"
               alt="Iconic Logo"
@@ -75,7 +78,7 @@ export default function Navbar() {
             <span className="self-center text-gray-800 text-xl tracking-tight font-mono font-semibold whitespace-nowrap dark:text-gray-100">
               Iconic
             </span>
-          </a>
+          </Link>
           <div className="flex items-center md:order-2">
             <button
               type="button"
@@ -141,5 +144,5 @@ export default function Navbar() {
         </div>
       </nav>
     </>
-  )
+  );
 }

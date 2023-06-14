@@ -6,30 +6,30 @@ import {
   FaHeart,
   FaStar,
   FaRegStar,
-} from "react-icons/fa"
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import { ItemTypes } from "../types/StoreTypes"
-import formatCurrency from "../utils/formatCurrency"
-import { useCart } from "../context/CartContext"
+} from "react-icons/fa";
+import { useState, useEffect } from "react";
+// import { useParams } from "react-router-dom"
+import { ItemTypes } from "../types/StoreTypes";
+import formatCurrency from "../utils/formatCurrency";
+import { useCart } from "../context/CartContext";
 
 export default function Item() {
-  const { addToCart, getItemQuantity } = useCart()
-  const { id } = useParams<{ id: string }>()
-  const [item, setItem] = useState<ItemTypes | null>(null)
+  const { addToCart, getItemQuantity } = useCart();
+  // const { id } = useParams<{ id: string }>()
+  const [item, setItem] = useState<ItemTypes | null>(null);
 
-  useEffect(() => {
-    function fetchItem() {
-      fetch(`http://localhost:8000/items/${id}`)
-        .then((res) => res.json())
-        .then((data) => setItem(data))
-    }
-    fetchItem()
-  }, [id])
+  // useEffect(() => {
+  //   function fetchItem() {
+  //     fetch(`http://localhost:8000/items/${id}`)
+  //       .then((res) => res.json())
+  //       .then((data) => setItem(data))
+  //   }
+  //   fetchItem()
+  // }, [id])
 
-  if (item === null) return <div>Loading...</div>
+  if (item === null) return <div>Loading...</div>;
 
-  const quantity = getItemQuantity(item.id)
+  const quantity = getItemQuantity(item.id);
 
   return (
     <>
@@ -121,5 +121,5 @@ export default function Item() {
         </div>
       </div>
     </>
-  )
+  );
 }
