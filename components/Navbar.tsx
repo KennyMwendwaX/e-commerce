@@ -9,7 +9,7 @@ import { useSearchContext } from "../context/SearchContext";
 import useColorMode from "../hooks/useColorMode";
 import Link from "next/link";
 import Image from "next/image";
-import "@/public/logo.png";
+import Logo from "@/public/logo.png";
 
 export default function Navbar() {
   const { cartQuantity } = useCart();
@@ -70,11 +70,7 @@ export default function Navbar() {
       <nav className="bg-gray-200 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 dark:bg-gray-800">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <Link href="/" className="flex items-center">
-            <Image
-              src="/logo.png"
-              className="h-6 mr-3 sm:h-9"
-              alt="Iconic Logo"
-            />
+            <Image src={Logo} className="h-6 mr-3 sm:h-9" alt="Iconic Logo" />
             <span className="self-center text-gray-800 text-xl tracking-tight font-mono font-semibold whitespace-nowrap dark:text-gray-100">
               Iconic
             </span>
@@ -92,7 +88,7 @@ export default function Navbar() {
               <span className="sr-only">Toggle dark mode</span>
             </button>
             <div className="relative hidden md:block">
-              <a
+              <Link
                 href="/cart"
                 className="text-gray-700 text-3xl cursor-pointer dark:text-gray-300">
                 <HiOutlineShoppingCart />
@@ -101,7 +97,7 @@ export default function Navbar() {
                     {cartQuantity}
                   </span>
                 )}
-              </a>
+              </Link>
             </div>
             {/* Mobile view Icons */}
             <button

@@ -1,11 +1,12 @@
+import Link from "next/link";
 import {
   FaGooglePlay,
   FaApple,
   FaFacebookF,
   FaTwitter,
   FaInstagram,
-} from "react-icons/fa"
-import { HiOutlineMail } from "react-icons/hi"
+} from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
 
 export default function Footer() {
   return (
@@ -130,7 +131,7 @@ export default function Footer() {
         </div>
         <div className="px-4 py-6 bg-gray-200 dark:bg-gray-700 md:flex md:items-center md:justify-between rounded-b-lg">
           <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
-            © 2023 <a href="/">Iconic™</a>. All Rights Reserved.
+            © 2023 <Link href="/">Iconic™</Link>. All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-6 text-lg sm:justify-center md:mt-0">
             <a
@@ -155,5 +156,5 @@ export default function Footer() {
         </div>
       </footer>
     </>
-  )
+  );
 }

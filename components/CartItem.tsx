@@ -1,37 +1,38 @@
-import { useEffect, useState } from "react"
-import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi"
-import { Link } from "react-router-dom"
-import { useCart } from "../context/CartContext"
-import { ItemTypes } from "../types/StoreTypes"
-import formatCurrency from "../utils/formatCurrency"
+import { useEffect, useState } from "react";
+import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
+import { useCart } from "../context/CartContext";
+import { ItemTypes } from "../types/StoreTypes";
+import formatCurrency from "../utils/formatCurrency";
+import Image from "next/image";
+import Link from "next/link";
 
 type CartItemProps = {
-  id: string
-  quantity: number
-}
+  id: string;
+  quantity: number;
+};
 
 export default function CartItem({ id, quantity }: CartItemProps) {
   const { decreaseCartQuantity, increaseCartQuantity, removeFromCart } =
-    useCart()
-  const [item, setItem] = useState<ItemTypes | null>(null)
+    useCart();
+  const [item, setItem] = useState<ItemTypes | null>(null);
 
   useEffect(() => {
     function fetchItems() {
       fetch(`http://localhost:8000/items/${id}`)
         .then((res) => res.json())
-        .then((data) => setItem(data))
+        .then((data) => setItem(data));
     }
-    fetchItems()
-  }, [id])
+    fetchItems();
+  }, [id]);
 
-  if (item == null) return null
+  if (item == null) return null;
 
   return (
     <>
       <tr className="border-b border-gray-400">
         <td className="w-32 p-4">
-          <Link to={`/products/${id}`}>
-            <img src={item.imgUrl} alt="Apple Watch" />
+          <Link href={`/products/${id}`}>
+            <Image src={item.imgUrl} alt="Apple Watch" />
           </Link>
         </td>
         <td className="px-6 py-4 font-semibold text-gray-700 dark:text-gray-300">
@@ -67,5 +68,5 @@ export default function CartItem({ id, quantity }: CartItemProps) {
         </td>
       </tr>
     </>
-  )
+  );
 }

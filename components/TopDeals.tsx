@@ -1,13 +1,12 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react"
-
+import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/css/pagination"
-
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 // import required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper"
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import Image from "next/image";
 
 export default function TopDeals() {
   return (
@@ -24,20 +23,29 @@ export default function TopDeals() {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         className="mySwiper h-50">
         <SwiperSlide>
-          <img className="cursor-pointer" src="/category-img/clothes.webp" />
+          <Image
+            className="cursor-pointer"
+            alt="clothes image"
+            src="/category-img/clothes.webp"
+          />
           <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
             -10%
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="cursor-pointer" src="/item-img/macbook.jpg" />
+          <Image
+            className="cursor-pointer"
+            alt="macbook image"
+            src="/item-img/macbook.jpg"
+          />
           <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
             -5%
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img
+          <Image
             className="cursor-pointer"
+            alt="gaming console image"
             src="/category-img/gaming-console.webp"
           />
           <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
@@ -45,36 +53,56 @@ export default function TopDeals() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="cursor-pointer" src="/category-img/footwear.jpg" />
+          <Image
+            className="cursor-pointer"
+            alt="footwear image"
+            src="/category-img/footwear.jpg"
+          />
           <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
             -10%
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="cursor-pointer" src="/category-img/desktop.jpeg" />
+          <Image
+            className="cursor-pointer"
+            alt="desktop image"
+            src="/category-img/desktop.jpeg"
+          />
           <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
             -10%
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="cursor-pointer" src="/item-img/gkmc.webp" />
+          <Image
+            className="cursor-pointer"
+            alt="albums image"
+            src="/item-img/gkmc.webp"
+          />
           <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
             -10%
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="cursor-pointer" src="/item-img/samsung-tv.jpeg" />
+          <Image
+            className="cursor-pointer"
+            alt="tv image"
+            src="/item-img/samsung-tv.jpeg"
+          />
           <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
             -10%
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="cursor-pointer" src="/item-img/rayban.jpg" />
+          <Image
+            className="cursor-pointer"
+            alt="glasses image"
+            src="/item-img/rayban.jpg"
+          />
           <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
             -10%
           </div>
         </SwiperSlide>
       </Swiper>
     </>
-  )
+  );
 }

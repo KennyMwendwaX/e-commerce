@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom"
-import formatCurrency from "../utils/formatCurrency"
-import { ItemTypes } from "../types/StoreTypes"
+import Link from "next/link";
+import Image from "next/image";
+import formatCurrency from "../utils/formatCurrency";
+import { ItemTypes } from "../types/StoreTypes";
 
 export default function StoreItem({
   id,
@@ -13,8 +14,8 @@ export default function StoreItem({
     <>
       <Link
         className="block relative h-48 rounded overflow-hidden cursor-pointer"
-        to={`/products/${id}`}>
-        <img
+        href={`/products/${id}`}>
+        <Image
           alt="ecommerce"
           className="object-cover object-center w-full h-full block"
           src={imgUrl}
@@ -32,5 +33,5 @@ export default function StoreItem({
         </p>
       </div>
     </>
-  )
+  );
 }
