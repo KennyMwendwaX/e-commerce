@@ -1,4 +1,6 @@
 import Layout from "@/components/Layout";
+import { CartProvider } from "@/context/CartContext";
+import { SearchProvider } from "@/context/SearchContext";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Roboto } from "next/font/google";
@@ -13,9 +15,13 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <main className={roboto.className}>
         <div className="min-h-screen bg-gray-100">
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <SearchProvider>
+            <CartProvider>
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </CartProvider>
+          </SearchProvider>
         </div>
       </main>
     </>
