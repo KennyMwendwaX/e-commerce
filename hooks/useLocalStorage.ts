@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export default function useLocalStorage<T>(
   key: string,
@@ -6,28 +6,29 @@ export default function useLocalStorage<T>(
 ) {
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
-      const item = localStorage.getItem(key)
-      return item ? JSON.parse(item) : initialValue
+      const item =
+        typeof window !== "undefined" ? localStorage.getItem(key) : null;
+      return item ? JSON.parse(item) : initialValue;
     } catch (error) {
-      console.log(error)
-      return initialValue
+      console.log(error);
+      return initialValue;
     }
-  })
+  });
 
   useEffect(() => {
     try {
       const valueToStore =
         typeof storedValue === "function"
           ? storedValue(storedValue)
-          : storedValue
-      localStorage.setItem(key, JSON.stringify(valueToStore))
+          : storedValue;
+      localStorage.setItem(key, JSON.stringify(valueToStore));
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }, [key, storedValue])
+  }, [key, storedValue]);
 
   return [storedValue, setStoredValue] as [
     typeof storedValue,
     typeof setStoredValue
-  ]
+  ];
 }
