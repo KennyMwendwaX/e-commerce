@@ -8,7 +8,7 @@ export default function Products() {
 
   useEffect(() => {
     async function fetchItems() {
-      const res = await fetch("http://localhost:8000/items");
+      const res = await fetch("http://localhost:3000/api/items");
       const data = await res.json();
       setItems(data);
     }

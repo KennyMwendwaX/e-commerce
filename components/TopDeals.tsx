@@ -11,9 +11,7 @@ import Image from "next/image";
 export default function TopDeals() {
   return (
     <>
-      <div className="font-light text-xl mb-2 dark:text-gray-300">
-        Top Deals
-      </div>
+      <div className="font-light text-xl mb-2">Top Deals</div>
       <Swiper
         navigation={true}
         pagination={{ clickable: true }}
@@ -25,6 +23,8 @@ export default function TopDeals() {
         <SwiperSlide>
           <Image
             className="cursor-pointer"
+            width={192}
+            height={192}
             alt="clothes image"
             src="/category-img/clothes.webp"
           />
@@ -35,6 +35,8 @@ export default function TopDeals() {
         <SwiperSlide>
           <Image
             className="cursor-pointer"
+            width={192}
+            height={192}
             alt="macbook image"
             src="/item-img/macbook.jpg"
           />
@@ -45,6 +47,8 @@ export default function TopDeals() {
         <SwiperSlide>
           <Image
             className="cursor-pointer"
+            width={192}
+            height={192}
             alt="gaming console image"
             src="/category-img/gaming-console.webp"
           />
@@ -55,6 +59,8 @@ export default function TopDeals() {
         <SwiperSlide>
           <Image
             className="cursor-pointer"
+            width={192}
+            height={192}
             alt="footwear image"
             src="/category-img/footwear.jpg"
           />
@@ -65,6 +71,8 @@ export default function TopDeals() {
         <SwiperSlide>
           <Image
             className="cursor-pointer"
+            width={192}
+            height={192}
             alt="desktop image"
             src="/category-img/desktop.jpeg"
           />
@@ -75,6 +83,8 @@ export default function TopDeals() {
         <SwiperSlide>
           <Image
             className="cursor-pointer"
+            width={192}
+            height={192}
             alt="albums image"
             src="/item-img/gkmc.webp"
           />
@@ -85,6 +95,8 @@ export default function TopDeals() {
         <SwiperSlide>
           <Image
             className="cursor-pointer"
+            width={192}
+            height={192}
             alt="tv image"
             src="/item-img/samsung-tv.jpeg"
           />
@@ -95,6 +107,8 @@ export default function TopDeals() {
         <SwiperSlide>
           <Image
             className="cursor-pointer"
+            width={192}
+            height={192}
             alt="glasses image"
             src="/item-img/rayban.jpg"
           />

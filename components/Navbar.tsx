@@ -22,7 +22,7 @@ export default function Navbar() {
   };
 
   function fetchItems() {
-    fetch("http://localhost:8000/items")
+    fetch("http://localhost:3000/api/items")
       .then((res) => res.json())
       .then((data) => {
         const searchResults = data
@@ -67,11 +67,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-gray-200 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 dark:bg-gray-800">
+      <nav className="bg-gray-200 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <Link href="/" className="flex items-center">
             <Image src={Logo} className="h-6 mr-3 sm:h-9" alt="Iconic Logo" />
-            <span className="self-center text-gray-800 text-xl tracking-tight font-mono font-semibold whitespace-nowrap dark:text-gray-100">
+            <span className="self-center text-gray-800 text-xl tracking-tight font-mono font-semibold whitespace-nowrap">
               Iconic
             </span>
           </Link>
@@ -79,7 +79,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              className="text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-4">
+              className="text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-lg text-sm p-2.5 mr-4">
               {theme === "light" ? (
                 <BsMoonStarsFill className="w-6 h-6" />
               ) : (
@@ -90,7 +90,7 @@ export default function Navbar() {
             <div className="relative hidden md:block">
               <Link
                 href="/cart"
-                className="text-gray-700 text-3xl cursor-pointer dark:text-gray-300">
+                className="text-gray-700 text-3xl cursor-point">
                 <HiOutlineShoppingCart />
                 {cartQuantity > 0 && (
                   <span className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-blue-600 rounded-full -top-2 -right-2">
@@ -124,7 +124,7 @@ export default function Navbar() {
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-search">
             <div className="relative hidden md:block">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 pointer-events-none dark:text-gray-300">
+              <div className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 pointer-events-none">
                 <FaSearch />
                 <span className="sr-only">Search icon</span>
               </div>
@@ -132,7 +132,7 @@ export default function Navbar() {
                 type="text"
                 id="search-navbar"
                 onChange={handleChange}
-                className="block w-full p-2 pl-10 text-sm text-gray-800 border border-gray-500 focus:outline-none focus:border-blue-600 rounded-lg bg-gray-50 dark:bg-gray-600 dark:text-gray-200 dark:focus:border-indigo-600"
+                className="block w-full p-2 pl-10 text-sm text-gray-800 border border-gray-500 focus:outline-none focus:border-blue-600 rounded-lg bg-gray-50"
                 placeholder="Search..."
               />
             </div>

@@ -11,14 +11,14 @@ import { HiOutlineMail } from "react-icons/hi";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-gray-50 dark:bg-gray-800 rounded-lg">
+      <footer className="bg-gray-50 rounded-lg">
         <div className="mx-auto w-full container">
           <div className="flex flex-wrap px-6 py-8">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
                 Company
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
                   <a href="#" className=" hover:underline">
                     About
@@ -42,10 +42,10 @@ export default function Footer() {
               </ul>
             </div>
             <div className="ml-20">
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
                 Legal
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
                   <a href="#" className="hover:underline">
                     Privacy Policy
@@ -69,12 +69,12 @@ export default function Footer() {
               </ul>
             </div>
             <div className="ml-20">
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
                 Download Our Site
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none dark:bg-gray-700 hover:dark:bg-gray-600">
+                  <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
                     <FaApple className="w-7 h-7" />
                     <span className="ml-4 flex items-start flex-col leading-none">
                       <span className="text-xs mb-1">Download on the</span>
@@ -83,7 +83,7 @@ export default function Footer() {
                   </button>
                 </li>
                 <li className="mb-4">
-                  <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none dark:bg-gray-700 hover:dark:bg-gray-600">
+                  <button className="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
                     <FaGooglePlay className="w-6 h-6" />
                     <span className="ml-4 flex items-start flex-col leading-none">
                       <span className="text-xs mb-1">GET IT ON</span>
@@ -96,7 +96,7 @@ export default function Footer() {
               </ul>
             </div>
             <div className="ml-20">
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">
                 SUBSCRIBE TO OUR MAILING LIST
               </h2>
 
@@ -104,7 +104,7 @@ export default function Footer() {
                 <div className="relative block w-full mr-3">
                   <label
                     htmlFor="member_email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                    className="block mb-2 text-sm font-medium text-gray-900">
                     Email address
                   </label>
                   <div className="inline-flex items-center">
@@ -113,7 +113,7 @@ export default function Footer() {
                     </div>
                     <input
                       id="member_email"
-                      className="bg-gray-50 border-2 border-gray-400 text-gray-900 text-sm rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:text-gray-200 dark:focus:bg-gray-800 dark:border-gray-600 dark:focus:border-indigo-500"
+                      className="bg-gray-50 border-2 border-gray-400 text-gray-900 text-sm rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
                       name="email_address"
                       aria-label="Email Address"
                       placeholder="Your email address..."
@@ -129,26 +129,20 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="px-4 py-6 bg-gray-200 dark:bg-gray-700 md:flex md:items-center md:justify-between rounded-b-lg">
-          <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+        <div className="px-4 py-6 bg-gray-200 md:flex md:items-center md:justify-between rounded-b-lg">
+          <span className="text-sm text-gray-500 sm:text-center">
             © 2023 <Link href="/">Iconic™</Link>. All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-6 text-lg sm:justify-center md:mt-0">
-            <a
-              href="#"
-              className="text-gray-500 hover:text-blue-600 dark:hover:text-white">
+            <a href="#" className="text-gray-500 hover:text-blue-600">
               <FaFacebookF />
               <span className="sr-only">Facebook page</span>
             </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-blue-600 dark:hover:text-white">
+            <a href="#" className="text-gray-500 hover:text-blue-600">
               <FaInstagram />
               <span className="sr-only">Instagram page</span>
             </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-blue-600 dark:hover:text-white">
+            <a href="#" className="text-gray-500 hover:text-blue-600">
               <FaTwitter />
               <span className="sr-only">Twitter page</span>
             </a>
