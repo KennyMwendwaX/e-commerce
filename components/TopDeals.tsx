@@ -11,7 +11,7 @@ import Image from "next/image";
 export default function TopDeals() {
   return (
     <>
-      <div className="font-light text-xl mb-2">Top Deals</div>
+      <div className="mb-2 text-xl font-light">Top Deals</div>
       <Swiper
         navigation={true}
         pagination={{ clickable: true }}
@@ -23,96 +23,96 @@ export default function TopDeals() {
         <SwiperSlide>
           <Image
             className="cursor-pointer"
-            width={192}
-            height={192}
+            width={230}
+            height={230}
             alt="clothes image"
             src="/category-img/clothes.webp"
           />
-          <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
+          <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <Image
             className="cursor-pointer"
-            width={192}
-            height={192}
+            width={230}
+            height={230}
             alt="macbook image"
             src="/item-img/macbook.jpg"
           />
-          <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
+          <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -5%
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <Image
             className="cursor-pointer"
-            width={192}
-            height={192}
+            width={230}
+            height={230}
             alt="gaming console image"
             src="/category-img/gaming-console.webp"
           />
-          <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
+          <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <Image
             className="cursor-pointer"
-            width={192}
-            height={192}
+            width={230}
+            height={230}
             alt="footwear image"
             src="/category-img/footwear.jpg"
           />
-          <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
+          <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <Image
             className="cursor-pointer"
-            width={192}
-            height={192}
+            width={230}
+            height={230}
             alt="desktop image"
             src="/category-img/desktop.jpeg"
           />
-          <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
+          <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <Image
             className="cursor-pointer"
-            width={192}
-            height={192}
+            width={230}
+            height={230}
             alt="albums image"
             src="/item-img/gkmc.webp"
           />
-          <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
+          <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <Image
             className="cursor-pointer"
-            width={192}
-            height={192}
+            width={230}
+            height={230}
             alt="tv image"
             src="/item-img/samsung-tv.jpeg"
           />
-          <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
+          <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <Image
             className="cursor-pointer"
-            width={192}
-            height={192}
+            width={230}
+            height={230}
             alt="glasses image"
             src="/item-img/rayban.jpg"
           />
-          <div className="absolute top-2 right-1 bg-red-100 text-red-600 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">
+          <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
           </div>
         </SwiperSlide>

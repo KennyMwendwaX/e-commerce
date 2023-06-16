@@ -1,12 +1,12 @@
-import { useCart } from "../context/CartContext"
-import CartItem from "./CartItem"
+import { useCart } from "../context/CartContext";
+import CartItem from "./CartItem";
 
 export default function CartComponent() {
-  const { cartItems } = useCart()
+  const { cartItems } = useCart();
   return (
     <div className="w-2/3">
-      <table className="text-sm text-left text-gray-500">
-        <thead className="text-sm text-gray-900 border-b border-gray-400 dark:text-gray-300">
+      <table className="text-left text-sm text-gray-500">
+        <thead className="border-b border-gray-400 text-sm text-gray-900">
           <tr>
             <th scope="col" className="px-6 py-3">
               <span className="sr-only">Image</span>
@@ -32,5 +32,5 @@ export default function CartComponent() {
         </tbody>
       </table>
     </div>
-  )
+  );
 }
