@@ -5,12 +5,12 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="container px-5 pt-20 pb-5 mx-auto">
+    <div className="container mx-auto px-5 pb-5 pt-20">
       <TopDeals />
-      <div className="mb-8">
+      <div className="mb-10">
         <PopularCategories />
       </div>
-      <div className="mb-8">
+      <div className="mb-10">
         <PopularBrands />
       </div>
       <Footer />

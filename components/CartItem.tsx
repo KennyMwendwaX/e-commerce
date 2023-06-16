@@ -26,7 +26,7 @@ export default function CartItem({ id, quantity }: CartItemProps) {
     fetchItems();
   }, [id]);
 
-  if (item == null) return null;
+  if (!item) return <div>Loading...</div>;
 
   return (
     <>
@@ -43,7 +43,7 @@ export default function CartItem({ id, quantity }: CartItemProps) {
         </td>
         <td className="px-6 py-4 font-semibold text-gray-700">{item.name}</td>
         <td className="px-6 py-4">
-          <div className="inline-flex items-center border border-gray-200 bg-transparent font-light">
+          <div className="inline-flex items-center border border-gray-500 bg-transparent font-light">
             <span className="sr-only">Quantity button</span>
             <button
               onClick={() => decreaseCartQuantity(id)}
