@@ -74,7 +74,7 @@ export default function Footer() {
               </h2>
               <ul className="font-medium text-gray-500">
                 <li className="mb-4">
-                  <button className="inline-flex items-center rounded-lg bg-gray-100 px-5 py-3 hover:bg-gray-200 focus:outline-none">
+                  <button className="inline-flex items-center rounded-lg bg-gray-200 px-5 py-3 hover:bg-gray-300 focus:outline-none">
                     <FaApple className="h-7 w-7" />
                     <span className="ml-4 flex flex-col items-start leading-none">
                       <span className="mb-1 text-xs">Download on the</span>
@@ -83,7 +83,7 @@ export default function Footer() {
                   </button>
                 </li>
                 <li className="mb-4">
-                  <button className="inline-flex items-center rounded-lg bg-gray-100 px-5 py-3 hover:bg-gray-200 focus:outline-none">
+                  <button className="inline-flex items-center rounded-lg bg-gray-200 px-5 py-3 hover:bg-gray-300 focus:outline-none">
                     <FaGooglePlay className="h-6 w-6" />
                     <span className="ml-4 flex flex-col items-start leading-none">
                       <span className="mb-1 text-xs">GET IT ON</span>

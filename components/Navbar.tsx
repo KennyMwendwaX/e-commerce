@@ -70,7 +70,13 @@ export default function Navbar() {
       <nav className="fixed left-0 top-0 z-20 w-full bg-gray-200 px-2 py-2.5 sm:px-4">
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <Link href="/" className="flex items-center">
-            <Image src={Logo} className="mr-3 h-6 sm:h-9" alt="Iconic Logo" />
+            <Image
+              src={Logo}
+              height={24}
+              width={45}
+              className="mr-3 sm:h-9"
+              alt="Iconic Logo"
+            />
             <span className="self-center whitespace-nowrap font-mono text-xl font-semibold tracking-tight text-gray-800">
               Iconic
             </span>
@@ -99,6 +105,21 @@ export default function Navbar() {
                 )}
               </Link>
             </div>
+            <button
+              type="button"
+              className="ml-5 mr-3 flex rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-300 md:mr-0"
+              id="user-menu-button"
+              data-dropdown-toggle="user-dropdown"
+              data-dropdown-placement="bottom">
+              <span className="sr-only">Open user menu</span>
+              <Image
+                className="rounded-full"
+                width={32}
+                height={32}
+                src="/profile-picture-3.jpg"
+                alt="user photo"
+              />
+            </button>
             {/* Mobile view Icons */}
             <button
               type="button"
