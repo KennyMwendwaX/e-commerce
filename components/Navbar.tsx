@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useState, useEffect, useCallback } from "react";
 import { FaSearch, FaUserCog } from "react-icons/fa";
 import { HiOutlineLogout, HiOutlineShoppingCart } from "react-icons/hi";
-import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 import { useCart } from "../context/CartContext";
 import { ItemTypes } from "../types/StoreTypes";
 import { useSearchContext } from "../context/SearchContext";
@@ -74,8 +73,6 @@ export default function Navbar({ session }: NavbarProps) {
       router.push("/products");
     }
   }, [filteredItems]);
-
-  const [theme, setTheme] = useColorMode();
 
   return (
     <>
