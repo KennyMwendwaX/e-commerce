@@ -10,7 +10,7 @@ export default function Layout({ children }: LayoutProps) {
   const { data: session, status } = useSession();
   return (
     <>
-      <Navbar session={session} />
+      <Navbar session={session} status={status} />
       {children}
     </>
   );

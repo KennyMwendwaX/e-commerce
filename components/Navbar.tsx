@@ -5,7 +5,6 @@ import { HiOutlineLogout, HiOutlineShoppingCart } from "react-icons/hi";
 import { useCart } from "../context/CartContext";
 import { ItemTypes } from "../types/StoreTypes";
 import { useSearchContext } from "../context/SearchContext";
-import useColorMode from "../hooks/useColorMode";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logo.png";
@@ -14,9 +13,10 @@ import { signOut } from "next-auth/react";
 
 type NavbarProps = {
   session: Session | null;
+  status: "loading" | "authenticated" | "unauthenticated";
 };
 
-export default function Navbar({ session }: NavbarProps) {
+export default function Navbar({ session, status }: NavbarProps) {
   const { cartQuantity } = useCart();
   const { filteredItems, setFilteredItems } = useSearchContext();
   const [searchValue, setSearchValue] = useState<string | null>(null);
@@ -103,13 +103,7 @@ export default function Navbar({ session }: NavbarProps) {
                 )}
               </Link>
             </div>
-            {!session ? (
-              <Link
-                href="/signin"
-                className="ml-5 mr-3 rounded-lg bg-slate-900 px-5 py-2 text-white">
-                Login
-              </Link>
-            ) : (
+            {session && (status = "authenticated") ? (
               <>
                 <button
                   type="button"
@@ -160,6 +154,12 @@ export default function Navbar({ session }: NavbarProps) {
                   </ul>
                 </div>
               </>
+            ) : (
+              <Link
+                href="/signin"
+                className="ml-5 mr-3 rounded-lg bg-slate-900 px-5 py-2 text-white">
+                Login
+              </Link>
             )}
           </div>
 
