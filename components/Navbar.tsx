@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useState, useEffect, useCallback } from "react";
-import { FaSearch, FaBars } from "react-icons/fa";
-import { HiOutlineShoppingCart } from "react-icons/hi";
+import { FaSearch, FaUserCog } from "react-icons/fa";
+import { HiOutlineLogout, HiOutlineShoppingCart } from "react-icons/hi";
 import { BsMoonStarsFill, BsSunFill } from "react-icons/bs";
 import { useCart } from "../context/CartContext";
 import { ItemTypes } from "../types/StoreTypes";
@@ -10,12 +10,24 @@ import useColorMode from "../hooks/useColorMode";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logo.png";
+import type { Session } from "next-auth";
+import { signOut } from "next-auth/react";
 
-export default function Navbar() {
+type NavbarProps = {
+  session: Session | null;
+};
+
+export default function Navbar({ session }: NavbarProps) {
   const { cartQuantity } = useCart();
   const { filteredItems, setFilteredItems } = useSearchContext();
   const [searchValue, setSearchValue] = useState<string | null>(null);
   const router = useRouter();
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -82,17 +94,6 @@ export default function Navbar() {
             </span>
           </Link>
           <div className="flex items-center md:order-2">
-            <button
-              type="button"
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              className="mr-4 rounded-lg p-2.5 text-sm text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-300">
-              {theme === "light" ? (
-                <BsMoonStarsFill className="h-6 w-6" />
-              ) : (
-                <BsSunFill className="h-6 w-6" />
-              )}
-              <span className="sr-only">Toggle dark mode</span>
-            </button>
             <div className="relative hidden md:block">
               <Link
                 href="/cart"
@@ -105,41 +106,66 @@ export default function Navbar() {
                 )}
               </Link>
             </div>
-            <button
-              type="button"
-              className="ml-5 mr-3 flex rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-300 md:mr-0"
-              id="user-menu-button"
-              data-dropdown-toggle="user-dropdown"
-              data-dropdown-placement="bottom">
-              <span className="sr-only">Open user menu</span>
-              <Image
-                className="rounded-full"
-                width={32}
-                height={32}
-                src="/profile-picture-3.jpg"
-                alt="user photo"
-              />
-            </button>
-            {/* Mobile view Icons */}
-            <button
-              type="button"
-              data-collapse-toggle="navbar-search"
-              aria-controls="navbar-search"
-              aria-expanded="false"
-              className="mr-1 rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 md:hidden">
-              <FaSearch />
-              <span className="sr-only">Search</span>
-            </button>
-            <button
-              data-collapse-toggle="navbar-search"
-              type="button"
-              className="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
-              aria-controls="navbar-search"
-              aria-expanded="false">
-              <span className="sr-only">Open menu</span>
-              <FaBars />
-            </button>
+            {!session ? (
+              <Link
+                href="/signin"
+                className="ml-5 mr-3 rounded-lg bg-slate-900 px-5 py-2 text-white">
+                Login
+              </Link>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  className="ml-5 mr-3 flex rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-300 md:mr-0"
+                  id="user-menu-button"
+                  data-dropdown-toggle="user-dropdown"
+                  data-dropdown-placement="bottom">
+                  <span className="sr-only">Open user menu</span>
+                  <Image
+                    className="rounded-full"
+                    width={32}
+                    height={32}
+                    src="/profile-picture-3.jpg"
+                    alt="user photo"
+                  />
+                </button>
+                {/* Dropdown menu */}
+                <div
+                  className={`z-50 ${
+                    isMenuOpen ? "" : "hidden"
+                  } fixed right-6 top-8 my-4 list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow`}
+                  id="user-dropdown">
+                  <div className="px-4 py-3">
+                    <span className="text-md block font-semibold  text-gray-900">
+                      {session.user?.name}
+                    </span>
+                    <span className="block truncate text-sm font-light text-gray-500">
+                      {session.user?.email}
+                    </span>
+                  </div>
+                  <ul className="py-2" aria-labelledby="user-menu-button">
+                    <li>
+                      <Link
+                        href="/profile"
+                        className="inline-flex w-full items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                        <FaUserCog size={18} />
+                        &nbsp; Profile
+                      </Link>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => signOut()}
+                        className="inline-flex w-full items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                        <HiOutlineLogout size={18} />
+                        &nbsp; Sign out
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </>
+            )}
           </div>
+
           {/* Search bar */}
           <div
             className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
