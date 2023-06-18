@@ -18,6 +18,7 @@ CREATE TABLE "Products" (
     "price" INTEGER NOT NULL,
     "quantity" INTEGER NOT NULL,
     "imgUrl" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL,
     "userId" TEXT,
 
     CONSTRAINT "Products_pkey" PRIMARY KEY ("id")
