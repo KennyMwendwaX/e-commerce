@@ -103,7 +103,7 @@ export default function Navbar({ session, status }: NavbarProps) {
                 )}
               </Link>
             </div>
-            {session && (status = "authenticated") ? (
+            {status === "authenticated" ? (
               <>
                 <button
                   type="button"
@@ -128,10 +128,10 @@ export default function Navbar({ session, status }: NavbarProps) {
                   id="user-dropdown">
                   <div className="px-4 py-3">
                     <span className="text-md block font-semibold  text-gray-900">
-                      {session.user?.name}
+                      {session?.user?.name}
                     </span>
                     <span className="block truncate text-sm font-light text-gray-500">
-                      {session.user?.email}
+                      {session?.user?.email}
                     </span>
                   </div>
                   <ul className="py-2" aria-labelledby="user-menu-button">
