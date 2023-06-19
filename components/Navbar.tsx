@@ -76,7 +76,7 @@ export default function Navbar({ session, status }: NavbarProps) {
 
   return (
     <>
-      <nav className="fixed left-0 top-0 z-20 w-full bg-gray-200 px-2 py-2.5 sm:px-4">
+      <nav className="fixed left-0 top-0 z-50 w-full bg-gray-200 px-2 py-2.5 sm:px-4">
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
@@ -109,6 +109,8 @@ export default function Navbar({ session, status }: NavbarProps) {
                   type="button"
                   className="ml-5 mr-3 flex rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-300 md:mr-0"
                   id="user-menu-button"
+                  aria-expanded={isMenuOpen}
+                  onClick={toggleMenu}
                   data-dropdown-toggle="user-dropdown"
                   data-dropdown-placement="bottom">
                   <span className="sr-only">Open user menu</span>
