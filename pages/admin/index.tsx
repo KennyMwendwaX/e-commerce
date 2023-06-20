@@ -23,7 +23,7 @@ export default function Profile() {
       <div>
         {/* Sidebar  */}
         <aside
-          className="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full border-r border-gray-400 bg-gray-100 pt-14 transition-transform md:translate-x-0"
+          className="fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full border-r border-gray-500 bg-gray-100 pt-14 transition-transform md:translate-x-0"
           aria-label="Sidebar"
           id="drawer-navigation">
           <div className="h-full overflow-y-auto bg-gray-100 px-3 py-5">
@@ -61,7 +61,7 @@ export default function Profile() {
                 </a>
               </li>
             </ul>
-            <ul className="mt-5 space-y-2 border-t border-gray-200 pt-5 dark:border-gray-700">
+            <ul className="mt-5 space-y-2 border-t border-gray-400 pt-5">
               <li>
                 <a
                   href="#"
