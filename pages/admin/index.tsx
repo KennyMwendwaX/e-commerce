@@ -7,6 +7,8 @@ import Link from "next/link";
 import { MdSpaceDashboard } from "react-icons/md";
 import { AiFillTag } from "react-icons/ai";
 import { FaClipboardList, FaUser } from "react-icons/fa";
+import { FcAbout } from "react-icons/fc";
+import { BiHelpCircle } from "react-icons/bi";
 
 export default function Profile() {
   // const router = useRouter();
@@ -66,6 +68,7 @@ export default function Profile() {
                 <a
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
+                  <FcAbout className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
                   <span className="ml-3">Help Centre</span>
                 </a>
               </li>
@@ -73,6 +76,7 @@ export default function Profile() {
                 <a
                   href="#"
                   className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
+                  <BiHelpCircle className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
                   <span className="ml-3">About Us</span>
                 </a>
               </li>
