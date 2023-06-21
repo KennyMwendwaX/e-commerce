@@ -1,7 +1,9 @@
+import SideLayout from "@/components/SideLayout";
+
 export default function Products() {
   return (
-    <>
-      <div className="container mx-auto px-5 pb-5 pt-20">products</div>
-    </>
+    <SideLayout>
+      <main className="h-auto p-4 pt-20 md:ml-64">Products</main>
+    </SideLayout>
   );
 }

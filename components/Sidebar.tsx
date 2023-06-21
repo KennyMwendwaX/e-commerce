@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AiFillTag } from "react-icons/ai";
 import { BiHelpCircle } from "react-icons/bi";
 import { FaClipboardList, FaUser } from "react-icons/fa";
@@ -16,54 +17,54 @@ export default function Sidebar() {
         <div className="h-full overflow-y-auto bg-gray-100 px-3 py-5">
           <ul className="space-y-4">
             <li>
-              <a
-                href="#"
+              <Link
+                href="/admin"
                 className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
                 <FaUser className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
                 <span className="ml-3">Profile</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/admin/overview"
                 className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
                 <MdSpaceDashboard className="h-6 w-6 text-gray-700 group-hover:text-gray-100" />
                 <span className="ml-3">Overview</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/admin/products"
                 className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
                 <AiFillTag className="h-6 w-6 text-gray-700 group-hover:text-gray-100" />
                 <span className="ml-3">Products</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="/admin/orders"
                 className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
                 <FaClipboardList className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
                 <span className="ml-3">Orders</span>
-              </a>
+              </Link>
             </li>
           </ul>
           <ul className="mt-5 space-y-2 border-t border-gray-400 pt-5">
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
                 <FcAbout className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
                 <span className="ml-3">Help Centre</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
                 <BiHelpCircle className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
                 <span className="ml-3">About Us</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
