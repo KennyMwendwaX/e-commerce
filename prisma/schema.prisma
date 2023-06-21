@@ -11,11 +11,12 @@ datasource db {
 }
 
 model User {
-  id       String     @id @default(cuid())
-  name     String
-  email    String     @unique
-  password String
-  products Products[]
+  id        String     @id @default(cuid())
+  name      String
+  email     String     @unique
+  password  String
+  createdAt String
+  products  Products[]
 }
 
 model Products {

@@ -2,7 +2,6 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Logo from "@/public/logo.png";
-import { HiOutlineUser, HiFingerPrint, HiOutlineLogout } from "react-icons/hi";
 import Link from "next/link";
 import SideLayout from "@/components/SideLayout";
 
