@@ -1,12 +1,21 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { AiFillTag } from "react-icons/ai";
 import { BiHelpCircle } from "react-icons/bi";
 import { FaClipboardList, FaUser } from "react-icons/fa";
-import { FcAbout } from "react-icons/fc";
+import { IoMdHelpBuoy } from "react-icons/io";
 import { HiOutlineLogout } from "react-icons/hi";
 import { MdSpaceDashboard } from "react-icons/md";
 
-export default function Sidebar() {
+interface Props {
+  href: string;
+}
+
+export default function Sidebar({ href }: Props) {
+  const router = useRouter();
+
+  // Check if the current route matches the provided href
+  const isActive = router.pathname === href;
   return (
     <>
       {/* Sidebar  */}
@@ -19,7 +28,9 @@ export default function Sidebar() {
             <li>
               <Link
                 href="/admin"
-                className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
+                className={`${
+                  isActive ? `bg-gray-700 text-white` : ``
+                }group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white`}>
                 <FaUser className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
                 <span className="ml-3">Profile</span>
               </Link>
@@ -54,7 +65,7 @@ export default function Sidebar() {
               <Link
                 href="#"
                 className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
-                <FcAbout className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
+                <IoMdHelpBuoy className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
                 <span className="ml-3">Help Centre</span>
               </Link>
             </li>
