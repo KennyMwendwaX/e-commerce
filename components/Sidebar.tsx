@@ -7,15 +7,9 @@ import { IoMdHelpBuoy } from "react-icons/io";
 import { HiOutlineLogout } from "react-icons/hi";
 import { MdSpaceDashboard } from "react-icons/md";
 
-interface Props {
-  href: string;
-}
-
-export default function Sidebar({ href }: Props) {
+export default function Sidebar() {
   const router = useRouter();
 
-  // Check if the current route matches the provided href
-  const isActive = router.pathname === href;
   return (
     <>
       {/* Sidebar  */}
