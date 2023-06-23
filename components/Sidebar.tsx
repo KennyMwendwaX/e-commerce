@@ -29,33 +29,66 @@ export default function Sidebar({ href }: Props) {
               <Link
                 href="/admin"
                 className={`${
-                  isActive ? `bg-gray-700 text-white` : ``
-                }group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white`}>
-                <FaUser className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
+                  router.pathname === "/admin" && "bg-gray-700 text-white"
+                } group flex cursor-pointer items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white`}>
+                <FaUser
+                  className={`${
+                    router.pathname === "/admin"
+                      ? "text-gray-100"
+                      : "text-gray-700"
+                  }h-5 w-5 group-hover:text-gray-100`}
+                />
                 <span className="ml-3">Profile</span>
               </Link>
             </li>
             <li>
               <Link
                 href="/admin/overview"
-                className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
-                <MdSpaceDashboard className="h-6 w-6 text-gray-700 group-hover:text-gray-100" />
+                className={`${
+                  router.pathname === "/admin/overview" &&
+                  "bg-gray-700 text-white"
+                } group flex cursor-pointer items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white`}>
+                <MdSpaceDashboard
+                  className={`${
+                    router.pathname === "/admin/overview"
+                      ? "text-gray-100"
+                      : "text-gray-700"
+                  }h-6 w-6 group-hover:text-gray-100`}
+                />
                 <span className="ml-3">Overview</span>
               </Link>
             </li>
             <li>
               <Link
                 href="/admin/products"
-                className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
-                <AiFillTag className="h-6 w-6 text-gray-700 group-hover:text-gray-100" />
+                className={`${
+                  router.pathname === "/admin/products" &&
+                  "bg-gray-700 text-white"
+                } group flex cursor-pointer items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white`}>
+                <AiFillTag
+                  className={`${
+                    router.pathname === "/admin/products"
+                      ? "text-gray-100"
+                      : "text-gray-700"
+                  }h-6 w-6 group-hover:text-gray-100`}
+                />
                 <span className="ml-3">Products</span>
               </Link>
             </li>
             <li>
               <Link
                 href="/admin/orders"
-                className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
-                <FaClipboardList className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
+                className={`${
+                  router.pathname === "/admin/orders" &&
+                  "bg-gray-700 text-white"
+                } group flex cursor-pointer items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white`}>
+                <FaClipboardList
+                  className={`${
+                    router.pathname === "/admin/orders"
+                      ? "text-gray-100"
+                      : "text-gray-700"
+                  }h-5 w-5 group-hover:text-gray-100`}
+                />
                 <span className="ml-3">Orders</span>
               </Link>
             </li>
@@ -63,18 +96,34 @@ export default function Sidebar({ href }: Props) {
           <ul className="mt-5 space-y-2 border-t border-gray-400 pt-5">
             <li>
               <Link
-                href="#"
-                className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
-                <IoMdHelpBuoy className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
+                href="/admin/help"
+                className={`${
+                  router.pathname === "/admin/help" && "bg-gray-700 text-white"
+                } group flex cursor-pointer items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white`}>
+                <IoMdHelpBuoy
+                  className={`${
+                    router.pathname === "/admin/help"
+                      ? "text-gray-100"
+                      : "text-gray-700"
+                  }h-6 w-6 group-hover:text-gray-100`}
+                />
                 <span className="ml-3">Help Centre</span>
               </Link>
             </li>
             <li>
               <Link
-                href="#"
-                className="group flex items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white">
-                <BiHelpCircle className="h-5 w-5 text-gray-700 group-hover:text-gray-100" />
-                <span className="ml-3">About Us</span>
+                href="/admin/about"
+                className={`${
+                  router.pathname === "/admin/about" && "bg-gray-700 text-white"
+                } group flex cursor-pointer items-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white`}>
+                <BiHelpCircle
+                  className={`${
+                    router.pathname === "/admin/about"
+                      ? "text-gray-100"
+                      : "text-gray-700"
+                  }h-6 w-6 group-hover:text-gray-100`}
+                />
+                <span className="ml-3">About</span>
               </Link>
             </li>
           </ul>
