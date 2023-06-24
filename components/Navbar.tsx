@@ -33,7 +33,7 @@ export default function Navbar({ session, status }: NavbarProps) {
   };
 
   const fetchItems = useCallback(() => {
-    fetch("http://localhost:3000/api/items")
+    fetch("/api/items")
       .then((res) => res.json())
       .then((data) => {
         const searchResults = data

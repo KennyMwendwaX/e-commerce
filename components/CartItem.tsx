@@ -19,7 +19,7 @@ export default function CartItem({ id, quantity }: CartItemProps) {
 
   useEffect(() => {
     function fetchItems() {
-      fetch(`http://localhost:3000/api/items/${id}`)
+      fetch(`/api/items/${id}`)
         .then((res) => res.json())
         .then((data) => setItem(data));
     }

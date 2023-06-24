@@ -13,7 +13,7 @@ export default function PopularCategories() {
   const [categories, setCategories] = useState<Category[]>([]);
   useEffect(() => {
     function fetchCategories() {
-      fetch("http://localhost:3000/api/popular-categories")
+      fetch("/api/popular-categories")
         .then((res) => res.json())
         .then((data) => setCategories(data));
     }
@@ -22,23 +22,23 @@ export default function PopularCategories() {
 
   return (
     <>
-      <div className="font-light text-xl mt-8 mb-2">
+      <div className="mb-2 mt-8 text-xl font-light">
         Explore Popular Categories
       </div>
       <div className="grid grid-cols-6 space-x-2">
         {categories.map((category) => (
-          <div className="block relative mb-5" key={category.id}>
+          <div className="relative mb-5 block" key={category.id}>
             <Image
               alt=""
               width={192}
               height={192}
-              className="h-48 w-48 rounded-full overflow-hidden cursor-pointer mb-2"
+              className="mb-2 h-48 w-48 cursor-pointer overflow-hidden rounded-full"
               src={category.imgUrl}
             />
             <div className="text-center font-mono">{category.name}</div>
           </div>
         ))}
-        <Link href="/products" className="block relative mb-5">
+        <Link href="/products" className="relative mb-5 block">
           <FaArrowCircleRight className="h-48 w-48" />
           <div className="text-center font-mono">See All</div>
         </Link>

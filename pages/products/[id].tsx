@@ -22,7 +22,7 @@ export default function Item() {
 
   useEffect(() => {
     function fetchItem() {
-      fetch(`http://localhost:3000/api/items/${id}`)
+      fetch(`/api/items/${id}`)
         .then((res) => res.json())
         .then((data) => setItem(data));
     }

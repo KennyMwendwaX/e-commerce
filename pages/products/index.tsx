@@ -8,7 +8,7 @@ export default function Products() {
 
   useEffect(() => {
     async function fetchItems() {
-      const res = await fetch("http://localhost:3000/api/items");
+      const res = await fetch("/api/items");
       const data = await res.json();
       setItems(data);
     }
@@ -27,13 +27,13 @@ export default function Products() {
   }, [filteredItems]);
 
   return (
-    <div className="text-gray-600 body-font">
-      <div className="container px-5 pt-20 pb-5 mt-4 mx-auto">
-        <div className="flex flex-wrap -m-4">
+    <div className="body-font text-gray-600">
+      <div className="container mx-auto mt-4 px-5 pb-5 pt-20">
+        <div className="-m-4 flex flex-wrap">
           {searchResults ? (
             <>
               {searchResults.map((item) => (
-                <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key={item.id}>
+                <div className="w-full p-4 md:w-1/2 lg:w-1/4" key={item.id}>
                   <StoreItem {...item} />
                 </div>
               ))}
@@ -41,7 +41,7 @@ export default function Products() {
           ) : (
             <>
               {items.map((item) => (
-                <div className="lg:w-1/4 md:w-1/2 p-4 w-full" key={item.id}>
+                <div className="w-full p-4 md:w-1/2 lg:w-1/4" key={item.id}>
                   <StoreItem {...item} />
                 </div>
               ))}
