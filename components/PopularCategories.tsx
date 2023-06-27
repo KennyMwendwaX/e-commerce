@@ -29,7 +29,7 @@ export default function PopularCategories() {
         {categories.map((category) => (
           <div className="relative mb-5 block" key={category.id}>
             <Image
-              alt=""
+              alt={category.name}
               width={192}
               height={192}
               className="mb-2 h-48 w-48 cursor-pointer overflow-hidden rounded-full"

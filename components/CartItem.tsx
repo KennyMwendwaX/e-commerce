@@ -33,12 +33,7 @@ export default function CartItem({ id, quantity }: CartItemProps) {
       <tr className="border-b border-gray-400">
         <td className="w-32 p-4">
           <Link href={`/products/${id}`}>
-            <Image
-              width={128}
-              height={128}
-              src={item.imgUrl}
-              alt="Apple Watch"
-            />
+            <Image width={128} height={128} src={item.imgUrl} alt={item.name} />
           </Link>
         </td>
         <td className="px-6 py-4 font-semibold text-gray-700">{item.name}</td>

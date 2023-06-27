@@ -26,7 +26,7 @@ export default function PopularBrands() {
         {brands.map((brand) => (
           <div className="relative mb-5 block" key={brand.id}>
             <Image
-              alt=""
+              alt={brand.name}
               width={192}
               height={192}
               className="mb-2 h-48 w-48 cursor-pointer overflow-hidden rounded-full"
