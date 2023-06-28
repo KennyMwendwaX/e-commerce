@@ -1,19 +1,16 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import Logo from "@/public/logo.png";
-import Link from "next/link";
 import SideLayout from "@/components/SideLayout";
 
 export default function Profile() {
-  // const router = useRouter();
-  // const { data: session } = useSession({
-  //   required: true,
-  //   onUnauthenticated() {
-  //     // The user is not authenticated, redirect to the signin route.
-  //     router.replace("/signin");
-  //   },
-  // });
+  const router = useRouter();
+  const { data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      // The user is not authenticated, redirect to the signin route.
+      router.replace("/signin");
+    },
+  });
 
   return (
     <>
