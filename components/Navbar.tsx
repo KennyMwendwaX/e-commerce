@@ -139,10 +139,10 @@ export default function Navbar({ session, status }: NavbarProps) {
                   <ul className="py-2" aria-labelledby="user-menu-button">
                     <li>
                       <Link
-                        href="/profile"
+                        href="/admin"
                         className="inline-flex w-full items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                         <FaUserCog size={18} />
-                        &nbsp; Profile
+                        &nbsp; Admin
                       </Link>
                     </li>
                     <li>
