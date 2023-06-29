@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { FaSearch, FaUserCog } from "react-icons/fa";
 import { HiOutlineLogout, HiOutlineShoppingCart } from "react-icons/hi";
 import { useCart } from "../context/CartContext";
@@ -22,6 +22,7 @@ export default function Navbar({ session, status }: NavbarProps) {
   const [searchValue, setSearchValue] = useState<string | null>(null);
   const router = useRouter();
 
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -73,6 +74,22 @@ export default function Navbar({ session, status }: NavbarProps) {
       router.push("/products");
     }
   }, [filteredItems]);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -127,7 +144,8 @@ export default function Navbar({ session, status }: NavbarProps) {
                   className={`z-50 ${
                     isMenuOpen ? "" : "hidden"
                   } fixed right-6 top-8 my-4 list-none divide-y divide-gray-100 rounded-lg bg-white text-base shadow`}
-                  id="user-dropdown">
+                  id="user-dropdown"
+                  ref={dropdownRef}>
                   <div className="px-4 py-3">
                     <span className="text-md block font-semibold  text-gray-900">
                       {session?.user?.name}
