@@ -47,7 +47,7 @@ export default function Sidebar() {
                     router.pathname === "/admin/overview"
                       ? "text-gray-100"
                       : "text-gray-700"
-                  }h-6 w-6 group-hover:text-gray-100`}
+                  }h-5 w-5 text-xl group-hover:text-gray-100`}
                 />
                 <span className="ml-3">Overview</span>
               </Link>
@@ -64,7 +64,7 @@ export default function Sidebar() {
                     router.pathname === "/admin/products"
                       ? "text-gray-100"
                       : "text-gray-700"
-                  }h-6 w-6 group-hover:text-gray-100`}
+                  }h-6 w-6 text-xl group-hover:text-gray-100`}
                 />
                 <span className="ml-3">Products</span>
               </Link>
@@ -81,7 +81,7 @@ export default function Sidebar() {
                     router.pathname === "/admin/orders"
                       ? "text-gray-100"
                       : "text-gray-700"
-                  }h-5 w-5 group-hover:text-gray-100`}
+                  }h-5 w-5 text-xl group-hover:text-gray-100`}
                 />
                 <span className="ml-3">Orders</span>
               </Link>
@@ -99,7 +99,7 @@ export default function Sidebar() {
                     router.pathname === "/admin/help"
                       ? "text-gray-100"
                       : "text-gray-700"
-                  }h-6 w-6 group-hover:text-gray-100`}
+                  }h-6 w-6 text-xl group-hover:text-gray-100`}
                 />
                 <span className="ml-3">Help Centre</span>
               </Link>
@@ -115,7 +115,7 @@ export default function Sidebar() {
                     router.pathname === "/admin/about"
                       ? "text-gray-100"
                       : "text-gray-700"
-                  }h-6 w-6 group-hover:text-gray-100`}
+                  }h-6 w-6 text-xl group-hover:text-gray-100`}
                 />
                 <span className="ml-3">About</span>
               </Link>
