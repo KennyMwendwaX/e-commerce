@@ -14,7 +14,7 @@ export default function AddProduct() {
     }
   };
 
-  const handleUpload = async () => {
+  const handleProductUpload = async () => {
     setUploading(true);
     try {
       if (!selectedFile) return;
@@ -35,7 +35,7 @@ export default function AddProduct() {
       <main className="h-auto p-4 pt-20 md:ml-64">
         <div className="text-xl">Add Product</div>
         <div className="mt-5">
-          <form onSubmit={handleUpload}>
+          <form onSubmit={handleProductUpload}>
             <div className="mb-2 text-sm font-medium">Add Product image</div>
             <input
               type="file"
@@ -52,7 +52,7 @@ export default function AddProduct() {
               disabled={uploading}
               style={{ opacity: uploading ? ".5" : "1" }}
               className="mt-4 w-32 rounded bg-red-600 py-2 text-center text-white">
-              {uploading ? "Uploading.." : "Upload"}
+              {uploading ? "Uploading..." : "Upload"}
             </button>
           </form>
         </div>
