@@ -16,16 +16,50 @@ type FormValues = {
 export default function AddProduct() {
   const { register, handleSubmit } = useForm<FormValues>();
   const [selectedImage, setSelectedImage] = useState("");
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files) return; // Guard clause
-    const file = e.target.files[0];
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (!event.target.files) return; // Guard clause
+    const file = event.target.files[0];
     if (file) {
       setSelectedImage(URL.createObjectURL(file));
+      setSelectedFile(file);
     }
   };
 
-  const handleProductUpload = async () => {};
+  const handleProductUpload = async (data: FormValues) => {
+    const { name, brand, category, description, price, quantity } = data;
+
+    const product = {
+      name,
+      brand,
+      category,
+      description,
+      price,
+      quantity,
+    };
+
+    const formData = new FormData();
+    formData.append("product", JSON.stringify(product));
+    if (selectedFile) formData.append("picture", selectedFile);
+
+    const options = {
+      method: "POST",
+      body: formData,
+    };
+
+    try {
+      const response = await fetch("/api/products/register", options);
+      if (response.ok) {
+        // Handle successful upload
+      } else {
+        // Handle upload error
+      }
+    } catch (error) {
+      // Handle fetch error
+    }
+  };
+
   return (
     <SideLayout>
       <main className="h-auto p-4 pt-20 md:ml-64">
@@ -40,11 +74,11 @@ export default function AddProduct() {
                 className="flex h-72 w-1/2 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100">
                 {selectedImage ? (
                   <Image
-                    width={290}
-                    height={290}
+                    width={280}
+                    height={280}
                     src={selectedImage}
                     alt="Selected"
-                    className="mb-4 text-gray-500"
+                    className="text-gray-500"
                   />
                 ) : (
                   <div className="flex flex-col items-center justify-center pb-6 pt-5">
@@ -65,6 +99,7 @@ export default function AddProduct() {
                   type="file"
                   className="hidden"
                   onChange={handleFileChange}
+                  required
                 />
               </label>
             </div>
