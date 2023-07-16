@@ -20,14 +20,6 @@ export default function Sidebar() {
         <div className="h-full overflow-y-auto bg-gray-100 px-3 py-5">
           <ul className="space-y-4">
             <li>
-              <button
-                type="button"
-                className="mb-2 mr-2 flex w-full items-center justify-center space-x-2 rounded-lg bg-slate-900 px-5 py-2.5 text-base font-medium text-white  focus:outline-none focus:ring-4 focus:ring-gray-200">
-                <AiOutlinePlus className="h-5 w-5" />
-                <span>Add Product</span>
-              </button>
-            </li>
-            <li>
               <Link
                 href="/admin"
                 className={`${
