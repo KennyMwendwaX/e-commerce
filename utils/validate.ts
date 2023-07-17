@@ -51,7 +51,7 @@ export const signinFormSchema = z.object({
     .max(20, { message: "Password must be less than 20 characters long" }),
 });
 
-export const AddProductFormSchema = z.object({
+export const addProductFormSchema = z.object({
   name: z
     .string({
       required_error: "Name is required",
@@ -73,20 +73,20 @@ export const AddProductFormSchema = z.object({
     })
     .min(5, { message: "Category must be greater than 5 character long" })
     .max(20, { message: "Category must be less than 20 characters long" }),
-  price: z
-    .number({
-      required_error: "Price is required",
-      invalid_type_error: "Price must be a number",
-    })
-    .min(1, { message: "Price must be greater than KSH 1" })
-    .max(1000000, { message: "Price must be less than KSH 1,000,000" }),
-  quantity: z
-    .number({
-      required_error: "Quantity is required",
-      invalid_type_error: "Quantity must be a number",
-    })
-    .min(1, { message: "Quantity must be greater than 1" })
-    .max(1000, { message: "Quantity must be less than 1,000" }),
+  // price: z
+  //   .number({
+  //     required_error: "Price is required",
+  //     invalid_type_error: "Price must be a number",
+  //   })
+  //   .min(1, { message: "Price must be greater than KSH 1" })
+  //   .max(1000000, { message: "Price must be less than KSH 1,000,000" }),
+  // quantity: z
+  //   .number({
+  //     required_error: "Quantity is required",
+  //     invalid_type_error: "Quantity must be a number",
+  //   })
+  //   .min(1, { message: "Quantity must be greater than 1" })
+  //   .max(1000, { message: "Quantity must be less than 1,000" }),
   description: z
     .string({
       required_error: "Description is required",

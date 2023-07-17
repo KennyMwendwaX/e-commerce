@@ -1,5 +1,5 @@
 import SideLayout from "@/components/SideLayout";
-import { AddProductFormSchema } from "@/utils/validate";
+import { addProductFormSchema } from "@/utils/validate";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useState } from "react";
@@ -10,9 +10,9 @@ type FormValues = {
   name: string;
   brand: string;
   category: string;
-  description: string;
-  price: number;
+  price: string;
   quantity: number;
+  description: string;
 };
 
 export default function AddProduct() {
@@ -21,7 +21,7 @@ export default function AddProduct() {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>({
-    resolver: zodResolver(AddProductFormSchema),
+    resolver: zodResolver(addProductFormSchema),
   });
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -35,16 +35,20 @@ export default function AddProduct() {
     }
   };
 
+  const convertToNumber = (value: string): number => {
+    return parseInt(value);
+  };
+
   const handleProductUpload = async (data: FormValues) => {
-    const { name, brand, category, description, price, quantity } = data;
+    const { name, brand, category, price, quantity, description } = data;
 
     const product = {
       name,
       brand,
       category,
-      description,
       price,
       quantity,
+      description,
     };
 
     const formData = new FormData();
@@ -183,10 +187,9 @@ export default function AddProduct() {
                   Product Price
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   id="price"
                   className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 outline-none focus:border-gray-900"
-                  placeholder="price"
                   required
                   {...register("price")}
                 />
