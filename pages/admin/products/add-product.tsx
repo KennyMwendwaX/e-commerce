@@ -1,4 +1,6 @@
 import SideLayout from "@/components/SideLayout";
+import { AddProductFormSchema } from "@/utils/validate";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -14,7 +16,13 @@ type FormValues = {
 };
 
 export default function AddProduct() {
-  const { register, handleSubmit } = useForm<FormValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({
+    resolver: zodResolver(AddProductFormSchema),
+  });
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
@@ -118,6 +126,11 @@ export default function AddProduct() {
                 required
                 {...register("name")}
               />
+              {errors.name?.message && (
+                <span className="text-xs text-red-600">
+                  {errors.name?.message}
+                </span>
+              )}
             </div>
             <div className="grid md:grid-cols-2 md:gap-6">
               <div>
@@ -134,6 +147,11 @@ export default function AddProduct() {
                   required
                   {...register("brand")}
                 />
+                {errors.brand?.message && (
+                  <span className="text-xs text-red-600">
+                    {errors.brand?.message}
+                  </span>
+                )}
               </div>
               <div>
                 <label
@@ -149,6 +167,11 @@ export default function AddProduct() {
                   required
                   {...register("category")}
                 />
+                {errors.category?.message && (
+                  <span className="text-xs text-red-600">
+                    {errors.category?.message}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -167,6 +190,11 @@ export default function AddProduct() {
                   required
                   {...register("price")}
                 />
+                {errors.price?.message && (
+                  <span className="text-xs text-red-600">
+                    {errors.price?.message}
+                  </span>
+                )}
               </div>
               <div>
                 <label
@@ -182,6 +210,11 @@ export default function AddProduct() {
                   required
                   {...register("quantity")}
                 />
+                {errors.quantity?.message && (
+                  <span className="text-xs text-red-600">
+                    {errors.quantity?.message}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -197,6 +230,11 @@ export default function AddProduct() {
                 placeholder="description"
                 required
                 {...register("description")}></textarea>
+              {errors.description?.message && (
+                <span className="text-xs text-red-600">
+                  {errors.description?.message}
+                </span>
+              )}
             </div>
 
             <button
