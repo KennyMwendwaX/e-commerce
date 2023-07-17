@@ -24,9 +24,9 @@ model Products {
   name        String
   brand       String
   category    String
-  description String
   price       Int
   quantity    Int
+  description String
   imgUrl      String
   createdAt   DateTime @default(now())
   User        User?    @relation(fields: [userId], references: [id])

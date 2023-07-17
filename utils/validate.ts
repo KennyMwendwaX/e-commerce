@@ -51,7 +51,7 @@ export const signinFormSchema = z.object({
     .max(20, { message: "Password must be less than 20 characters long" }),
 });
 
-export const AddProductSchema = z.object({
+export const AddProductFormSchema = z.object({
   name: z
     .string({
       required_error: "Name is required",
