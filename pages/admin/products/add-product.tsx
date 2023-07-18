@@ -2,6 +2,7 @@ import SideLayout from "@/components/SideLayout";
 import { addProductFormSchema } from "@/utils/validate";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { BiCloudUpload } from "react-icons/bi";
@@ -25,6 +26,8 @@ export default function AddProduct() {
   });
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+  const router = useRouter();
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files) return; // Guard clause
@@ -59,6 +62,7 @@ export default function AddProduct() {
       const response = await fetch("/api/products/register", options);
       if (response.ok) {
         // Handle successful upload
+        router.push("/products");
       } else {
         // Handle upload error
       }

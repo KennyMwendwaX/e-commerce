@@ -8,9 +8,14 @@ export default function Products() {
 
   useEffect(() => {
     async function fetchItems() {
-      const res = await fetch("/api/products");
-      const data = await res.json();
-      setItems(data);
+      const response = await fetch("/api/products");
+      const data = await response.json();
+      // Sort items by createdAt in descending order
+      const sortedItems: ItemTypes[] = data.sort(
+        (a: ItemTypes, b: ItemTypes) =>
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      );
+      setItems(sortedItems);
     }
     fetchItems();
   }, []);

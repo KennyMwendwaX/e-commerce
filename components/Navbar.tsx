@@ -34,7 +34,7 @@ export default function Navbar({ session, status }: NavbarProps) {
   };
 
   const fetchItems = useCallback(() => {
-    fetch("/api/items")
+    fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
         const searchResults = data
