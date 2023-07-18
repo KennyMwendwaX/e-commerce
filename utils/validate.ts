@@ -87,6 +87,20 @@ export const addProductFormSchema = z.object({
   //   })
   //   .min(1, { message: "Quantity must be greater than 1" })
   //   .max(1000, { message: "Quantity must be less than 1,000" }),
+  price: z
+    .string({
+      required_error: "Price is required",
+      invalid_type_error: "Price must be a string",
+    })
+    .min(1, { message: "Price must be greater than 5 character long" })
+    .max(20, { message: "Price must be less than 20 characters long" }),
+  quantity: z
+    .string({
+      required_error: "Quantity is required",
+      invalid_type_error: "Quantity must be a string",
+    })
+    .min(1, { message: "Quantity must be greater than 5 character long" })
+    .max(20, { message: "Quantity must be less than 20 characters long" }),
   description: z
     .string({
       required_error: "Description is required",

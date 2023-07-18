@@ -11,7 +11,7 @@ type FormValues = {
   brand: string;
   category: string;
   price: string;
-  quantity: number;
+  quantity: string;
   description: string;
 };
 
@@ -35,19 +35,14 @@ export default function AddProduct() {
     }
   };
 
-  const convertToNumber = (value: string): number => {
-    return parseInt(value);
-  };
-
   const handleProductUpload = async (data: FormValues) => {
     const { name, brand, category, price, quantity, description } = data;
-
     const product = {
       name,
       brand,
       category,
-      price,
-      quantity,
+      price: parseInt(price),
+      quantity: parseInt(quantity),
       description,
     };
 
@@ -187,7 +182,7 @@ export default function AddProduct() {
                   Product Price
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   id="price"
                   className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 outline-none focus:border-gray-900"
                   required
