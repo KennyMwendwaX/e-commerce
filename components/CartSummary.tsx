@@ -10,7 +10,7 @@ export default function CartSummary() {
 
   useEffect(() => {
     function fetchItems() {
-      fetch("/api/items")
+      fetch("/api/products")
         .then((res) => res.json())
         .then((data) => setItems(data));
     }
