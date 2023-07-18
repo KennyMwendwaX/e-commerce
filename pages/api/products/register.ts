@@ -3,6 +3,8 @@ import { prisma } from "@/utils/db";
 import formidable from "formidable";
 import path from "path";
 import fs from "fs/promises";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "../auth/[...nextauth]";
 
 export const config = {
   api: {
@@ -48,6 +50,21 @@ export default async function handler(
     return res.status(405).json({ message: "Method Not Allowed" });
   }
 
+  const session = await getServerSession(req, res, authOptions);
+
+  if (!session) {
+    res.status(401).json({ message: "You must be logged in." });
+    return;
+  }
+
+  const user = await prisma.user.findUnique({
+    where: {
+      email: session.user?.email as string,
+    },
+  });
+
+  if (!user) return res.status(404).json({ message: "User not found" });
+
   try {
     try {
       await fs.readdir(path.join(process.cwd() + "/public", "/pictures"));
@@ -67,6 +84,8 @@ export default async function handler(
       return res.status(400).json({ message: "Missing required fields" });
     }
 
+    const filepath = `/pictures/${file.originalFilename as string}`;
+
     const createdProduct = await prisma.products.create({
       data: {
         name: name as string,
@@ -75,7 +94,8 @@ export default async function handler(
         price: parseInt(price as string),
         quantity: parseInt(quantity as string),
         description: description as string,
-        imgUrl: file.filepath,
+        imgUrl: filepath,
+        userId: user.id,
       },
     });
 

@@ -107,5 +107,7 @@ export const addProductFormSchema = z.object({
       invalid_type_error: "Description must be a string",
     })
     .min(5, { message: "Description must be greater than 5 character long" })
-    .max(20, { message: "Description must be less than 20 characters long" }),
+    .max(1000, {
+      message: "Description must be less than 1000 characters long",
+    }),
 });
