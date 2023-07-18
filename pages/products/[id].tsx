@@ -22,7 +22,7 @@ export default function Item() {
 
   useEffect(() => {
     function fetchItem() {
-      fetch(`/api/items/${id}`)
+      fetch(`/api/products/${id}`)
         .then((res) => res.json())
         .then((data) => setItem(data));
     }
@@ -75,13 +75,7 @@ export default function Item() {
                 </span>
               </div>
               <p className="mb-5 font-light leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-                est voluptatum sit culpa itaque, libero, ducimus doloribus
-                aliquid beatae perferendis velit commodi mollitia quis odit
-                pariatur praesentium natus dignissimos eos totam reiciendis
-                asperiores veniam possimus id dolorem! Odio doloremque veniam
-                rerum mollitia a assumenda commodi natus laboriosam obcaecati,
-                iste accusamus!
+                {item.description}
               </p>
               <div className="mb-5 flex">
                 <span className="mr-3">Color</span>
