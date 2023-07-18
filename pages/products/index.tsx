@@ -8,7 +8,7 @@ export default function Products() {
 
   useEffect(() => {
     async function fetchItems() {
-      const res = await fetch("/api/items");
+      const res = await fetch("/api/products");
       const data = await res.json();
       setItems(data);
     }
