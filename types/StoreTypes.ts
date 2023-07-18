@@ -7,4 +7,5 @@ export type ItemTypes = {
   price: number;
   imgUrl: string;
   createdAt: number;
+  quantity: number;
 };
