@@ -41,8 +41,8 @@ export default function Item() {
             <Image
               alt="ecommerce"
               width={200}
-              height={256}
-              className="h-64 w-full rounded object-cover object-center lg:h-auto lg:w-1/2"
+              height={240}
+              className="h-60 w-full rounded object-cover object-center lg:h-auto lg:w-1/2"
               src={item.imgUrl}
             />
             <div className="mt-6 w-full lg:mt-0 lg:w-1/2 lg:py-6 lg:pl-10">
