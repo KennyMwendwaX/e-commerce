@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
 import { ItemTypes } from "../types/StoreTypes";
 import formatCurrency from "../utils/formatCurrency";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 export default function CartSummary() {
   const { cartQuantity, cartItems } = useCart();
@@ -57,9 +58,14 @@ export default function CartSummary() {
               )}
             </span>
           </div>
-          <button className="w-full rounded-sm bg-indigo-500 py-3 text-sm font-semibold uppercase text-gray-100 hover:bg-indigo-600">
-            Checkout
-          </button>
+          <PayPalScriptProvider
+            options={{
+              clientId:
+                "Af2mB2ICYt9BSJlc54m6hY2Q-MBgZ6iyuPMc5CRb5b1eEwTWmbDJBDlZvldA8puemm5iVHxGcLl2IjsR",
+              currency: "kes",
+            }}>
+            <PayPalButtons />
+          </PayPalScriptProvider>
         </div>
       </div>
     </>
