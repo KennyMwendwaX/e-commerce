@@ -25,7 +25,7 @@ export default async function handler(
 
   if (!user) return res.status(404).json({ message: "User not found" });
 
-  const products = await prisma.products.findMany({
+  const products = await prisma.product.findMany({
     where: {
       userId: user.id,
     },

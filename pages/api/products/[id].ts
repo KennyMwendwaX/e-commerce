@@ -9,7 +9,7 @@ export default async function handler(
     return res.status(405).json({ message: "Method Not Allowed" });
 
   const { id } = req.query;
-  const product = await prisma.products.findUnique({
+  const product = await prisma.product.findUnique({
     where: {
       id: id as string,
     },

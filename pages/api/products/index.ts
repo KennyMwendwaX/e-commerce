@@ -9,7 +9,7 @@ export default async function handler(
     return res.status(405).json({ message: "Method Not Allowed" });
   }
 
-  const products = await prisma.products.findMany();
+  const products = await prisma.product.findMany();
 
   res.status(200).json(products);
 }
