@@ -11,15 +11,15 @@ datasource db {
 }
 
 model User {
-  id        String     @id @default(cuid())
+  id        String    @id @default(cuid())
   name      String
-  email     String     @unique
+  email     String    @unique
   password  String
-  createdAt DateTime   @default(now())
-  products  Products[]
+  createdAt DateTime  @default(now())
+  products  Product[]
 }
 
-model Products {
+model Product {
   id          String   @id @default(cuid())
   name        String
   brand       String
