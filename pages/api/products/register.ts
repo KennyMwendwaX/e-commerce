@@ -86,7 +86,7 @@ export default async function handler(
 
     const filepath = `/pictures/${file.originalFilename as string}`;
 
-    const createdProduct = await prisma.products.create({
+    const createdProduct = await prisma.product.create({
       data: {
         name: name as string,
         brand: brand as string,
@@ -104,7 +104,7 @@ export default async function handler(
         message: "Product created successfully",
       });
   } catch (error) {
-    console.error(error);
+    console.log(error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 }
