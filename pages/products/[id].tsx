@@ -42,6 +42,7 @@ export default function Item() {
               alt="ecommerce"
               width={200}
               height={240}
+              unoptimized={true}
               className="h-60 w-full rounded object-cover object-center lg:h-auto lg:w-1/2"
               src={item.imgUrl}
             />
