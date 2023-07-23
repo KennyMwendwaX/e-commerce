@@ -29,6 +29,6 @@ model Product {
   description String
   imgUrl      String
   createdAt   DateTime @default(now())
-  User        User?    @relation(fields: [userId], references: [id])
-  userId      String?
+  User        User     @relation(fields: [userId], references: [id])
+  userId      String
 }
