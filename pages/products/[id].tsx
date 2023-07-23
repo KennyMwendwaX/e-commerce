@@ -52,17 +52,6 @@ export default function Item() {
               </h2>
               <h1 className="title-font mb-1 flex text-3xl font-medium text-gray-900">
                 {item.name}
-                <span className="ml-3 flex space-x-3 border-l-2 border-gray-400 py-2 pl-3 text-xl">
-                  <a className="cursor-pointer text-gray-500">
-                    <FaFacebookF />
-                  </a>
-                  <a className="cursor-pointer text-gray-500">
-                    <FaTwitter />
-                  </a>
-                  <a className="cursor-pointer text-gray-500">
-                    <FaInstagram />
-                  </a>
-                </span>
               </h1>
 
               <div className="mb-4 flex">
