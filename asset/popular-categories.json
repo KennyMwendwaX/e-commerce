@@ -2,51 +2,51 @@
   {
     "id": "1",
     "name": "Desktops",
-    "imgUrl": "/category-img/desktop.jpeg"
+    "imgUrl": "/img/desktop.jpeg"
   },
   {
     "id": "2",
     "name": "Laptops",
-    "imgUrl": "/category-img/laptop.webp"
+    "imgUrl": "/img/laptop.webp"
   },
   {
     "id": "3",
     "name": "Smartphones",
-    "imgUrl": "/item-img/iPhone-14-Pro-Max.jpg"
+    "imgUrl": "/img/iPhone-14-Pro-Max.jpg"
   },
   {
     "id": "4",
     "name": "TVs",
-    "imgUrl": "/item-img/samsung-tv.jpeg"
+    "imgUrl": "/img/samsung-tv.jpeg"
   },
   {
     "id": "5",
     "name": "Gaming Consoles",
-    "imgUrl": "/category-img/gaming-console.webp"
+    "imgUrl": "/img/gaming-console.webp"
   },
   {
     "id": "6",
     "name": "Albums",
-    "imgUrl": "/item-img/gkmc.webp"
+    "imgUrl": "/img/gkmc.webp"
   },
   {
     "id": "7",
     "name": "Clothes",
-    "imgUrl": "/category-img/clothes.webp"
+    "imgUrl": "/img/clothes.webp"
   },
   {
     "id": "8",
     "name": "Books",
-    "imgUrl": "/category-img/books.jpg"
+    "imgUrl": "/img/books.jpg"
   },
   {
     "id": "9",
     "name": "Footwear",
-    "imgUrl": "/category-img/footwear.jpg"
+    "imgUrl": "/img/footwear.jpg"
   },
   {
     "id": "10",
     "name": "Wrist Watches",
-    "imgUrl": "/category-img/wrist-watch.jpg"
+    "imgUrl": "/img/wrist-watch.jpg"
   }
 ]

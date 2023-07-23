@@ -2,46 +2,46 @@
   {
     "id": "1",
     "name": "Apple",
-    "imgUrl": "/brands-img/apple.png"
+    "imgUrl": "/img/apple.png"
   },
   {
     "id": "2",
     "name": "Nike",
-    "imgUrl": "/brands-img/nike.jpg"
+    "imgUrl": "/img/nike.jpg"
   },
   {
     "id": "3",
     "name": "Xiaomi",
-    "imgUrl": "/brands-img/xiaomi.png"
+    "imgUrl": "/img/xiaomi.png"
   },
   {
     "id": "4",
     "name": "HP",
-    "imgUrl": "/brands-img/hp.jpeg"
+    "imgUrl": "/img/hp.jpeg"
   },
   {
     "id": "5",
     "name": "Rolex",
-    "imgUrl": "/brands-img/rolex.png"
+    "imgUrl": "/img/rolex.png"
   },
   {
     "id": "6",
     "name": "Nvidia",
-    "imgUrl": "/brands-img/nvidia.png"
+    "imgUrl": "/img/nvidia.png"
   },
   {
     "id": "7",
     "name": "Dell",
-    "imgUrl": "/brands-img/dell.jpeg"
+    "imgUrl": "/img/dell.jpeg"
   },
   {
     "id": "8",
     "name": "Adidas",
-    "imgUrl": "/brands-img/adidas.png"
+    "imgUrl": "/img/adidas.png"
   },
   {
     "id": "9",
     "name": "Louis Vuitton",
-    "imgUrl": "/brands-img/lv.jpg"
+    "imgUrl": "/img/lv.jpg"
   }
 ]
