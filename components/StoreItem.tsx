@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import formatCurrency from "../utils/formatCurrency";
-import { ItemTypes } from "../types/StoreTypes";
+import { Products } from "@/types/ProductTypes";
 
 export default function StoreItem({
   id,
@@ -9,25 +9,25 @@ export default function StoreItem({
   brand,
   price,
   imgUrl,
-}: ItemTypes) {
+}: Products) {
   return (
     <>
       <Link
-        className="block relative h-48 rounded overflow-hidden cursor-pointer"
+        className="relative block h-48 cursor-pointer overflow-hidden rounded"
         href={`/products/${id}`}>
         <Image
           alt="ecommerce"
           width={192}
           height={192}
-          className="object-cover object-center w-full h-full block"
+          className="block h-full w-full object-cover object-center"
           src={imgUrl}
         />
       </Link>
       <div className="mt-4">
-        <h3 className="inline-block py-1 px-2 rounded bg-indigo-100 text-indigo-600 text-xs font-medium tracking-widest">
+        <h3 className="inline-block rounded bg-indigo-100 px-2 py-1 text-xs font-medium tracking-widest text-indigo-600">
           {brand}
         </h3>
-        <h2 className="text-gray-900 title-font text-lg tracking-tight font-mono font-medium">
+        <h2 className="title-font font-mono text-lg font-medium tracking-tight text-gray-900">
           {name}
         </h2>
         <p className="mt-1 font-normal">{formatCurrency(price)}</p>

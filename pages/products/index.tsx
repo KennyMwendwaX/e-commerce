@@ -11,16 +11,16 @@ export default function Products() {
       const response = await fetch("/api/products");
       const data = await response.json();
       // Sort products by createdAt in descending order
-      const sortedItems: Pr[] = data.sort(
-        (a: Pr, b: Pr) =>
+      const sortedItems: Products[] = data.sort(
+        (a: Products, b: Products) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       );
-      setItems(sortedItems);
+      setProducts(sortedItems);
     }
     fetchItems();
   }, []);
 
-  const [searchResults, setSearchResults] = useState<Pr[] | null>(null);
+  const [searchResults, setSearchResults] = useState<Products[] | null>(null);
   const { filteredItems } = useSearchContext();
 
   useEffect(() => {
