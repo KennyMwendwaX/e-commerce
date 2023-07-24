@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useCart } from "../context/CartContext";
-import { ItemTypes } from "../types/StoreTypes";
+import { Products } from "@/types/ProductTypes";
 import formatCurrency from "../utils/formatCurrency";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 export default function CartSummary() {
   const { cartQuantity, cartItems } = useCart();
 
-  const [items, setItems] = useState<ItemTypes[]>([]);
+  const [items, setItems] = useState<Products[]>([]);
 
   useEffect(() => {
     function fetchItems() {
