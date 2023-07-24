@@ -3,13 +3,13 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { FaSearch, FaUserCog } from "react-icons/fa";
 import { HiOutlineLogout, HiOutlineShoppingCart } from "react-icons/hi";
 import { useCart } from "../context/CartContext";
-import { ItemTypes } from "../types/StoreTypes";
 import { useSearchContext } from "../context/SearchContext";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logo.png";
 import type { Session } from "next-auth";
 import { signOut } from "next-auth/react";
+import { Products } from "@/types/ProductTypes";
 
 type NavbarProps = {
   session: Session | null;
@@ -38,14 +38,14 @@ export default function Navbar({ session, status }: NavbarProps) {
       .then((res) => res.json())
       .then((data) => {
         const searchResults = data
-          .filter((item: ItemTypes) => {
+          .filter((item: Products) => {
             return (
               searchValue && // prevent rendering when there is no input
               item &&
               item.name.toLowerCase().includes(searchValue.toLowerCase())
             );
           })
-          .sort((a: ItemTypes, b: ItemTypes) => {
+          .sort((a: Products, b: Products) => {
             if (
               searchValue && // check that the value is not null
               a.name.toLowerCase().indexOf(searchValue.toLowerCase()) === 0
