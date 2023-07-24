@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import StoreItem from "@/components/StoreItem";
-import { ItemTypes } from "@/types/StoreTypes";
 import { useSearchContext } from "@/context/SearchContext";
+import { Products } from "@/types/ProductTypes";
 
 export default function Products() {
-  const [items, setItems] = useState<ItemTypes[]>([]);
+  const [products, setProducts] = useState<Products[]>([]);
 
   useEffect(() => {
     async function fetchItems() {
       const response = await fetch("/api/products");
       const data = await response.json();
-      // Sort items by createdAt in descending order
-      const sortedItems: ItemTypes[] = data.sort(
-        (a: ItemTypes, b: ItemTypes) =>
+      // Sort products by createdAt in descending order
+      const sortedItems: Pr[] = data.sort(
+        (a: Pr, b: Pr) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       );
       setItems(sortedItems);
@@ -20,7 +20,7 @@ export default function Products() {
     fetchItems();
   }, []);
 
-  const [searchResults, setSearchResults] = useState<ItemTypes[] | null>(null);
+  const [searchResults, setSearchResults] = useState<Pr[] | null>(null);
   const { filteredItems } = useSearchContext();
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function Products() {
             </>
           ) : (
             <>
-              {items.map((item) => (
+              {products.map((item) => (
                 <div className="w-full p-4 md:w-1/2 lg:w-1/4" key={item.id}>
                   <StoreItem {...item} />
                 </div>
