@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { HiOutlineMinus, HiOutlinePlus } from "react-icons/hi";
 import { useCart } from "../context/CartContext";
-import { ItemTypes } from "../types/StoreTypes";
 import formatCurrency from "../utils/formatCurrency";
 import Image from "next/image";
 import Link from "next/link";
+import { Products } from "@/types/ProductTypes";
 
 type CartItemProps = {
   id: string;
@@ -15,7 +15,7 @@ export default function CartItem({ id, quantity }: CartItemProps) {
   const { decreaseCartQuantity, increaseCartQuantity, removeFromCart } =
     useCart();
 
-  const [item, setItem] = useState<ItemTypes | null>(null);
+  const [item, setItem] = useState<Products | null>(null);
 
   useEffect(() => {
     function fetchItems() {
