@@ -1,5 +1,4 @@
 import SideLayout from "@/components/SideLayout";
-import { ItemTypes } from "@/types/StoreTypes";
 import formatCurrency from "@/utils/formatCurrency";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -7,6 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { HiPlus } from "react-icons/hi";
+import { Products } from "@/types/ProductTypes";
 
 export default function Index() {
   const router = useRouter();
@@ -18,15 +18,15 @@ export default function Index() {
     },
   });
 
-  const [items, setItems] = useState<ItemTypes[]>([]);
+  const [items, setItems] = useState<Products[]>([]);
 
   useEffect(() => {
     async function fetchItems() {
       const response = await fetch("/api/products/user-products");
       const data = await response.json();
       // Sort items by createdAt in descending order
-      const sortedItems: ItemTypes[] = data.sort(
-        (a: ItemTypes, b: ItemTypes) =>
+      const sortedItems: Products[] = data.sort(
+        (a: Products, b: Products) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       );
       setItems(sortedItems);
