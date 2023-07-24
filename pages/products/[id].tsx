@@ -10,15 +10,15 @@ import {
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
-import { ItemTypes } from "@/types/StoreTypes";
 import formatCurrency from "@/utils/formatCurrency";
 import { useRouter } from "next/router";
+import { Products } from "@/types/ProductTypes";
 
 export default function Item() {
   const { addToCart, getItemQuantity } = useCart();
   const router = useRouter();
   const { id } = router.query;
-  const [item, setItem] = useState<ItemTypes | null>(null);
+  const [item, setItem] = useState<Products | null>(null);
 
   useEffect(() => {
     function fetchItem() {
