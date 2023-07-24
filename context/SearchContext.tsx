@@ -1,23 +1,23 @@
-import { createContext, useContext, ReactNode, useState } from "react"
-import { ItemTypes } from "../types/StoreTypes"
+import { Products } from "@/types/ProductTypes";
+import { createContext, useContext, ReactNode, useState } from "react";
 
 type SearchProviderProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 type SearchContextTypes = {
-  filteredItems: ItemTypes[] | null
-  setFilteredItems: React.Dispatch<React.SetStateAction<ItemTypes[] | null>>
-}
+  filteredItems: Products[] | null;
+  setFilteredItems: React.Dispatch<React.SetStateAction<Products[] | null>>;
+};
 
-const SearchContext = createContext({} as SearchContextTypes)
+const SearchContext = createContext({} as SearchContextTypes);
 
 export function useSearchContext() {
-  return useContext(SearchContext)
+  return useContext(SearchContext);
 }
 
 export function SearchProvider({ children }: SearchProviderProps) {
-  const [filteredItems, setFilteredItems] = useState<ItemTypes[] | null>(null)
+  const [filteredItems, setFilteredItems] = useState<Products[] | null>(null);
   return (
     <SearchContext.Provider
       value={{
@@ -26,5 +26,5 @@ export function SearchProvider({ children }: SearchProviderProps) {
       }}>
       {children}
     </SearchContext.Provider>
-  )
+  );
 }
