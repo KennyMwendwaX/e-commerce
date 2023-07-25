@@ -64,7 +64,7 @@ export const addProductFormSchema = z.object({
       required_error: "Brand is required",
       invalid_type_error: "Brand must be a string",
     })
-    .min(5, { message: "Brand must be greater than 5 character long" })
+    .min(2, { message: "Brand must be greater than 5 character long" })
     .max(20, { message: "Brand must be less than 20 characters long" }),
   category: z
     .string({
