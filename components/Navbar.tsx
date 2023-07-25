@@ -100,7 +100,7 @@ export default function Navbar({ session, status }: NavbarProps) {
               src={Logo}
               height={24}
               width={45}
-              className="mr-3 sm:h-9"
+              className="mr-3"
               alt="Iconic Logo"
             />
             <span className="self-center whitespace-nowrap font-mono text-xl font-semibold tracking-tight text-gray-800">

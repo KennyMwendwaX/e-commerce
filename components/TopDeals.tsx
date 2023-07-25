@@ -26,7 +26,7 @@ export default function TopDeals() {
             width={230}
             height={230}
             alt="clothes image"
-            src="/category-img/clothes.webp"
+            src="/img/clothes.webp"
           />
           <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
@@ -38,7 +38,7 @@ export default function TopDeals() {
             width={230}
             height={230}
             alt="macbook image"
-            src="/item-img/macbook.jpg"
+            src="/img/macbook.jpg"
           />
           <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -5%
@@ -50,7 +50,7 @@ export default function TopDeals() {
             width={230}
             height={230}
             alt="gaming console image"
-            src="/category-img/gaming-console.webp"
+            src="/img/gaming-console.webp"
           />
           <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
@@ -62,7 +62,7 @@ export default function TopDeals() {
             width={230}
             height={230}
             alt="footwear image"
-            src="/category-img/footwear.jpg"
+            src="/img/footwear.jpg"
           />
           <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
@@ -74,7 +74,7 @@ export default function TopDeals() {
             width={230}
             height={230}
             alt="desktop image"
-            src="/category-img/desktop.jpeg"
+            src="/img/desktop.jpeg"
           />
           <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
@@ -86,7 +86,7 @@ export default function TopDeals() {
             width={230}
             height={230}
             alt="albums image"
-            src="/item-img/gkmc.webp"
+            src="/img/gkmc.webp"
           />
           <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
@@ -98,7 +98,7 @@ export default function TopDeals() {
             width={230}
             height={230}
             alt="tv image"
-            src="/item-img/samsung-tv.jpeg"
+            src="/img/samsung-tv.jpeg"
           />
           <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
@@ -110,7 +110,7 @@ export default function TopDeals() {
             width={230}
             height={230}
             alt="glasses image"
-            src="/item-img/rayban.jpg"
+            src="/img/rayban.jpg"
           />
           <div className="absolute right-1 top-2 mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-600">
             -10%
