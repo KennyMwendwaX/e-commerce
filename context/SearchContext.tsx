@@ -1,4 +1,4 @@
-import { Products } from "@/types/ProductTypes";
+import { Product } from "@/types/ProductTypes";
 import { createContext, useContext, ReactNode, useState } from "react";
 
 type SearchProviderProps = {
@@ -6,8 +6,8 @@ type SearchProviderProps = {
 };
 
 type SearchContextTypes = {
-  filteredItems: Products[] | null;
-  setFilteredItems: React.Dispatch<React.SetStateAction<Products[] | null>>;
+  filteredItems: Product[] | null;
+  setFilteredItems: React.Dispatch<React.SetStateAction<Product[] | null>>;
 };
 
 const SearchContext = createContext({} as SearchContextTypes);
@@ -17,7 +17,7 @@ export function useSearchContext() {
 }
 
 export function SearchProvider({ children }: SearchProviderProps) {
-  const [filteredItems, setFilteredItems] = useState<Products[] | null>(null);
+  const [filteredItems, setFilteredItems] = useState<Product[] | null>(null);
   return (
     <SearchContext.Provider
       value={{

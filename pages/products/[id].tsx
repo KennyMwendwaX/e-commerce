@@ -12,13 +12,13 @@ import Image from "next/image";
 import { useCart } from "@/context/CartContext";
 import formatCurrency from "@/utils/formatCurrency";
 import { useRouter } from "next/router";
-import { Products } from "@/types/ProductTypes";
+import { Product } from "@/types/ProductTypes";
 
-export default function Item() {
+export default function Product() {
   const { addToCart, getItemQuantity } = useCart();
   const router = useRouter();
   const { id } = router.query;
-  const [item, setItem] = useState<Products | null>(null);
+  const [item, setItem] = useState<Product | null>(null);
 
   useEffect(() => {
     function fetchItem() {

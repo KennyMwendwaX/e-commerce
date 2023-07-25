@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext";
 import formatCurrency from "../utils/formatCurrency";
 import Image from "next/image";
 import Link from "next/link";
-import { Products } from "@/types/ProductTypes";
+import { Product } from "@/types/ProductTypes";
 
 type CartItemProps = {
   id: string;
@@ -15,7 +15,7 @@ export default function CartItem({ id, quantity }: CartItemProps) {
   const { decreaseCartQuantity, increaseCartQuantity, removeFromCart } =
     useCart();
 
-  const [item, setItem] = useState<Products | null>(null);
+  const [item, setItem] = useState<Product | null>(null);
 
   useEffect(() => {
     function fetchItems() {

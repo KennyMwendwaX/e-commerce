@@ -1,15 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import formatCurrency from "../utils/formatCurrency";
-import { Products } from "@/types/ProductTypes";
+import { Product } from "@/types/ProductTypes";
 
-export default function StoreItem({
-  id,
-  name,
-  brand,
-  price,
-  imgUrl,
-}: Products) {
+export default function StoreItem({ id, name, brand, price, imgUrl }: Product) {
   return (
     <>
       <Link

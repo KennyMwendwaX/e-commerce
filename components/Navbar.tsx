@@ -9,7 +9,7 @@ import Image from "next/image";
 import Logo from "@/public/logo.png";
 import type { Session } from "next-auth";
 import { signOut } from "next-auth/react";
-import { Products } from "@/types/ProductTypes";
+import { Product } from "@/types/ProductTypes";
 
 type NavbarProps = {
   session: Session | null;
@@ -38,14 +38,14 @@ export default function Navbar({ session, status }: NavbarProps) {
       .then((res) => res.json())
       .then((data) => {
         const searchResults = data
-          .filter((item: Products) => {
+          .filter((item: Product) => {
             return (
               searchValue && // prevent rendering when there is no input
               item &&
               item.name.toLowerCase().includes(searchValue.toLowerCase())
             );
           })
-          .sort((a: Products, b: Products) => {
+          .sort((a: Product, b: Product) => {
             if (
               searchValue && // check that the value is not null
               a.name.toLowerCase().indexOf(searchValue.toLowerCase()) === 0

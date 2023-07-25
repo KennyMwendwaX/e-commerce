@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import StoreItem from "@/components/StoreItem";
 import { useSearchContext } from "@/context/SearchContext";
-import { Products } from "@/types/ProductTypes";
+import { Product } from "@/types/ProductTypes";
 
 export default function Products() {
-  const [products, setProducts] = useState<Products[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     async function fetchItems() {
       const response = await fetch("/api/products");
       const data = await response.json();
       // Sort products by createdAt in descending order
-      const sortedItems: Products[] = data.sort(
-        (a: Products, b: Products) =>
+      const sortedItems: Product[] = data.sort(
+        (a: Product, b: Product) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       );
       setProducts(sortedItems);
@@ -20,7 +20,7 @@ export default function Products() {
     fetchItems();
   }, []);
 
-  const [searchResults, setSearchResults] = useState<Products[] | null>(null);
+  const [searchResults, setSearchResults] = useState<Product[] | null>(null);
   const { filteredItems } = useSearchContext();
 
   useEffect(() => {

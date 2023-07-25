@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { HiPlus } from "react-icons/hi";
-import { Products } from "@/types/ProductTypes";
+import { Product } from "@/types/ProductTypes";
 
 export default function Index() {
   const router = useRouter();
@@ -18,15 +18,15 @@ export default function Index() {
     },
   });
 
-  const [items, setItems] = useState<Products[]>([]);
+  const [items, setItems] = useState<Product[]>([]);
 
   useEffect(() => {
     async function fetchItems() {
       const response = await fetch("/api/products/user-products");
       const data = await response.json();
       // Sort items by createdAt in descending order
-      const sortedItems: Products[] = data.sort(
-        (a: Products, b: Products) =>
+      const sortedItems: Product[] = data.sort(
+        (a: Product, b: Product) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       );
       setItems(sortedItems);
