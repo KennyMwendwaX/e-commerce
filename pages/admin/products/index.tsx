@@ -81,10 +81,9 @@ export default function Index() {
                 <td className="px-6 py-4">
                   <div className="inline-flex items-center border border-gray-500 bg-transparent font-light">
                     <span className="sr-only">Quantity button</span>
-
-                    <button className="bg-transparent px-5 py-2.5 text-sm font-medium text-gray-900 focus:outline-none">
+                    <span className="bg-transparent px-5 py-2.5 text-sm font-medium text-gray-900 focus:outline-none">
                       {item.quantity}
-                    </button>
+                    </span>
                   </div>
                 </td>
                 <td className="px-6 py-4 font-semibold text-gray-900">
