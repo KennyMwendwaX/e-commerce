@@ -16,8 +16,7 @@ export const config = {
 };
 
 const uploadFile = async (
-  req: NextApiRequest,
-  saveLocally?: boolean
+  req: NextApiRequest
 ): Promise<{ fields: formidable.Fields; files: formidable.Files }> => {
   const options: formidable.Options = {};
   options.maxFileSize = 4000 * 1024 * 1024;
@@ -46,7 +45,7 @@ export default async function handler(
     return res.status(405).json({ message: "Method Not Allowed" });
 
   try {
-    const { fields, files } = await uploadFile(req, true);
+    const { fields, files } = await uploadFile(req);
 
     const myFiles = files.picture as formidable.File[];
     const file = myFiles[0];
