@@ -50,11 +50,9 @@ export default async function handler(
     const myFiles = files.picture as formidable.File[];
     const file = myFiles[0];
 
-    const uploadedImage = await cloudinary.uploader.upload(
-      // file.filepath,
-      // process.env.CLOUDINARY_UPLOAD_PRESET
-      file.filepath
-    );
+    const uploadedImage = await cloudinary.uploader.upload(file.filepath, {
+      upload_preset: process.env.CLOUDINARY_UPLOAD_PRESET,
+    });
 
     res.status(200).json({ fileUrl: uploadedImage.secure_url });
 
