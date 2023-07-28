@@ -62,7 +62,6 @@ export default function CartSummary() {
             options={{
               clientId:
                 "Af2mB2ICYt9BSJlc54m6hY2Q-MBgZ6iyuPMc5CRb5b1eEwTWmbDJBDlZvldA8puemm5iVHxGcLl2IjsR",
-              currency: "KES",
             }}>
             <PayPalButtons />
           </PayPalScriptProvider>

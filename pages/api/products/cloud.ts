@@ -4,9 +4,9 @@ import { v2 as cloudinary } from "cloudinary";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  secure: true,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
+  secure: true,
 });
 
 export const config = {
@@ -49,6 +49,14 @@ export default async function handler(
 
     const myFiles = files.picture as formidable.File[];
     const file = myFiles[0];
+
+    const uploadedImage = await cloudinary.uploader.upload(
+      // file.filepath,
+      // process.env.CLOUDINARY_UPLOAD_PRESET
+      file.filepath
+    );
+
+    res.status(200).json({ fileUrl: uploadedImage.secure_url });
 
     const { name, brand, category, price, quantity, description } = fields;
     console.log(fields);
