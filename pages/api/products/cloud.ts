@@ -2,6 +2,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import formidable from "formidable";
 import { v2 as cloudinary } from "cloudinary";
 import { prisma } from "@/utils/db";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../auth/[...nextauth]";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -45,6 +47,19 @@ export default async function handler(
   if (req.method !== "POST")
     return res.status(405).json({ message: "Method Not Allowed" });
 
+  const session = await getServerSession(req, res, authOptions);
+
+  if (!session)
+    return res.status(401).json({ message: "User must be logged in" });
+
+  const user = await prisma.user.findUnique({
+    where: {
+      email: session.user?.email as string,
+    },
+  });
+
+  if (!user) return res.status(404).json({ message: "User not found" });
+
   try {
     const { fields, files } = await getFileData(req);
 
@@ -57,10 +72,6 @@ export default async function handler(
 
     if (!uploadedImage)
       return res.status(500).json({ message: "Image upload failed" });
-
-    console.log(uploadedImage.secure_url);
-
-    res.status(200).json({ fileUrl: uploadedImage.secure_url });
 
     const { name, brand, category, price, quantity, description } = fields;
 
@@ -80,6 +91,9 @@ export default async function handler(
         userId: user.id,
       },
     });
+
+    if (!newProduct)
+      return res.status(500).json({ message: "Product upload failed" });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Internal Server Error" });
