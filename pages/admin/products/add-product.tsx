@@ -245,11 +245,13 @@ export default function AddProduct() {
 
             <button
               type="submit"
-              className="mt-5 inline-flex items-center rounded-lg border bg-gray-800 px-10 py-2.5 text-sm font-medium text-white hover:bg-gray-600 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200"
+              className={`${
+                isUploading ? `bg-gray-600` : `bg-gray-800`
+              } mt-5 inline-flex items-center rounded-lg border px-10 py-2.5 text-sm font-medium text-white hover:bg-gray-600 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200`}
               disabled={isUploading}>
               {isUploading ? (
                 <>
-                  Uploading...
+                  Uploading
                   <AiOutlineLoading3Quarters className="ml-2 animate-spin" />
                 </>
               ) : (
