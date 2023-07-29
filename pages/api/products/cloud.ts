@@ -96,8 +96,11 @@ export default async function handler(
       },
     });
 
-    if (!newProduct)
+    if (!newProduct) {
       return res.status(500).json({ message: "Product upload failed" });
+    } else {
+      return res.status(201).json({ message: "Product created successfully" });
+    }
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Internal Server Error" });
