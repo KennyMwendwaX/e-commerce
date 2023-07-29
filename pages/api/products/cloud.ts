@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import formidable from "formidable";
 import { v2 as cloudinary } from "cloudinary";
+import { prisma } from "@/utils/db";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -54,11 +55,31 @@ export default async function handler(
       upload_preset: process.env.CLOUDINARY_UPLOAD_PRESET,
     });
 
+    if (!uploadedImage)
+      return res.status(500).json({ message: "Image upload failed" });
+
     console.log(uploadedImage.secure_url);
 
     res.status(200).json({ fileUrl: uploadedImage.secure_url });
 
     const { name, brand, category, price, quantity, description } = fields;
+
+    if (!name || !brand || !category || !price || !quantity || !description) {
+      return res.status(400).json({ message: "Missing required fields" });
+    }
+
+    const newProduct = await prisma.product.create({
+      data: {
+        name: name as string,
+        brand: brand as string,
+        category: category as string,
+        price: parseInt(price as string),
+        quantity: parseInt(quantity as string),
+        description: description as string,
+        imgUrl: uploadedImage.secure_url,
+        userId: user.id,
+      },
+    });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Internal Server Error" });
