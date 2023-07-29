@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { BiCloudUpload } from "react-icons/bi";
 
 type FormValues = {
@@ -26,6 +27,7 @@ export default function AddProduct() {
   });
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
 
   const router = useRouter();
 
@@ -39,6 +41,7 @@ export default function AddProduct() {
   };
 
   const handleProductUpload = async (data: FormValues) => {
+    setIsUploading(true);
     const { name, brand, category, price, quantity, description } = data;
     const product = {
       name,
@@ -59,7 +62,7 @@ export default function AddProduct() {
     };
 
     try {
-      const response = await fetch("/api/products/register", options);
+      const response = await fetch("/api/products/cloud", options);
       if (response.ok) {
         // Handle successful upload
         router.push("/products");
@@ -69,6 +72,7 @@ export default function AddProduct() {
     } catch (error) {
       // Handle fetch error
     }
+    setIsUploading(false);
   };
 
   return (
@@ -241,8 +245,16 @@ export default function AddProduct() {
 
             <button
               type="submit"
-              className="mt-5 inline-flex items-center rounded-lg border bg-gray-800 px-10 py-2.5 text-sm font-medium text-white hover:bg-gray-600 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200">
-              Upload
+              className="mt-5 inline-flex items-center rounded-lg border bg-gray-800 px-10 py-2.5 text-sm font-medium text-white hover:bg-gray-600 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200"
+              disabled={isUploading}>
+              {isUploading ? (
+                <>
+                  Uploading...
+                  <AiOutlineLoading3Quarters className="ml-2 animate-spin" />
+                </>
+              ) : (
+                <>Upload</>
+              )}
             </button>
           </form>
         </div>

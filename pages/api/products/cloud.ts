@@ -54,6 +54,8 @@ export default async function handler(
       upload_preset: process.env.CLOUDINARY_UPLOAD_PRESET,
     });
 
+    console.log(uploadedImage.secure_url);
+
     res.status(200).json({ fileUrl: uploadedImage.secure_url });
 
     const { name, brand, category, price, quantity, description } = fields;
