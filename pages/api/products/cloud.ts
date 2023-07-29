@@ -5,6 +5,10 @@ import { prisma } from "@/utils/db";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../auth/[...nextauth]";
 
+interface Data {
+  message: string;
+}
+
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -42,7 +46,7 @@ const getFileData = async (
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse<Data>
 ) {
   if (req.method !== "POST")
     return res.status(405).json({ message: "Method Not Allowed" });
