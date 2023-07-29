@@ -15,7 +15,7 @@ export const config = {
   },
 };
 
-const uploadFile = async (
+const getFileData = async (
   req: NextApiRequest
 ): Promise<{ fields: formidable.Fields; files: formidable.Files }> => {
   const options: formidable.Options = {};
@@ -45,7 +45,7 @@ export default async function handler(
     return res.status(405).json({ message: "Method Not Allowed" });
 
   try {
-    const { fields, files } = await uploadFile(req);
+    const { fields, files } = await getFileData(req);
 
     const myFiles = files.picture as formidable.File[];
     const file = myFiles[0];
@@ -59,7 +59,6 @@ export default async function handler(
     res.status(200).json({ fileUrl: uploadedImage.secure_url });
 
     const { name, brand, category, price, quantity, description } = fields;
-    console.log(fields);
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Internal Server Error" });
