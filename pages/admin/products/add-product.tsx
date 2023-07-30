@@ -28,6 +28,7 @@ export default function AddProduct() {
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
+  const [serverErrors, setServerErrors] = useState("");
 
   const router = useRouter();
 
@@ -68,9 +69,11 @@ export default function AddProduct() {
         router.push("/products");
       } else {
         // Handle upload error
+        setServerErrors("Upload Failed, Please try again later");
       }
     } catch (error) {
       // Handle fetch error
+      setServerErrors("An unexpected error occurred, Please try again later");
     }
     setIsUploading(false);
   };
@@ -83,6 +86,13 @@ export default function AddProduct() {
           <form
             className="mx-auto w-2/3 space-y-6"
             onSubmit={handleSubmit(handleProductUpload)}>
+            {serverErrors && (
+              <div
+                className="mb-4 rounded-lg border border-red-600 bg-red-50 p-4 text-sm text-red-800"
+                role="alert">
+                {serverErrors}
+              </div>
+            )}
             <div className="flex w-full items-center justify-center">
               <label
                 htmlFor="dropzone-file"
