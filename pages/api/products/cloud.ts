@@ -2,8 +2,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import formidable from "formidable";
 import { v2 as cloudinary } from "cloudinary";
 import { prisma } from "@/utils/db";
-import { getServerSession } from "next-auth";
 import { authOptions } from "../auth/[...nextauth]";
+import { getServerSession } from "next-auth/next";
 
 interface Data {
   message: string;
@@ -22,7 +22,7 @@ export const config = {
   },
 };
 
-const getFileData = async (
+const getFormData = async (
   req: NextApiRequest
 ): Promise<{ fields: formidable.Fields; files: formidable.Files }> => {
   const options: formidable.Options = {};
@@ -65,7 +65,7 @@ export default async function handler(
   if (!user) return res.status(404).json({ message: "User not found" });
 
   try {
-    const { fields, files } = await getFileData(req);
+    const { fields, files } = await getFormData(req);
 
     const myFiles = files.picture as formidable.File[];
     const file = myFiles[0];
@@ -79,9 +79,8 @@ export default async function handler(
 
     const { name, brand, category, price, quantity, description } = fields;
 
-    if (!name || !brand || !category || !price || !quantity || !description) {
+    if (!name || !brand || !category || !price || !quantity || !description)
       return res.status(400).json({ message: "Missing required fields" });
-    }
 
     const newProduct = await prisma.product.create({
       data: {
