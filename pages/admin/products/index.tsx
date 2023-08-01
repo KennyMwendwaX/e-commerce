@@ -91,7 +91,7 @@ export default function Index() {
                 </td>
                 <td className="px-6 py-4">
                   <button className="font-medium text-red-600 hover:underline">
-                    Remove
+                    Delete
                   </button>
                 </td>
               </tr>

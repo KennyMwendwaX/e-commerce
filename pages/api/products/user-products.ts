@@ -12,10 +12,8 @@ export default async function handler(
 
   const session = await getServerSession(req, res, authOptions);
 
-  if (!session) {
-    res.status(401).json({ message: "You must be logged in." });
-    return;
-  }
+  if (!session)
+    return res.status(401).json({ message: "You must be logged in." });
 
   const user = await prisma.user.findUnique({
     where: {
