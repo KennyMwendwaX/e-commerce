@@ -94,7 +94,9 @@ export default function Index() {
                     {formatCurrency(product.price)}
                   </td>
                   <td className="px-6 py-4">
-                    <button className="font-medium text-red-600 hover:underline">
+                    <button
+                      onClick={() => deleteProduct(product.id)}
+                      className="font-medium text-red-600 hover:underline">
                       Delete
                     </button>
                   </td>
