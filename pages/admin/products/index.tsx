@@ -34,7 +34,7 @@ export default function Index() {
     fetchProducts();
   }, []);
 
-  const deleteProduct = (productId: string) => {};
+  const handleDeleteProduct = (productId: string) => {};
 
   return (
     <SideLayout>
@@ -95,7 +95,7 @@ export default function Index() {
                   </td>
                   <td className="px-6 py-4">
                     <button
-                      onClick={() => deleteProduct(product.id)}
+                      onClick={() => handleDeleteProduct(product.id)}
                       className="font-medium text-red-600 hover:underline">
                       Delete
                     </button>
