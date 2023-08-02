@@ -34,6 +34,8 @@ export default function Index() {
     fetchProducts();
   }, []);
 
+  const deleteProduct = (productId: string) => {};
+
   return (
     <SideLayout>
       <main className="h-auto p-4 pt-20 md:ml-64">
