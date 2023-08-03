@@ -1,13 +1,16 @@
 import { Product } from "@/types/ProductTypes";
-import { FaEdit, FaRegTrashAlt } from "react-icons/fa";
-import { HiOutlineClock } from "react-icons/hi";
+import { FaRegTrashAlt, FaTimes } from "react-icons/fa";
+import { BsFillExclamationCircleFill } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
+import { TiWarning } from "react-icons/ti";
 
 interface DeleteModalProps {
+  product: Product;
   handleDeleteModalToggle: (product: Product) => void;
 }
 
 export default function DeleteModal({
+  product,
   handleDeleteModalToggle,
 }: DeleteModalProps) {
   const handleDeleteProduct = (productId: string) => {};
@@ -16,63 +19,51 @@ export default function DeleteModal({
     <>
       {/* Modal */}
       <div
-        id="defaultModal"
+        id="deleteModal"
         tabIndex={-1}
         aria-hidden="true"
         className="fixed left-0 right-0 top-0 z-50 flex h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden bg-black bg-opacity-50">
         {/* Modal content */}
-        <div className="relative w-full max-w-2xl rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:p-5">
+        <div className="relative h-full w-full max-w-md rounded-lg bg-white p-4 md:h-auto">
           {/* Modal header */}
-          <div className="mb-4 flex items-center justify-between rounded-t border-b pb-4 sm:mb-5">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-              Note
-            </h3>
+          <div className="mb-4 flex items-start rounded-t pb-2 sm:mb-5">
+            <div className="ml-auto rounded-lg bg-red-200 p-3">
+              <TiWarning className="h-9 w-9 text-red-600" />
+            </div>
             <button
               type="button"
-              //   onClick={() => handleNoteModalToggle(note)}
+              onClick={() => handleDeleteModalToggle(product)}
               className="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
-              data-modal-toggle="defaultModal">
+              data-modal-toggle="deleteModal">
               <MdClose className="h-6 w-6" />
               <span className="sr-only">Close note</span>
             </button>
           </div>
           {/* Modal body */}
-          <h1 className="title-font mb-3 text-xl font-bold text-gray-900 dark:text-gray-100 sm:text-2xl">
+          <div className="mb-3 text-xl font-bold text-gray-900">
             {/* title */}
-          </h1>
-          <div className="flex items-center justify-between pb-4">
-            <span className="inline-block rounded bg-indigo-100 px-2 py-1 text-sm font-medium tracking-widest text-indigo-600 dark:bg-indigo-600 dark:text-gray-100">
-              {/* category */}
-            </span>
-            <span
-              aria-label="time"
-              role="contentinfo"
-              className="flex items-center rounded-full border border-gray-800 px-3 py-1 text-sm text-gray-800 dark:border-gray-200 dark:text-gray-200">
-              <HiOutlineClock />
-              <p className="ml-2"> {/* createdAt */}</p>
-            </span>
+            You are about to delete the following product:
           </div>
-          <textarea
-            id="content"
-            rows={8}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:outline-none focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:ring-blue-500"
-            placeholder="Write your note content here"
-            readOnly
-            required></textarea>
-          <div className="flex items-center space-x-4 p-3">
+          <div>
+            <div className="flex items-center text-gray-600">
+              <BsFillExclamationCircleFill className="mr-2 text-gray-400" />
+              {product.name}
+            </div>
+          </div>
+          <div className="mt-4 flex items-center space-x-4">
             <button
               type="button"
               //   onClick={updateNote}
-              className="inline-flex items-center rounded-lg border border-blue-700 bg-transparent px-5 py-2.5 text-center text-sm font-medium text-blue-700 hover:bg-blue-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">
-              <FaEdit className="-ml-1 mr-1 h-4 w-4" />
-              Edit
+              className="focus:ring-primary-300 inline-flex items-center rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-4">
+              <FaTimes className="-ml-1 mr-1 h-4 w-4" />
+              No, Cancel
             </button>
             <button
               type="button"
               //   onClick={deleteNote}
-              className="inline-flex items-center rounded-lg border border-red-600 bg-transparent px-5 py-2.5 text-center text-sm font-medium text-red-700 hover:bg-red-700 hover:text-white focus:outline-none focus:ring-4 focus:ring-red-300">
+              className="inline-flex items-center rounded-lg bg-red-600 px-3 py-2 text-center text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300">
               <FaRegTrashAlt className="-ml-1 mr-1.5 h-4 w-4" />
-              Delete
+              Yes, I&apos;m sure
             </button>
           </div>
         </div>

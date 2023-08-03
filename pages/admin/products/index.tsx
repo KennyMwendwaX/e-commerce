@@ -19,6 +19,7 @@ export default function Index() {
     },
   });
   const [showModal, setShowModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const [products, setProducts] = useState<Product[]>([]);
 
@@ -37,6 +38,7 @@ export default function Index() {
   }, []);
 
   const handleDeleteModalToggle = (product: Product) => {
+    setSelectedProduct(product);
     setShowModal(!showModal);
   };
 
@@ -114,8 +116,11 @@ export default function Index() {
             a product.
           </div>
         )}
-        {showModal === true && (
-          <DeleteModal handleDeleteModalToggle={handleDeleteModalToggle} />
+        {selectedProduct && showModal === true && (
+          <DeleteModal
+            product={selectedProduct}
+            handleDeleteModalToggle={handleDeleteModalToggle}
+          />
         )}
       </main>
     </SideLayout>
