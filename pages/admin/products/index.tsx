@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { HiPlus } from "react-icons/hi";
 import { Product } from "@/types/ProductTypes";
+import DeleteModal from "@/components/DeleteModal";
 
 export default function Index() {
   const router = useRouter();
@@ -17,6 +18,7 @@ export default function Index() {
       router.replace("/signin");
     },
   });
+  const [showModal, setShowModal] = useState(false);
 
   const [products, setProducts] = useState<Product[]>([]);
 
@@ -34,9 +36,9 @@ export default function Index() {
     fetchProducts();
   }, []);
 
-  const handleDeleteModalToggle = (productId: string) => {};
-
-  const handleDeleteProduct = (productId: string) => {};
+  const handleDeleteModalToggle = (product: Product) => {
+    setShowModal(!showModal);
+  };
 
   return (
     <SideLayout>
@@ -97,7 +99,7 @@ export default function Index() {
                   </td>
                   <td className="px-6 py-4">
                     <button
-                      onClick={() => handleDeleteModalToggle(product.id)}
+                      onClick={() => handleDeleteModalToggle(product)}
                       className="font-medium text-red-600 hover:underline">
                       Delete
                     </button>
@@ -111,6 +113,9 @@ export default function Index() {
             You have no products available, click the Add Product button to add
             a product.
           </div>
+        )}
+        {showModal === true && (
+          <DeleteModal handleDeleteModalToggle={handleDeleteModalToggle} />
         )}
       </main>
     </SideLayout>

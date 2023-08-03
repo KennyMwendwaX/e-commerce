@@ -1,8 +1,17 @@
+import { Product } from "@/types/ProductTypes";
 import { FaEdit, FaRegTrashAlt } from "react-icons/fa";
 import { HiOutlineClock } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
 
-export default function DeleteModal() {
+interface DeleteModalProps {
+  handleDeleteModalToggle: (product: Product) => void;
+}
+
+export default function DeleteModal({
+  handleDeleteModalToggle,
+}: DeleteModalProps) {
+  const handleDeleteProduct = (productId: string) => {};
+
   return (
     <>
       {/* Modal */}
