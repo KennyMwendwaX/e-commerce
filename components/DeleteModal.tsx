@@ -53,7 +53,7 @@ export default function DeleteModal({
           <div className="mt-4 flex items-center space-x-4">
             <button
               type="button"
-              //   onClick={updateNote}
+              onClick={() => handleDeleteModalToggle(product)}
               className="focus:ring-primary-300 inline-flex items-center rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-4">
               <FaTimes className="-ml-1 mr-1 h-4 w-4" />
               No, Cancel
