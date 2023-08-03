@@ -34,6 +34,8 @@ export default function Index() {
     fetchProducts();
   }, []);
 
+  const handleDeleteModalToggle = (productId: string) => {};
+
   const handleDeleteProduct = (productId: string) => {};
 
   return (
@@ -95,7 +97,7 @@ export default function Index() {
                   </td>
                   <td className="px-6 py-4">
                     <button
-                      onClick={() => handleDeleteProduct(product.id)}
+                      onClick={() => handleDeleteModalToggle(product.id)}
                       className="font-medium text-red-600 hover:underline">
                       Delete
                     </button>
