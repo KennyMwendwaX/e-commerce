@@ -6,11 +6,13 @@ import { TiWarning } from "react-icons/ti";
 
 interface DeleteModalProps {
   product: Product;
+  fetchProducts: () => void;
   handleDeleteModalToggle: (product: Product) => void;
 }
 
 export default function DeleteModal({
   product,
+  fetchProducts,
   handleDeleteModalToggle,
 }: DeleteModalProps) {
   const handleDeleteProduct = async (productId: string) => {
