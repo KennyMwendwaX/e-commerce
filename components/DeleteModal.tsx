@@ -50,7 +50,7 @@ export default function DeleteModal({
               {product.name}
             </div>
           </div>
-          <div className="mt-4 flex items-center space-x-4">
+          <div className="mt-4 flex items-center justify-center space-x-4">
             <button
               type="button"
               onClick={() => handleDeleteModalToggle(product)}
