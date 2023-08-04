@@ -23,17 +23,18 @@ export default function Index() {
 
   const [products, setProducts] = useState<Product[]>([]);
 
+  async function fetchProducts() {
+    const response = await fetch("/api/products/user-products");
+    const data = await response.json();
+    // Sort products by createdAt in descending order
+    const sortedProducts: Product[] = data.sort(
+      (a: Product, b: Product) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
+    setProducts(sortedProducts);
+  }
+
   useEffect(() => {
-    async function fetchProducts() {
-      const response = await fetch("/api/products/user-products");
-      const data = await response.json();
-      // Sort products by createdAt in descending order
-      const sortedProducts: Product[] = data.sort(
-        (a: Product, b: Product) =>
-          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-      );
-      setProducts(sortedProducts);
-    }
     fetchProducts();
   }, []);
 

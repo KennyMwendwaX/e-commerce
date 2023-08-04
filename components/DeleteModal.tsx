@@ -13,7 +13,16 @@ export default function DeleteModal({
   product,
   handleDeleteModalToggle,
 }: DeleteModalProps) {
-  const handleDeleteProduct = (productId: string) => {};
+  const handleDeleteProduct = async (productId: string) => {
+    try {
+      await fetch(`/api/delete/${productId}`, {
+        method: "DELETE",
+      });
+      fetchProducts(); // Fetch the updated list of products after deletion
+    } catch (error) {
+      console.error("Error deleting note:", error);
+    }
+  };
 
   return (
     <>
@@ -60,7 +69,7 @@ export default function DeleteModal({
             </button>
             <button
               type="button"
-              //   onClick={deleteNote}
+              onClick={() => handleDeleteProduct(product.id)}
               className="inline-flex items-center rounded-lg bg-red-600 px-3 py-2 text-center text-sm font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300">
               <FaRegTrashAlt className="-ml-1 mr-1.5 h-4 w-4" />
               Yes, I&apos;m sure
