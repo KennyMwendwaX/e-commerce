@@ -3,24 +3,28 @@ import { FaRegTrashAlt, FaTimes } from "react-icons/fa";
 import { BsFillExclamationCircleFill } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 import { TiWarning } from "react-icons/ti";
+import { Dispatch, SetStateAction } from "react";
 
 interface DeleteModalProps {
   product: Product;
   fetchProducts: () => void;
   handleDeleteModalToggle: (product: Product) => void;
+  setShowModal: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function DeleteModal({
   product,
   fetchProducts,
   handleDeleteModalToggle,
+  setShowModal,
 }: DeleteModalProps) {
   const handleDeleteProduct = async (productId: string) => {
     try {
-      await fetch(`/api/delete/${productId}`, {
+      await fetch(`/api/products/delete/${productId}`, {
         method: "DELETE",
       });
       fetchProducts(); // Fetch the updated list of products after deletion
+      setShowModal(false);
     } catch (error) {
       console.error("Error deleting note:", error);
     }

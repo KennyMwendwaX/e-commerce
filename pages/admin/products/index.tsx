@@ -121,6 +121,7 @@ export default function Index() {
           <DeleteModal
             product={selectedProduct}
             fetchProducts={fetchProducts}
+            setShowModal={setShowModal}
             handleDeleteModalToggle={handleDeleteModalToggle}
           />
         )}
