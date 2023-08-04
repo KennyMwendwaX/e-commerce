@@ -66,7 +66,7 @@ export default function AddProduct() {
       const response = await fetch("/api/products/cloud", options);
       if (response.ok) {
         // Handle successful upload
-        router.push("/products");
+        router.push("/admin/products");
       } else {
         // Handle upload error
         setServerErrors("Upload Failed, Please try again later");

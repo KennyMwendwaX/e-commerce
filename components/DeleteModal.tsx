@@ -26,7 +26,7 @@ export default function DeleteModal({
       fetchProducts(); // Fetch the updated list of products after deletion
       setShowModal(false);
     } catch (error) {
-      console.error("Error deleting note:", error);
+      console.log("Error deleting note:", error);
     }
   };
 
