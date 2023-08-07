@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "watchcss": "npx tailwindcss -o styles/globals.css --watch",
-    "buildcss": "npx tailwindcss -o styles/globals.css --minify",
-    "postInstall": "prisma generate"
+    "buildcss": "npx tailwindcss -o styles/globals.css --minify"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",
