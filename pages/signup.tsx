@@ -45,10 +45,7 @@ export default function Signup() {
       body: JSON.stringify(values),
     };
 
-    const register = await fetch(
-      "http://localhost:3000/api/auth/register",
-      options
-    );
+    const register = await fetch("/api/auth/register", options);
 
     if (register.status === 409) setServerErrors("Email is already registered");
 
