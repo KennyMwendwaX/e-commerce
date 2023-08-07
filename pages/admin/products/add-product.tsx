@@ -63,7 +63,7 @@ export default function AddProduct() {
     };
 
     try {
-      const response = await fetch("/api/products/cloud", options);
+      const response = await fetch("/api/products/register", options);
       if (response.ok) {
         // Handle successful upload
         router.push("/admin/products");
