@@ -1,6 +1,7 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import SideLayout from "@/components/SideLayout";
+import Head from "next/head";
 
 export default function Profile() {
   const router = useRouter();
@@ -14,6 +15,13 @@ export default function Profile() {
 
   return (
     <>
+      <Head>
+        <title>Cart</title>
+        <meta name="description" content="Admin page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <SideLayout>
         <main className="h-auto p-4 pt-20 md:ml-64">
           <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
