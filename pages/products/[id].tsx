@@ -13,6 +13,7 @@ import { useCart } from "@/context/CartContext";
 import formatCurrency from "@/utils/formatCurrency";
 import { useRouter } from "next/router";
 import { Product } from "@/types/ProductTypes";
+import Head from "next/head";
 
 export default function Product() {
   const { addToCart, getItemQuantity } = useCart();
@@ -35,6 +36,13 @@ export default function Product() {
 
   return (
     <>
+      <Head>
+        <title>Product</title>
+        <meta name="description" content="Product page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <div className="body-font overflow-hidden text-gray-600">
         <div className="container mx-auto px-5 py-24">
           <div className="mx-auto flex flex-wrap lg:w-4/5">
