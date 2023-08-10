@@ -15,7 +15,7 @@ model User {
   name      String
   email     String    @unique
   password  String
-  imgUrl    String
+  imgUrl    String?
   createdAt DateTime  @default(now())
   products  Product[]
 }
