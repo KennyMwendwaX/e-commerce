@@ -33,7 +33,7 @@ export default async function handler(
         name: name,
         email: email,
         password: hashedPassword,
-        imgUrl: "/profile-picture-3.jpg",
+        imgUrl: null,
       },
     });
 
