@@ -71,7 +71,7 @@ export default function Signup() {
           <Image className="mr-2 h-9 w-11" src={Logo} alt="logo" />
           Iconic
         </a>
-        <div className="w-full rounded-lg bg-white shadow dark:border sm:max-w-md md:mt-0 xl:p-0">
+        <div className="w-full rounded-lg bg-white shadow sm:max-w-md md:mt-0 xl:p-0">
           <div className="space-y-3 p-6 sm:p-8 md:space-y-5">
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
               Sign up to have an account

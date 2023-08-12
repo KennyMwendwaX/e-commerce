@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useEffect, useCallback, useRef } from "react";
-import { FaSearch, FaUserCog } from "react-icons/fa";
+import { FaSearch, FaUserCircle, FaUserCog } from "react-icons/fa";
 import { HiOutlineLogout, HiOutlineShoppingCart } from "react-icons/hi";
 import { useCart } from "../context/CartContext";
 import { useSearchContext } from "../context/SearchContext";
@@ -124,20 +124,14 @@ export default function Navbar({ session, status }: NavbarProps) {
               <>
                 <button
                   type="button"
-                  className="ml-5 mr-3 flex rounded-full bg-gray-800 text-sm focus:ring-4 focus:ring-gray-300 md:mr-0"
+                  className="ml-5 mr-3 flex rounded-full text-sm focus:ring-4 focus:ring-gray-300 md:mr-0"
                   id="user-menu-button"
                   aria-expanded={isMenuOpen}
                   onClick={toggleMenu}
                   data-dropdown-toggle="user-dropdown"
                   data-dropdown-placement="bottom">
                   <span className="sr-only">Open user menu</span>
-                  <Image
-                    className="rounded-full"
-                    width={32}
-                    height={32}
-                    src="/profile-picture-3.jpg"
-                    alt="user photo"
-                  />
+                  <FaUserCircle className="text-gray-800" size={30} />
                 </button>
                 {/* Dropdown menu */}
                 <div
