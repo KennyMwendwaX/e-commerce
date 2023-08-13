@@ -36,6 +36,7 @@ export const authOptions: NextAuthOptions = {
 
         return {
           ...user,
+          image: user.imgUrl,
         };
       },
     }),
