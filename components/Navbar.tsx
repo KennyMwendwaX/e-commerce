@@ -91,7 +91,7 @@ export default function Navbar({ session, status }: NavbarProps) {
     };
   }, []);
 
-  console.log(session?.user?.image);
+  console.log(session?.user);
 
   return (
     <>
