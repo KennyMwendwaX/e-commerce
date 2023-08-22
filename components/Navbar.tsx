@@ -91,8 +91,6 @@ export default function Navbar({ session, status }: NavbarProps) {
     };
   }, []);
 
-  console.log(session?.user);
-
   return (
     <>
       <nav className="fixed left-0 top-0 z-50 w-full bg-gray-200 px-2 py-2.5 sm:px-4">
