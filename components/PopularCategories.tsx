@@ -40,7 +40,7 @@ export default function PopularCategories() {
         ))}
         <Link href="/products" className="relative mb-5 block">
           <FaArrowCircleRight className="h-48 w-48" />
-          <div className="text-center font-mono">See All</div>
+          <div className="text-center font-mono">See All Products</div>
         </Link>
       </div>
     </>
