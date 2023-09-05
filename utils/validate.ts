@@ -71,7 +71,7 @@ export const addProductFormSchema = z.object({
       required_error: "Category is required",
       invalid_type_error: "Category must be a string",
     })
-    .min(5, { message: "Category must be greater than 5 character long" })
+    .min(2, { message: "Category must be greater than 2 character long" })
     .max(20, { message: "Category must be less than 20 characters long" }),
   // price: z
   //   .number({
